@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/6q72r4wz7k2kk3w/export.pkl?dl=1'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1QufoVwNjyGYVhucUhcisTjZf_T0MuVsB'
 export_file_name = 'export.pkl'
 
 classes = ['female 8 to 11','female 13 to 15', 'female 16 to 18', 'female 19 to 20',
