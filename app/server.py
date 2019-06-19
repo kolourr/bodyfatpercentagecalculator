@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 import uvicorn
+import base64
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
@@ -64,6 +65,7 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
+    # img = base64.decodebytes(img_bytes.encode())
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 

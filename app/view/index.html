@@ -18,7 +18,7 @@
 
 
 <div class="header">
-  <img src="../images/testheader.png" class="logo" alt="header-image">
+  <img src="../images/testheader.png" class="logo" alt="logo">
 </div>
 
 <!-- Responsive Menu Bar  -->
@@ -76,7 +76,7 @@
 
 
 
-    <div class='content'>
+    <!-- <div class='content'>
       <div class='no-display'>
         <input id='file-input'
                class='no-display'
@@ -91,7 +91,24 @@
       </div>
       <div>
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+      </div> -->
+
+
+
+
+      <div class="content">
+      <div class="upload-demo-wrap">
+          <div id="upload-demo"></div>
       </div>
+      <div class="actions">
+          <a class="btn file-btn">
+              <span>Upload</span>
+              <input type="file" id="upload" value="Choose a file" accept="image/*" />
+          </a>
+          <button class="upload-result">Crop</button>
+      </div>
+
+
       <div class='analyze'>
         <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
       </div>
@@ -185,12 +202,14 @@
 <div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
 
 
+
 <script src='../static/jquery.min.js'></script>
 <script src='../static/sweetalert.min.js'></script>
 <script src="../static/croppie.js"></script>
 <script src="../static/script.js"></script>
   <script src="../static/exif.js"></script>
     <script src='../static/client.js'></script>
+
 
 <script>       CropImage.init();   </script>
 
