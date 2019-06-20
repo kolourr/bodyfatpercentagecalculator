@@ -13,7 +13,6 @@
 </head>
 <body>
 <div>
-
   <div class='center'>
 
 
@@ -21,46 +20,34 @@
   <img src="../images/testheader.png" class="logo" alt="logo">
 </div>
 
-<!-- Responsive Menu Bar  -->
 
 
-            <div id='cssmenu'>
+<div id='cssmenu'>
+<ul>
+   <li><a href='#'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Products</span></a>
       <ul>
-         <li><a href='#'><span>Home</span></a></li>
-         <li class='active has-sub'><a href='#'><span>Products</span></a>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
             <ul>
-               <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                  <ul>
-                     <li><a href='#'><span>Sub Product</span></a></li>
-                     <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                  </ul>
-               </li>
-               <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                  <ul>
-                     <li><a href='#'><span>Sub Product</span></a></li>
-                     <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                  </ul>
-               </li>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
             </ul>
          </li>
-         <li><a href='#'><span>About</span></a></li>
-         <li class='last'><a href='#'><span>Contact</span></a></li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
       </ul>
-      </div>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
 
-
-
-
-                <!-- Site Starts here  -->
 
         <h1>BODY FAT PERCENTAGE CALCULATOR</h1>
-
-
-
-
-
-
-
         <p>
             Determine your body fat percentage with only a picture using AI.<br> No Tape! No Scales! No Measurements!
         </p>
@@ -73,44 +60,24 @@
 
 
 
-
-
-
-    <!-- <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
-      </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div> -->
-
-
-
-
       <div class="content">
       <div class="upload-demo-wrap">
           <div id="upload-demo"></div>
       </div>
-      <div class="actions">
-          <a class="btn file-btn">
-              <span>Upload</span>
-              <input type="file" id="upload" value="Choose a file" accept="image/*" />
+      <div class="actions"><h3> STEP 1</h3>
+          <a class="btn file-btn" >
+    <span>Upload your Picture </span>
+
+               <input type="file"   id="upload"  value="Choose a file"  accept="image/*"  >
+
+
           </a>
-          <button class="upload-result">Crop</button>
+      <br><br>    <br><br> <h3> STEP 2</h3> <button class="upload-result">Crop Your Upper Body</button>
       </div>
 
 
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+      <div class='analyze'><h3> STEP 3</h3>
+        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Estimate Your Body Fat</button>
       </div>
       <div class='result-label'>
         <label id='result-label'></label>
@@ -200,27 +167,16 @@
 </div>
 
 <div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
-
-
-
 <script src='../static/jquery.min.js'></script>
 <script src='../static/sweetalert.min.js'></script>
 <script src="../static/croppie.js"></script>
 <script src="../static/script.js"></script>
-  <script src="../static/exif.js"></script>
-    <script src='../static/client.js'></script>
-
-
+<script src="../static/exif.js"></script>
+<script src='../static/client.js'></script>
 <script>       CropImage.init();   </script>
-
-
-
 </body>
 </html>
-
-
-
-  </div>
+</div>
 </div>
 </body>
 </html>
