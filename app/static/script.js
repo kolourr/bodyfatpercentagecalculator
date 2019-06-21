@@ -48,7 +48,7 @@ var CropImage = (function() {
 
 		}
 		swal({
-			title: 'Please make sure this is your upper torso!',
+			title: '<u>ATTENTION</u> <br>This image must ONLY include your UPPER BODY. If not, re-do!',
 			html: true,
 			text: html,
 
@@ -56,10 +56,10 @@ var CropImage = (function() {
 		});
 		setTimeout(function(){
 			$('.sweet-alert').css('margin', function() {
-				var top = -1 * ($(this).height() / 2),
-					left = -1 * ($(this).width() / 2);
-
-				return top + 'px 0 0 ' + left + 'px';
+				// var top = -1 * ($(this).height() / 2),
+				// 	left = -1 * ($(this).width() / 2);
+				//
+				// return top + 'px 0 0 ' + left + 'px';
 			});
 		}, 1);
 	}
@@ -217,8 +217,8 @@ var CropImage = (function() {
 
 		$uploadCrop = $('#upload-demo').croppie({
 			viewport: {
-				width: 210,
-				height: 300,
+				width: 180,
+				height: 245,
 
 			},
 			enableExif: true
@@ -401,7 +401,8 @@ var CropImage = (function() {
 
 		}
 		swal({
-			title: 'Please make sure this is your upper torso!',
+			title: '<u>ATTENTION</u> <br>This image must ONLY include your UPPER BODY. If not, re-do!',
+
 			html: true,
 			text: html,
 
@@ -409,10 +410,10 @@ var CropImage = (function() {
 		});
 		setTimeout(function(){
 			$('.sweet-alert').css('margin', function() {
-				var top = -1 * ($(this).height() / 2),
-					left = -1 * ($(this).width() / 2);
-
-				return top + 'px 0 0 ' + left + 'px';
+				// var top = -1 * ($(this).height() / 2),
+				// 	left = -1 * ($(this).width() / 2);
+				//
+				// return top + 'px 0 0 ' + left + 'px';
 			});
 		}, 1);
 	}
@@ -570,8 +571,8 @@ var CropImage = (function() {
 
 		$uploadCrop = $('#upload-demo').croppie({
 			viewport: {
-				width: 210,
-				height: 300,
+				width: 180,
+				height: 245,
 
 			},
 			enableExif: true
