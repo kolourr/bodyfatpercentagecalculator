@@ -1,3 +1,5 @@
+
+
 @media screen and (min-width: 1681px) {
 
     h1, h2,p,  .content {
@@ -601,9 +603,6 @@ button:focus {outline:0;}
 #custom-button:hover {
   background-color: #00b28f;
 }
-
-
-
 
 
 
