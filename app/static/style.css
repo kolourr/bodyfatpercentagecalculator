@@ -459,7 +459,7 @@ h1, .productBox.full h6 {
       border: 1px solid #3D3D3D;
       /* border-left: none;
       border-right: none; */
-      background-color:#7052CB ;
+      background-color:#959393;
 }
 
 
@@ -585,7 +585,7 @@ button.btn file-btn {
 height: 40px;
 border-radius: 2px;
 background-color: #ffffff;
-border: solid 1px #7052CB;
+border: solid 1px #C1C1C1;
 font-size: 13px;
 color: #7052CB;
 }
