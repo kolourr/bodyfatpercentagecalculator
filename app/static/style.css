@@ -1546,7 +1546,7 @@ button, a.btn {
     font: normal normal bold 20px arial;
     color: #ffffff;
     text-decoration: none;
-    min-width: 300px
+    min-width: 200px
 }
 button, a.btn:hover,
 button, a.btn:focus {
