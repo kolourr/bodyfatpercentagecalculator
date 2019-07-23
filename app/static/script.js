@@ -16,6 +16,7 @@ $('#cssmenu').prepend('<div id="menu-button">Menu</div>');
 
 
 
+
 var CropImage = (function() {
 
 	function output(node) {
@@ -48,7 +49,7 @@ var CropImage = (function() {
 
 		}
 		swal({
-			title: '<u>ATTENTION</u> <br>This image must ONLY include your UPPER BODY. If not, re-do!',
+			title: '<u>ATTENTION</u> <br>UPPER BODY ONLY',
 			html: true,
 			text: html,
 
@@ -388,7 +389,7 @@ var CropImage = (function() {
 
 		}
 		swal({
-			title: '<u>ATTENTION</u> <br>This image must ONLY include your UPPER BODY. If not, re-do!',
+			title: 'REMINDER: <br>MUST BE UPPER BODY ONLY!',
 
 			html: true,
 			text: html,
@@ -709,7 +710,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('result-label').innerHTML = `Your Body Fat Percentage (Range) Identifies as: ${response['result']} Percent. To Learn About Your Body Fat Percentage and How You Can Lose Fat, Scroll Down!`;
         }
         el('analyze-button').innerHTML = 'Analyze';
     }

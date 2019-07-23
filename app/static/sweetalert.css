@@ -28,6 +28,8 @@ body.stop-scrolling {
   top: 50%;
   margin-left: -256px;
   margin-top: -200px;
+
+
   overflow: hidden;
   display: none;
   z-index: 99999; }
@@ -36,8 +38,11 @@ body.stop-scrolling {
       width: auto;
       margin-left: 0;
       margin-right: 0;
-      left: 15px;
-      right: 15px; } }
+      left: 30px;
+      right: 15px;
+      top: 180px;
+
+      } }
   .sweet-alert h2 {
     color: #575757;
     font-size: 25px;
@@ -59,7 +64,8 @@ body.stop-scrolling {
     float: none;
     margin: 0;
     padding: 0;
-    line-height: normal; }
+    line-height: normal;
+    border: 2px solid #ffd3cf;}
   .sweet-alert fieldset {
     border: none;
     position: relative; }
