@@ -389,7 +389,7 @@ var CropImage = (function() {
 
 		}
 		swal({
-			title: 'REMINDER: <br>MUST BE UPPER BODY ONLY!',
+			title: 'REMINDER: <br>MUST BE FLEXED UPPER BODY ONLY!',
 
 			html: true,
 			text: html,
