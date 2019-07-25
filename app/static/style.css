@@ -540,8 +540,23 @@ h3  {
       /* font-size: 1.3em; */
       /* font-weight: 600; */
       font-family: futura ;
-      font-size: 1.5em;
+      font-size: 30px;
       color: #333333;
+      /* border: 1px solid #3D3D3D; */
+      /* border-left: none;
+      border-right: none; */
+      /* background-color: #ffe9e5; */
+      /* border: 1px solid #ff9380; */
+
+}
+
+h4  {
+      /* font-size: 1.5em; */
+      /* font-size: 1.3em; */
+      /* font-weight: 600; */
+      font-family: futura ;
+      font-size: 25px;
+
       /* border: 1px solid #3D3D3D; */
       /* border-left: none;
       border-right: none; */
