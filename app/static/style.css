@@ -8,7 +8,6 @@
 
 
 
-
 @media screen and (min-width: 1681px) {
 
     h1, h2,p,h3,h4,form,     .content  {
@@ -30,7 +29,7 @@
 
 
   h1 {
-      font-size: 32px;
+      font-size: 26px;
       color: black;
 
   }
@@ -157,7 +156,7 @@ footer {
   }
 
   h1 {
-      font-size: 30px;
+      font-size: 26px;
       color: black;
   }
 
@@ -245,7 +244,7 @@ footer {
   }
 
   h1 {
-      font-size: 26px;
+      font-size: 23px;
       color: black;
   }
 
@@ -335,7 +334,7 @@ h1, h2, p, h4, h3,form,  .content {
 
 
   h1 {
-      font-size: 22px;
+      font-size: 19px;
       color: black;
   }
 
@@ -424,8 +423,13 @@ h1, h2, p, h4, h3,form,  .content {
 
 
   h1 {
-      font-size: 20px;
+      font-size: 15px;
       color: black;
+  }
+
+  .calculator{
+    font-size: 16px;
+
   }
 
   h2 {
@@ -436,7 +440,7 @@ h1, h2, p, h4, h3,form,  .content {
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 15px;
 
   }
 

@@ -766,7 +766,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('result-label').innerHTML = `Your Body Fat Percentage (Range) Identifies as: ${response['result']} Percent. To Learn About Your Body Fat Percentage and How You Can Lose Fat, Scroll Down!`;
+            el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get a free `;
         }
         el('analyze-button').innerHTML = 'Analyze';
     }

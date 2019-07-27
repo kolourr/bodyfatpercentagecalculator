@@ -60,6 +60,12 @@ async def homepage(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/sitemap.xml')
+async def sitemap(request):
+    html_file = path / 'view' / 'sitemap.xml'
+    return HTMLResponse(html_file.open().read())
+
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()
