@@ -766,7 +766,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get a free `;
+            el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get Your Free Fat Loss Guide Below. `;
         }
         el('analyze-button').innerHTML = 'Analyze';
     }
