@@ -2,6 +2,9 @@ import aiohttp
 import asyncio
 import uvicorn
 import base64
+import cv2
+import numpy as np
+import os
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
@@ -9,6 +12,8 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+from PIL import Image
+
 
 export_file_url = 'https://drive.google.com/uc?export=download&id=1TsuDVFNhNgP8ijd0xVQvcgeBlgS97u87'
 export_file_name = 'export.pkl'
@@ -23,6 +28,7 @@ path = Path(__file__).parent
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+
 
 
 async def download_file(url, dest):
@@ -54,6 +60,81 @@ learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 
+async def facecrop(image):
+
+
+    global sub_face1
+    global sub_face2
+    global sub_face3
+    global sub_face4
+
+    women_file_name = 'women_cascade.xml'
+    men_file_name = 'men_cascade.xml'
+    bwomen_file_name = 'bwomen_cascade.xml'
+    bmen_file_name = 'bmen_cascade.xml'
+
+    women_url = 'https://drive.google.com/uc?export=download&id=1u5L5e1Z_-TSUlE9Lkb3HngpkVY-phU3O'
+    men_url = 'https://drive.google.com/uc?export=download&id=1F4xFb652COZPbAy3Ix81EoGY8iHPHWt1'
+    bwomen_url = 'https://drive.google.com/uc?export=download&id=1UguSYu4_VAsDBr5NTfVP705WUPfsn1bL'
+    bmen_url = 'https://drive.google.com/uc?export=download&id=1MoBwB5Tm_2_JCAK95MsZsFgUpSCe3-J4'
+
+
+    await download_file(women_url, path / women_file_name)
+    await download_file(men_url, path / men_file_name)
+    await download_file(bwomen_url, path / bwomen_file_name)
+    await download_file(bmen_url, path / bmen_file_name)
+
+    f = str(path)
+
+    cascade1 = cv2.CascadeClassifier(f + '/' + women_file_name)
+    cascade2 = cv2.CascadeClassifier(f + '/' + men_file_name)
+    cascade3 = cv2.CascadeClassifier(f + '/' + bwomen_file_name)
+    cascade4 = cv2.CascadeClassifier(f + '/' + bmen_file_name)
+
+
+    img = cv2.imread(image)
+    minisize = (img.shape[1],img.shape[0])
+    miniframe = cv2.resize(img, minisize)
+
+
+    faces1 = cascade1.detectMultiScale(miniframe, scaleFactor=1.3, minNeighbors=12, minSize=(700, 950))
+    faces2 = cascade2.detectMultiScale(miniframe, scaleFactor=1.3, minNeighbors=12, minSize=(700, 950))
+    faces3 = cascade3.detectMultiScale(miniframe, scaleFactor=1.3, minNeighbors=12, minSize=(700, 950))
+    faces4 = cascade4.detectMultiScale(miniframe, scaleFactor=1.3, minNeighbors=12, minSize=(700, 950))
+
+
+    for f in faces1:
+        x, y, w, h = [ v for v in f ]
+        cv2.rectangle(img, (x,y), (x+w,y+h), (255,255,255))
+        sub_face1 = img[y:y+h, x:x+w]
+
+    for f in faces2:
+        x, y, w, h = [ v for v in f ]
+        cv2.rectangle(img, (x,y), (x+w,y+h), (255,255,255))
+        sub_face2 = img[y:y+h, x:x+w]
+
+    for f in faces3:
+        x, y, w, h = [ v for v in f ]
+        cv2.rectangle(img, (x,y), (x+w,y+h), (255,255,255))
+        sub_face3 = img[y:y+h, x:x+w]
+
+    for f in faces4:
+        x, y, w, h = [ v for v in f ]
+        cv2.rectangle(img, (x,y), (x+w,y+h), (255,255,255))
+        sub_face4 = img[y:y+h, x:x+w]
+
+
+    if len(faces2) !=0:
+        return sub_face2
+    elif len(faces1) != 0:
+        return sub_face1
+    elif len(faces3) != 0:
+        return sub_face3
+    else:
+        return sub_face4
+
+
+
 @app.route('/')
 async def homepage(request):
     html_file = path / 'view' / 'index.html'
@@ -70,9 +151,26 @@ async def sitemap(request):
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(img_bytes))
-    # img = base64.decodebytes(img_bytes.encode())
-    prediction = learn.predict(img)[0]
+    img = Image.open(BytesIO(img_bytes))
+    img = img.convert('RGB')
+
+
+    basewidth = 2000
+    f = str(path)
+    image_file_name = "imageToSave.jpg"
+    new_path = f + '/' + image_file_name
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    size =(basewidth, hsize)
+    img = img.resize(size, Image.LANCZOS)
+    img.save(new_path)
+
+
+    main = await facecrop(new_path)
+    success, encoded_image = cv2.imencode('.jpg', main)
+    success_new = encoded_image.tobytes()
+    img2 = open_image(BytesIO(success_new))
+    prediction = learn.predict(img2)[0]
     return JSONResponse({'result': str(prediction)})
 
 

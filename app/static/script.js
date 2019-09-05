@@ -751,27 +751,57 @@ function dataURItoBlob(dataURI) {
 
 var el = x => document.getElementById(x);
 
+function showPicker() {
+  el("file-input").click();
+}
+
 function analyze() {
 
-		var uploadFiles = dataURItoBlob(newbase64);
+		// var uploadFiles = dataURItoBlob(newbase64);
+
+		var uploadFiles = el("upload").files;
 
 
-    // if (uploadFiles.length != 1) {alert('Please select 1 file to analyze!');}
+		el("analyze-button").innerHTML = "ANALYZING...";
+	  var xhr = new XMLHttpRequest();
+	  var loc = window.location;
+	  xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
+	    true);
+	  xhr.onerror = function() {
+	    alert(xhr.responseText);
+	  };
+	  xhr.onload = function(e) {
+	    if (this.readyState === 4) {
+	      var response = JSON.parse(e.target.responseText);
+	      el("result-label").innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %.`;
+	    }
+	    el("analyze-button").innerHTML = "UPLOAD IMAGE";
+	  };
 
-    el('analyze-button').innerHTML = 'Analyzing...';
-    var xhr = new XMLHttpRequest();
-    var loc = window.location
-    xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
-    xhr.onerror = function() {alert (xhr.responseText);}
-    xhr.onload = function(e) {
-        if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
-            el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get Your Free Fat Loss Guide Below. `;
-        }
-        el('analyze-button').innerHTML = 'Analyze';
-    }
+	  var fileData = new FormData();
+	  fileData.append("file", uploadFiles[0]);
+	  xhr.send(fileData);
+	}
 
-    var fileData = new FormData();
-    fileData.append('file', uploadFiles);
-    xhr.send(fileData);
-}
+
+
+
+//     if (uploadFiles.length != 1) {alert('Please select 1 file to analyze!');}
+//
+//     el('analyze-button').innerHTML = 'ANALYZING...';
+//     var xhr = new XMLHttpRequest();
+//     var loc = window.location
+//     xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
+//     xhr.onerror = function() {alert (xhr.responseText);}
+//     xhr.onload = function(e) {
+//         if (this.readyState === 4) {
+//             var response = JSON.parse(e.target.responseText);
+//             el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get Your Free Fat Loss Guide Below. `;
+//         }
+//         el('analyze-button').innerHTML = 'Analyze';
+//     }
+//
+//     var fileData = new FormData();
+//     fileData.append('file', uploadFiles);
+//     xhr.send(fileData);
+// }
