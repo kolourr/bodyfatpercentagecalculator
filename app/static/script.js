@@ -774,7 +774,7 @@ function analyze() {
 	    if (this.readyState === 4) {
 	      var response = JSON.parse(e.target.responseText);
 
-				 el("result-text").innerHTML = `Your body fat percentage (range) identifies as:`;
+				 el("result-text").innerHTML = `Your body fat percentage (range) is: <br><br>`;
 
 
 				el("result-label").innerHTML = ` ${response['result']} %`;
