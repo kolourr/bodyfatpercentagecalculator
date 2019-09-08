@@ -773,7 +773,11 @@ function analyze() {
 	  xhr.onload = function(e) {
 	    if (this.readyState === 4) {
 	      var response = JSON.parse(e.target.responseText);
-	      el("result-label").innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %.`;
+
+				 el("result-text").innerHTML = `Your body fat percentage (range) identifies as:`;
+
+
+				el("result-label").innerHTML = ` ${response['result']} %`;
 	    }
 	    el("analyze-button").innerHTML = "UPLOAD IMAGE";
 	  };
@@ -781,6 +785,14 @@ function analyze() {
 	  var fileData = new FormData();
 	  fileData.append("file", uploadFiles[0]);
 	  xhr.send(fileData);
+	}
+
+	function showDiv() {
+	   document.getElementById('welcomeDiv').style.display = "block";
+
+		//  $('#welcomeDiv').toggle(10000, function() {
+ 	  //   // Animation complete.
+ 	  // });
 	}
 
 
