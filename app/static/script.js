@@ -777,7 +777,7 @@ function analyze() {
 				 el("result-text").innerHTML = `Your body fat percentage (range) is: <br><br>`;
 
 
-				el("result-label").innerHTML = ` ${response['result']} %`;
+				el("result-label").innerHTML = ` ${response['result']} `;
 	    }
 	    el("analyze-button").innerHTML = "UPLOAD IMAGE";
 	  };
