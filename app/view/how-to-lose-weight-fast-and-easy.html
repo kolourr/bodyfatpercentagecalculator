@@ -1,0 +1,465 @@
+<html lang='en'>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144324144-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144324144-1');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXR2CSP');</script>
+<!-- End Google Tag Manager -->
+
+
+<title>Estimate Body Fat - Artificial Intelligence Body Fat Percentage Calculator</title>
+<link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/estimatebfimages/favicon-32x32.png">
+<meta name="description" content="Determine your body fat percentage with Artificial Intelligence using only a picture. No Tape. No Scales. No Measurements.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
+<meta name="viewport" collapse="width=device-width, initial-scale=1">
+
+
+
+    <meta name="robots" content="index, follow">
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <script src="jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="../static/croppie.css" />
+    <link rel="stylesheet" href="../static/sweetalert.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    //auto expand textarea
+    function adjust_textarea(h) {
+        h.style.height = "20px";
+        h.style.height = (h.scrollHeight)+"px";
+    }
+    </script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+
+
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<div>
+<div class='center'>
+<a href='./'><div class="header"> <img src="https://storage.googleapis.com/estimatebfimages/estimatebodyfat-header-main.png" class="logo" alt="logo"> </div></a>
+<div id='cssmenu'>
+<ul>
+
+  <li class='has-sub'><a href='./'><span>Home</span></a>
+     <ul>
+        <li class='last'><a style="text-align: left;" href="#about"><span>About</span></a>
+
+        <li ><a style="text-align: left;" href="/what-is-body-fat-percentage.html"><span>What is body fat percentage?</span></a>
+
+
+            <li ><a style="text-align: left;" href="/how-does-the-ai-body-fat-calculator-works.html"><span>How Does A.I. Body Fat Detector Work?</span></a>
+
+               <li ><a style="text-align: left;" href="/how-does-the-ai-body-fat-calculator-works.html"><span>Help Make A.I. Better</span></a>
+
+           <ul>      </ul></ul>   </li>    </li>     </li>
+
+
+
+   <li class='has-sub'><a href='https://forums.estimatebodyfat.com/'><span>Forum</span></a>
+
+     <ul>
+        <li class='last'><a style="text-align: left;" href="#downloadweightlossguide"><span>Download Weight Loss Content FREE</span></a></ul>   </li>
+
+
+   <li class='has-sub'><a href="/how-does-the-ai-body-fat-calculator-works.html"><span>A.I. limitations</span></a>
+      <ul>
+         <li class='last'><a style="text-align: left;" href="/what-factors-influence-your-body-weight.html"><span>Factor Influencing Body Fat Accumulation</span></a>
+             <li ><a style="text-align: left;" href="/body-fat-percentages-of-men-and-women-with-pictures-and-charts.html"><span>Body Fat Percentage Ranges</span></a>
+
+
+            <ul>      </ul></ul>   </li>         </li>
+
+
+            <li class='has-sub'><a href="/how-to-lose-weight-fast-and-easy.html"><span>Best Way To Lose Body Fat</span></a>
+               <ul>
+                  <li class='last'><a style="text-align: left;" href="/how-to-lose-weight-fast-without-exercise.html"><span>How to Lose Body Fat Fast?</span></a>
+
+                        <li class='last'><a style="text-align: left;" href="/average-weight-loss-on-keto.html"><span>Average Body Fat Loss Per Month</span></a>
+
+                              <li class='last'><a style="text-align: left;" href="/how-to-resist-temptation-of-junk-food.html"><span>How to Resist Junk Food?</span></a>
+
+
+                     <ul>      </ul></ul>   </li>         </li></li></li>
+
+
+
+
+            <li class='has-sub'><a href="/free-weight-loss-resources.html"><span>Resources for Fat Loss</span></a>
+
+            <ul>
+               <li class='last'><a style="text-align: left;" href="/different-ways-to-measure-body-fat.html"><span>Different Ways to Measure Bodyfat</span></a></ul>   </li>
+
+
+
+
+
+   <!-- <li class='active has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li> -->
+   <!-- <li><a href='#'><span>About</span></a></li> -->
+<!-- </ul> -->
+</div>
+
+
+
+
+  <a href='./'> <h1 style="background-color:#faf1f0; ">Determine Your Body Fat % With A.I. Using Only a Picture</h1></a>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+ <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; text-align: center;"> How to Lose Weight Fast and Easy?</h2> <p><br> </p>
+
+
+
+
+<h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>A.	Educate Yourself (or Rather Re-Learn) </strong></h3>
+
+<p style="text-align: left;">
+  We live in a world where we are bombarded with food advertisements claiming to be ‘healthy’ and ‘good for us’. Yet in many cases, these same ‘healthy’ foods make us fat and sick.<br><br> So, how do we one-up these food companies that are simply pushing their own agenda for profits. The path towards enlightenment is through education.    <br><br>
+I’ve probably mentioned the work of Dr. Jason Fung already on this application, and there is a good reason for it. His book <a href="https://amzn.to/2IFVioL">The Obesity Code: Unlocking the Secrets of Weight Loss </a>helped break many myths that had taken root in me. Here are some of the important concepts that I thought were true. <br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>1.	Calories</strong></h4>
+
+<p style="text-align: left;">
+A calorie is not a calorie (i.e., all calories are not the same). Just try eating 1000 calories of steak for 7 days vs 1000 calories of Doritos. <br><br>They both have the same number of calories but differ greatly in the time it takes to reach satiety (feeling full) and the way they make you feel in terms of energy. The law of thermodynamics cannot be applied to the human body. <br><br>The body must make the switch from using food as an energy source to using fat reserves as an energy source. Simply eating less calories without taking into account the type of calories does not work in the long-term for fat loss. <br><br>In fact, when we do this, the body goes into starvation mode and lowers the BMR and metabolism - meaning instead of burning 2000 calories a day, your body now only burns 1700 calories a day.  <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/BMR%20Phone.jpg" alt="BMR tracking"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+To prevent this from happening, the body needs to completely deplete its dependency on carbohydrates and tap into the fat reserves to obtain energy. <br><br>The ketogenic diet helps achieve this. When we eat less calories, the BMR (basal metabolic rate or the number of calories your body burns while at rest) decreases. With the ketogenic diet, your overall BMR does not decrease, but rather it switches the source of energy to the body’s fat reserves. <br><br>This is only possible when the body has completed depleted its glycogen storage (i.e., it no longer has stored glucose or carbs). This is why you do not feel hungry on the ketogenic diet. <br><br>Fast food companies hijack the calories-in calories-out mantra for their own benefit by telling you that it's your lack of self control that is making you fat, not the type of calories in their food.  <br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>2.	Vegetable Oil</strong></h4>
+
+
+<p style="text-align: left;">
+Eliminate <a href="https://perfectketo.com/is-vegetable-oil-bad-for-you/">vegetable oils from your diet </a>if you are serious about lowering your  <a href="https://amzn.to/2RZiAsM">omega 6 to omega 3 ratio</a>. A diet that is high in omega 6s usually leads to inflammation, increasing the possibility of developing many diseases.<br><br> Cook with oils from fruits such as olives, coconuts, and avocados or use butter. Among oils, I usually go for the <a href="https://amzn.to/2RZiAsM">Colvaita Extra Virgin Olive Oil</a> - it’s both delicious and affordable. <br><br>Extra virgin olive oil is an excellent choice for people who want to lose fat. It has a relatively low percentage of saturated fat. Its high smoke point allows it to be used for cooking at high temperatures. It’s no wonder that olive oil has been a staple in Mediterranean cooking for centuries. The monounsaturated fatty acids in extra virgin olive oil (approximately 75 percent) provide additional health benefits. <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Olive%20Oil.jpg" alt="Olive Oil"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">They lower bad cholesterol (LDL) and increase good cholesterol (HDL). They control blood sugar levels, normalise blood clotting, and help in keeping the heart healthy. They promote a feeling of satiety and make it easier for you to stay away from snacks laden with empty calories.<br><br> Extra virgin olive oil is an especially healthy fat-loss-promoting cooking ingredient because it is unrefined and has no additives. <br><br>The lack of processing means that extra virgin olive oil contains a higher concentration of essential minerals and vitamins. <br><br>And as a bonus, the high vitamin E content will work wonders for your skin. The antioxidants in this oil attack free radicals in the blood which are associated with the effects of aging and certain cancers.
+<br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>3. Grains</strong></h4>
+
+<p style="text-align: left;">
+ Eliminate <a href="https://www.vitacost.com/blog/food-nutrition/grain-free-diet-benefits-and-risks.html">grains from your diet</a>. If you are prone to irritable bowel syndrome and suffer from diarrhea, bloating, and constipation, you may find instant relief. Read <a href="https://amzn.to/2LFPJZw">Wheat Belly by William Davis </a>which talks in detail about why wheat is possibly one of the worst foods you can consume. <br><br>A cardiologist by profession, Dr. Davis found that eating grains for breakfast (bagels, toast, waffles) often made him feel lethargic and tired. He started experimenting with a wheat-free diet on patients who were overweight and at high risk for developing diabetes.<br><br> He asked them to substitute grains with low-glycemic-index foods for 3 months. To his surprise, Dr. Davis found that the majority of patients who participated in the experiment lost a significant amount of weight and had better blood sugar levels.  <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Grains.jpg" alt="Grains"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+ <p style="text-align: left;">They also reported feeling more energetic and having better focus at work and school. <br><br>In addition, they reported more restful sleep and better bowel health. In his bestselling book, Dr. Davis recommends replacing bread, pasta, cereal, wheat, rye, and certain oats with vegetables, less sugary fruits like apples and oranges, meat and eggs, cheese, yogurt, milk, soy, olives, avocados, and raw seeds and nuts. <br><br>Transitioning off wheat can feel intimidating, but its doable, and limited quantities of quinoa, chia, and millet can be consumed. In terms of alcohol, Dr. Davis strongly recommends staying off beers and choosing a glass of red wine instead for its heart-healthy properties.
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>4. Snacks</strong></h4>
+
+<p style="text-align: left;">
+Stop <a href="https://blog.myfitnesspal.com/truth-about-snacking-and-weight-loss/">snacking completely</a>. The idea that you need to constantly eat to keep your metabolism going has never been proven.<br><br> On the other hand, constant snacking can lead to insulin resistance as the body is constantly pumped with food. In ancient times, humans typically ate one meal a day and it was only when the industrial revolution happened that the idea of three meals a day was floated to sustain manual labourers. <br><br>In the modern day, eating outside of mealtimes, constantly snacking, and erratic eating patterns mean that human beings are in a “fed state” for a large proportion of the day. The post-meal state triggers an immune response in the body and constant snacking can put the immune system under a great deal of physiological stress. <br><br>This low-grade inflammation can result in a number of diseases as well as drive the body towards early aging.  <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Snacks.png" alt="Snacks"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">Snacking late at night has been linked to elevated levels of glucose and cholesterol, insulin resistance, and a feeling of hunger the following day. <br><br>Mindless snacking can easily take you over the recommended caloric intake for the day while providing minimal to zero nutritional value. Careless and frequent snacking is also associated with a higher incidence of tooth decay.<br><br> If you tend to snack out of boredom, stress, or just bad habit, make an effort to stop right away. Sugary treats should be reserved for special occasions. And when the hunger pangs strike away from mealtimes, substitute carbohydrate-rich snacks with nutrient- and fiber-rich ones that are satiating.<br><br> A handful of almonds has about half the calories of a dozen pretzel twists and about 4 times the fiber as well as dozens of minerals, vitamins, and antioxidants. Choosing wisely and becoming mindful of your snacking habits will go a long way in helping you progress on your journey towards a healthy fat percentage.
+<br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5.	Dietary Fat</strong></h4>
+
+<p style="text-align: left;">
+Remember, <a href="https://bjsm.bmj.com/content/51/15/1111">saturated fat</a>  in your diet does not make you fat or clog your arteries. In fact, fat is an important source of energy for the body and a critical component of a healthy balanced diet. Fat has several important functions in human nutrition. It helps in the absorption of vitamins and minerals. It is a necessary ingredient for cell membranes and nerve sheaths. <br><br>It is essential for healthy muscles and blood clotting. It prevents inflammation. However, some fats are good for us while others are not. Trans-fats (solid margarine and vegetable shortening) have no health benefits and should be avoided altogether (in fact, they are banned in the United States).   <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/dietary%20fat.jpg" alt="Dietary fat"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">Saturated fats, such as those found in red meat, full-fat milk, and cheese, are common in our diets. <br><br>If consumed in excess, they can drive up the cholesterol levels in the body and clog the arteries. It is recommended that less than 10 percent of the daily caloric intake should come from saturated fats. On the other hand, monounsaturated and polyunsaturated fats are good for us.<br><br> These are found in nuts, seeds, fruits, and fish. They are liquid at room temperature. Olive oil contains mostly monounsaturated fats. <br><br>Studies have shown that people living in Mediterranean countries have a low incidence of heart disease despite a seemingly high-fat diet. This is because most of the fats they consume are not saturated animal fats but rather monounsaturated fat such as that found in olive oil.
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>6. Sleep</strong></h4>
+
+<p style="text-align: left;">
+Getting a good night's <a href="https://www.healthline.com/nutrition/sleep-and-weight-loss">sleep is essential</a> in keeping appetite under control and preventing cravings for high-starch foods. When the human body is sleep deprived, there is increased production of the stress hormone cortisol. <br><br>This triggers the reward center in the brain and increases food cravings. People who don’t get enough sleep also tend to over-produce the hunger hormone ghrelin and the satiety hormone leptin, making them more susceptible to overeating and feeling less satiated after meals.   <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Sleeping.jpg" alt="Sleep"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">Adequate sleep is also necessary because it is during sleep that the body produces growth hormone. <br><br>This hormone burns fat and repairs and builds muscles, thereby improving strength and allowing you to work out more efficiently. Lack of sleep can lead to cravings for salty and sugary foods and unhealthy late-night snacking habits.<br><br> If you are in a state of sleep-deprived exhaustion, your mental clarity is less than optimal and your will power is probably at its lowest, making it more likely that you will reach for that forbidden donut rather than a piece of fruit. There are several ways to promote restful sleep. <br><br>Consistent sleep/wake times, avoiding caffeine later in the day, reducing daytime naps, and sleeping in a quiet dark room are all known to help.
+<br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>7. Stress</strong></h4>
+
+<p style="text-align: left;">
+<a href="https://www.webmd.com/diet/features/stress-weight-gain">Reduce daily stress</a> to lose the fat. Find a healthy way to blow off steam. Something like working out, reading, participating in an outdoor activity, or playing a musical instrument. If you leave the stress unaddressed, you are at greater risk of stress eating. <br><br>This type of emotional eating not only contributes to excess calories but also frequently consists of unhealthy foods that cause the body’s fat percentage to creep into the unhealthy range. Stress leads to high levels of cortisol hormone in the body.  <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/work-stressed.jpg" alt="Person under stress"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">This hormone is known to promote body fat and make it extremely difficult to get rid of extra weight, especially belly fat.<br><br> This is because cortisol tells the body to conserve energy even though the body hasn’t used many calories. Chronic stress and the secretion of cortisol is part of a feedback loop that has been found to slow down fat metabolism and make fat loss difficult.<br><br> The only way to break out of this vicious cycle is to manage chronic stress. <br><br><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296480/">Studies show </a> that people who undergo some sort of stress management program along with healthy lifestyle efforts with diet and exercise are more likely to achieve a reduction in BMI compared to people who simply make changes in lifestyle without participating in stress management.
+<br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>8. Fasting</strong></h4>
+
+<p style="text-align: left;">
+Incorporate <a href="https://idmprogram.com/what-fasting-is-not-crazy-batsh-stupid/">fasting in your overall weight loss plan</a> as a way to boost your immune system, accelerate your fat loss, and improve your skin. It has worked wonders for me and I know it will for you as well.<br><br> Fasting is a scientifically-backed method of burning fat and it has been around since ancient times. For one, it is a great way to reverse insulin resistance and get rid of the stubborn weight that just refuses to go. <br><br>Fasting is also known to protect against a number of diseases, such as Alzheimer’s, Parkinson’s, liver disease, heart conditions, and cancer. <br><br>It kickstarts the immune system and provides a boost to metabolism. Fasting leads to a natural increase in the secretion of growth hormone, leading to a more energetic state that promotes an efficient exercise session.  <br><br></p>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Fasting.jpg" alt="Fasting"style="max-width:100%;height:auto; "  ><br><br></p>
+
+
+<p style="text-align: left;">Temporarily restricting food intake helps put the hormones back in balance. It forces the body to tap into fat reserves to function normally. The body moves from a sugar-burning mode to a fat-burning mode. <br><br>Sugar, which is stored as glycogen in the liver and muscles, is the easiest source of energy for the body. Once this is depleted, the fasting body moves to obtaining energy from fat stores. And this is good news for people who are aiming for a healthier fat percentage.
+<br><br></p>
+
+<h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>B.	Focus on Building Good Habits</strong></h3>
+
+
+<p style="text-align: left;">Fat loss is a long-term commitment, and therefore, you need a long-term solution that is sustainable. You can achieve this by building good habits that can help you achieve your goal. This takes dedication but is worth the effort. <br><br>
+‘Building a habit only takes 21 days’ is a common myth that almost everyone thinks is true. Habits take anywhere from <a href="https://jamesclear.com/new-habit">two months to eight months </a>to form.<br><br> Therefore, you need to have a realistic timeframe when it comes to achieving your weight loss goals as this will require you to form several good habits. Here are a few habits that can help you achieve your goals:
+
+<br><br></p>
+
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>1. Water</strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Drinking%20Water.jpg" alt="Water"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+Drink water everyday. Drinking more water has been<a href="https://www.healthline.com/nutrition/drinking-water-helps-with-weight-loss"> shown to burn more calories</a>. Keeping a <a href="https://amzn.to/2JluWaw">water bottle beside your bed</a>, desk, or on hand when travelling is an easy way to build this habit, save money, and lose fat as a by-product.  <br><br></p>
+
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>2. Preparing Meals in Advance</strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Meal%20Preparation.jpg" alt="Meals in Advance"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+Prepare your meals in advance to avoid any unnecessary temptation to order restaurant food when you are tired after work or school.  <br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>3.	Eliminate Junk Food </strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Throwing%20Junk%20Food%20in%20the%20Trash.jpg" alt="Eliminate Junk Food"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+Throw out ALL unhealthy foods from your home. This might sound drastic, but if there are no chips, ice cream, or cookies in your kitchen, there is no junk food for you to eat. <br><br>If you do feel the need to occasionally eat junk food, eat it when you’re outside your home and do not store any at home. This way you can start afresh after a cheat day and not have any temptation derailing your diet.  <br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>4.	Drink Bone Broth </strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Bone%20Broth.jpg" alt="Bone Broth"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+Drink <a href="https://amzn.to/2RXdLQN">bone broth </a>as part of your diet. It helps strengthen the heart, aids in muscle growth, and contains essential electrolytes such as calcium and magnesium that can easily be absorbed through the gut. <br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5.	Reduce Social Media </strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Checking%20Social%20Media%20on%20Phone.jpg" alt="Reduce Dependence on Social Media"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">
+Reduce your dependence on social media. Yes, I know you’re wondering what this has to do with losing fat! Well, you need a clear and uncluttered mind to take on the huge challenge of losing fat. This will be difficult if you are in a <a href="https://www.healthline.com/health-news/social-media-use-increases-depression-and-loneliness">depressed, lonely or anxious state </a>- which social media has been shown to increase. To get a healthy body, you first need a healthy mind.  <br><br></p>
+
+
+
+
+
+<h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>C. Take Things Slow</strong></h3>
+
+
+<p style="text-align: left;">Fat loss is a long-term game, so don’t play it with a short-term mindset? Taking things slow, especially at first, will help you learn more about yourself. The path to becoming the best version of yourself mentally and physically is a slow and steady one. Here are some tips to help:
+
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>1. Start Mediating</strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Meditation.jpg" alt="Start Meditating"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">Meditation is a great tool to develop the mental fortitude necessary to handle the ups and downs that are likely to occur during your fat loss journey. <br><br>Not only that, meditation will help you focus more intensely and be more creative. <a href="https://amzn.to/2JgF8m3">Practical Meditation for Beginners</a> is great guide for novices.
+
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>2.	Start Reading</strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Reading.jpg" alt="Start Reading"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">Reading might not seem like a vital cog in the fat-loss wheel, but hear me out. Having a healthy body without a healthy mind is useless. Just as you work on your body, the mind also needs its own fuel – and reading is that fuel. <br><br>Not only do you learn from the mistakes of others but you also learn what works and how you can put that to your benefit. For those that hate reading, consider starting out with audiobooks. It might take longer to complete, but if it helps you get started with books, go for it. Get <a href="https://amzn.to/2Z2q9B7">two free audiobooks from Audible</a> when you sign up.
+
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>3.	Eliminate Addictions</strong></h4>
+
+<p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Addiction.jpg" alt="Addiction"style="max-width:100%;height:auto; "  ><br><br></p>
+
+<p style="text-align: left;">Probably much easier said than done, but to be the best version of yourself, you must get your act together. <br><br>You might not even be aware that you have an addiction until you reflect on how social media, television, junk food, alcohol, drugs or relationships influence your life. This type of reflection can identify problematic patterns in your behaviour that need to be worked on. <br><br>Once they are identified, seek help from those that have overcome similar issues or read books that address a particular addiction. <br><br>One of my biggest crutches were cigarettes, and eliminating this addiction set me firmly on the path towards a healthier life. If you are interested in exploring this further, read  <a href="https://amzn.to/2Jld6WJ">The Easy Way to Quit Smoking by Alan Carr </a> which helped me beat my cigarette addiction.
+
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>4.	Find What Works for You</strong></h4>
+
+
+<p style="text-align: left;">None of what I’ve written above matters if it doesn’t work for you. Create your own path and stay accountable to it. I’ll admit I struggle with this myself. But knowing that the journey is a long one helps prepare for it mentally. <br><br>On the other hand, there is no point in going to extreme lengths to achieve your goals when you know that three months from now you’ll be back to your old ways. <br><br>Find something that works that you can easily see yourself doing 10 years from now.
+
+<br><br></p> <br>
+
+
+
+
+
+      <link rel=canonical href="https://www.estimatebodyfat.com/#howtoloseweightnaturally"/>
+
+
+
+
+
+
+              <details>
+                <summary>
+
+                <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ;">Disclaimer</h2>
+
+
+              </summary>
+                <p style="text-align: left;">The content on this site is for information purposes only. I (Bruce Rebello) am a licensed industrial engineer in the province of Ontario, Canada, with no medical training whatsoever. None of website content is meant to be taken as medical advice.<br><br>
+                All I have done on this site is aggregate information that I think is beneficial. Speak to your healthcare professional for medical advice and read the book I mentioned in the resources section that is written by a healthcare professional.<br><br> I or the company that owns this web app will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content. <br><br>
+                As a way of generating revenue to sustain this web app, estimatebodyfat.com is a member of Amazon’s Affiliate program and may earn a commission if you decide to buy any of the products recommended on this website through Amazon.
+
+
+                <br><br></p></details><br>
+
+
+
+
+            <footer>
+
+            <div>
+
+
+
+            <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://forums.estimatebodyfat.com/privacy">Privacy Policy</a></p>
+
+
+              <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2019</a> </p>
+
+  </div>
+          </footer>
+
+
+
+    </div>
+</div>
+
+<div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
+<script src='../static/jquery.min.js'></script>
+<script src='../static/sweetalert.min.js'></script>
+<script src="../static/croppie.js"></script>
+<script src="../static/script.js"></script>
+<script src="../static/exif.js"></script>
+<script src='../static/client.js'></script>
+<script>       CropImage.init();   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow23.png" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();</script>
+<noscript>Not seeing a <a href="https://www.scrolltotop.com/">Scroll to Top Button</a>? Go to our FAQ page for more info.</noscript>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#ffd3cf",
+      "text": "#000000"
+    },
+    "button": {
+      "background": "#ff9080",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right",
+  "content": {
+    "message": "Estimate Body Fat uses cookies to ensure you get the best experience on our web app. ",
+    "dismiss": "GOT IT!",
+    "href": "https://forums.estimatebodyfat.com/privacy"
+  }
+});
+</script> -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

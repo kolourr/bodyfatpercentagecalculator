@@ -149,6 +149,66 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/what-is-body-fat-percentage.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'what-is-body-fat-percentage.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/how-does-the-ai-body-fat-calculator-work.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-does-the-ai-body-fat-calculator-work.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/what-factors-influence-your-body-weight.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'what-factors-influence-your-body-weight.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/body-fat-percentages-of-men-and-women-with-pictures-and-charts.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'body-fat-percentages-of-men-and-women-with-pictures-and-charts.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/how-to-lose-weight-fast-and-easy.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-to-lose-weight-fast-and-easy.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/how-to-lose-weight-fast-without-exercise.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-to-lose-weight-fast-without-exercise.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/average-weight-loss-on-keto.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'average-weight-loss-on-keto.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/how-to-resist-temptation-of-junk-food.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-to-resist-temptation-of-junk-food.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/different-ways-to-measure-body-fat.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'different-ways-to-measure-body-fat.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/free-weight-loss-resources.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'free-weight-loss-resources.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()

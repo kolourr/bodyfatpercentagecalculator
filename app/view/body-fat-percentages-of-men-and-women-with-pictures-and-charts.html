@@ -1,0 +1,423 @@
+<html lang='en'>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144324144-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144324144-1');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXR2CSP');</script>
+<!-- End Google Tag Manager -->
+
+
+<title>Estimate Body Fat - Artificial Intelligence Body Fat Percentage Calculator</title>
+<link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/estimatebfimages/favicon-32x32.png">
+<meta name="description" content="Determine your body fat percentage with Artificial Intelligence using only a picture. No Tape. No Scales. No Measurements.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
+<meta name="viewport" collapse="width=device-width, initial-scale=1">
+
+
+
+    <meta name="robots" content="index, follow">
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <script src="jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="../static/croppie.css" />
+    <link rel="stylesheet" href="../static/sweetalert.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    //auto expand textarea
+    function adjust_textarea(h) {
+        h.style.height = "20px";
+        h.style.height = (h.scrollHeight)+"px";
+    }
+    </script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+
+
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<div>
+<div class='center'>
+<a href='./'><div class="header"> <img src="https://storage.googleapis.com/estimatebfimages/estimatebodyfat-header-main.png" class="logo" alt="logo"> </div></a>
+<div id='cssmenu'>
+<ul>
+
+  <li class='has-sub'><a href='./'><span>Home</span></a>
+     <ul>
+        <li class='last'><a style="text-align: left;" href="#about"><span>About</span></a>
+
+        <li ><a style="text-align: left;" href="/what-is-body-fat-percentage.html"><span>What is body fat percentage?</span></a>
+
+
+            <li ><a style="text-align: left;" href="/how-does-the-ai-body-fat-calculator-works.html"><span>How Does A.I. Body Fat Detector Work?</span></a>
+
+               <li ><a style="text-align: left;" href="/how-does-the-ai-body-fat-calculator-works.html"><span>Help Make A.I. Better</span></a>
+
+           <ul>      </ul></ul>   </li>    </li>     </li>
+
+
+
+   <li class='has-sub'><a href='https://forums.estimatebodyfat.com/'><span>Forum</span></a>
+
+     <ul>
+        <li class='last'><a style="text-align: left;" href="#downloadweightlossguide"><span>Download Weight Loss Content FREE</span></a></ul>   </li>
+
+
+   <li class='has-sub'><a href="/how-does-the-ai-body-fat-calculator-works.html"><span>A.I. limitations</span></a>
+      <ul>
+         <li class='last'><a style="text-align: left;" href="/what-factors-influence-your-body-weight.html"><span>Factor Influencing Body Fat Accumulation</span></a>
+             <li ><a style="text-align: left;" href="/body-fat-percentages-of-men-and-women-with-pictures-and-charts.html"><span>Body Fat Percentage Ranges</span></a>
+
+
+            <ul>      </ul></ul>   </li>         </li>
+
+
+            <li class='has-sub'><a href="/how-to-lose-weight-fast-and-easy.html"><span>Best Way To Lose Body Fat</span></a>
+               <ul>
+                  <li class='last'><a style="text-align: left;" href="/how-to-lose-weight-fast-without-exercise.html"><span>How to Lose Body Fat Fast?</span></a>
+
+                        <li class='last'><a style="text-align: left;" href="/average-weight-loss-on-keto.html"><span>Average Body Fat Loss Per Month</span></a>
+
+                              <li class='last'><a style="text-align: left;" href="/how-to-resist-temptation-of-junk-food.html"><span>How to Resist Junk Food?</span></a>
+
+
+                     <ul>      </ul></ul>   </li>         </li></li></li>
+
+
+
+
+            <li class='has-sub'><a href="/free-weight-loss-resources.html"><span>Resources for Fat Loss</span></a>
+
+            <ul>
+               <li class='last'><a style="text-align: left;" href="/different-ways-to-measure-body-fat.html"><span>Different Ways to Measure Bodyfat</span></a></ul>   </li>
+
+
+
+
+
+
+
+
+   <!-- <li class='active has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li> -->
+   <!-- <li><a href='#'><span>About</span></a></li> -->
+<!-- </ul> -->
+</div>
+
+
+
+
+  <a href='./'> <h1 style="background-color:#faf1f0; ">Determine Your Body Fat % With A.I. Using Only a Picture</h1></a>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+   <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; text-align: center; "> What are the Different Body Fat Ranges for Men and Women? (with pictures and charts)</h2>
+
+
+      <p style="text-align: left;"> Body fat is essential for survival; however, excess body fat prevents the body from performing at its peak. <br><br>It is also frequently is a precursor to many chronic diseases. Long gone are the days where being overweight was seen as a sign of prosperity (maybe in a few developing countries this still holds true).
+      <br><br>The American Council on Exercise has categorized body fat percentages for men and women into 5 separate categories. It is important to remember that these categories are broad generalizations.<br><br> Living a healthy lifestyle and being a little overweight is still considerably better than having the body fat percentage of a performance athlete but living off junk food, alcohol and cigarettes. <br><br>
+
+
+      <table style="overflow-x:auto; " >
+        <tr>
+          <th>Description</th>
+          <th>Men <br>(in percentage)</th>
+          <th>Women <br>(in percentage)</th>
+        </tr>
+        <tr>
+          <td>Essential fat</td>
+          <td style="text-align:center;">3–5</td>
+          <td style="text-align:center;">10–13</td>
+        </tr>
+        <tr>
+          <td>Athletes</td>
+          <td style="text-align:center;">6–13</td>
+          <td style="text-align:center;">14–20</td>
+        </tr>
+        <tr>
+          <td>Fitness</td>
+        <td style="text-align:center;">14–17</td>
+          <td style="text-align:center;">21–24</td>
+        </tr>
+        <tr>
+          <td>Average</td>
+          <td style="text-align:center;">18–24</td>
+          <td style="text-align:center;">25–31</td>
+        </tr>
+          <tr>
+          <td>Obese</td>
+          <td style="text-align:center;">25+</td>
+          <td style="text-align:center;">32+</td>
+        </tr>
+      </table> <br>Source: <a href="https://www.acefitness.org/">American Council on Exercise</a><br><br>
+
+
+      Going for an annual physical check-up with your family doctor is a great way to keep a tab on your overall health. <br><br>To get a better understanding of physique, let’s see how the human body looks with different body fat percentages on men and women.
+
+    </p>
+
+
+
+      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>A. Male </strong></h3>
+
+      <p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Male%20Body%20Fat%20Percentage%20Range.png" alt="Male Body Fat Percentage Range"style="max-width:100%;height:auto; "  ><br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>1. Body Fat Percentage under 7%</strong></h4>
+
+      <p style="text-align: left;">
+      Trying to maintain a body fat percentage of less than 7% is not only extremely difficult, but also very unhealthy (considering the body needs at least 3-5% of fat just to survive). However, professional bodybuilders and fitness models sometimes achieve this prior to shows/shoots. <br><br>With sub 7% body fat, there is a clear vascularity (appearance of veins) between the muscles, an 8 pack of abdominal muscles (abs), and striations (lines) visible across different muscles. <br><br>While this body fat percentage may be aesthetically pleasing to some people, it is practically impossible to maintain for the long-term, let alone live with on a daily basis. <br><br>This level of body fat percentage is usually achieved with the help of anabolic steroids, extremely strict diets, and dehydration. Also, being at an extremely low body fat percentage can negatively affect sex drive as it leads to a fall in testosterone levels.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>2. Body Fat Percentage between 10% and 12%</strong></h4>
+
+      <p style="text-align: left;">
+      This body fat range is safe, sustainable, and presents you in the best light possible. Your body is defined, there is a clear separation between the different muscles, and it is generally perceived as being the <a href="http://thetestosteronehacker.com/most-attractive-body-fat-percentage-men/">most attractive to the opposite sex</a>. This makes sense when you think about it from an evolutionary perspective.<br><br> A diet low in refined carbohydrates and frequent exercise can help anyone achieve and maintain this range of body fat percentage. <br><br>Think of Daniel Craig (James Bond) in Casino Royale. That is what a 10 to 12 body fat percentage looks like. If you are thinking of bulking up (gaining muscle), most fitness professionals recommend aiming for this body fat range.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>3. Body Fat Percentage between 14% and 17%</strong></h4>
+
+      <p style="text-align: left;">
+      In this range, you have a muscular look without firm abs or vascular arms. You look well-defined in a t-shirt but you may not have the tone you desire when you take it off.<br><br> However, if you’ve been overweight your whole life and have recently lost a considerable amount of fat, your body will definitely have a brand new look. It will be noticeable to friends and family. <br><br>This is a prelude to a four/six pack, abs not beer :). So, don’t give up just yet. And beware, this is often the range where many men stop following their healthy diet and exercise plan and fall back into their old habits that made them overweight in the first place.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>4. Body Fat Percentage around 20% </strong></h4>
+
+      <p style="text-align: left;">
+    Say goodbye to vascularity at this stage. Think of it as the stocky powerlifter look (if you are muscled) with a belly. Men that are under muscled and overweight tend to be skinny fat at this stage, which is the worst possible look. <br><br>To break the skinny fat mould, it is best to focus on body weight exercises like push ups and chin ups to build strength, while at the same time eating a diet very low in refined carbohydrates. <br><br>A strict diet for a couple of months combined with an exercise routine can definitely bring down your body fat percentage to 12%, no matter your body type.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5.	Body Fat Percentage between 25% and 30% </strong></h4>
+
+      <p style="text-align: left;">
+    The waist starts protruding at this point as this is the excess fat category. This range is where there is no separation between the muscles at all. Your face looks puffy and you most likely develop a double chin.<br><br> On the other hand, if you’ve been obese your whole life and have been making changes to your diet and lifestyle, this is the range where people will start noticing a change. <br><br>Baggy clothing may conceal the fact that you’re still overweight, but if you wear a well-fitted t-shirt, it will be rather obvious.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>6. Body Fat Percentage above 30% </strong></h4>
+
+      <p style="text-align: left;">
+    When the body fat exceeds 30 percent, men enter the high-risk category. In most cases, the waist-to-hip ratio is greater than 1 and the gut is noticeable nomatter the clothes you wear.<br><br> There is no muscle separation whatsoever, and this is usually the stage where losing fat is necessary not just for aesthetic reasons but for health reasons.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>7. Body Fat Percentage above 35%  </strong></h4>
+
+      <p style="text-align: left;">
+    Making any positive change to your diet and lifestyle at this stage will have a positive effect on your overall health. The waist-to-hip ratio is far above 1 and so are the risks of cardiovascular diseases, diabetes, stroke, etc. <br><br>The android fat distribution (fat surrounding the waist) is very dominant at this stage, and if you want to lead a healthy and happy life, a radical change in your diet is needed.
+      <br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>8. Body Fat Percentage above 40%  </strong></h4>
+
+      <p style="text-align: left;">
+    Basic everyday activities like walking, bending, playing sports, etc., become difficult at this point. The waist-to-hip ratio is considerably higher than 1 with all the risks listed in the section above. <br><br>At this range, you qualify as obese and losing fat is imperative if you want a long and healthy life. Sticking to a low-carb high-fat diet for even 30 days may produce marvellous results. <br><br>Do not give up. If you stick with your plan, within 3 months, you’ll feel like a brand new person. The human body is very malleable. Always remember that.
+      <br><br></p>
+
+
+      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>A. Female </strong></h3>
+
+      <p><img class="lazy" data-src="https://storage.googleapis.com/estimatebfimages/Female%20Body%20Fat%20Percentage%20Chart.png" alt="Female Body Fat Percentage Range"style="max-width:100%;height:auto; "  ><br><br></p>
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>1. Body Fat Percentage between 13% and 15%</strong></h4>
+
+      <p style="text-align: left;">
+    This range in body fat percentage is attained by some female bodybuilders prior to a show. It sits a few percentage points above the essential body fat percentage level. As such, it is unsustainable over the long run. <br><br>Female bodies require more body fat to function, and women at this range of body fat may even stop menstruating due to the lack of fat. Just like male bodybuilders prior to a show, striations (lines) are visible across different muscles and there is a clear separation between the muscles.
+      <br><br></p>
+
+        <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>2. Body Fat Percentage between 15% and 17%</strong></h4>
+
+      <p style="text-align: left;">
+    At this body fat level, there is still clear separation between different muscles and some vascularity is visible. <br><br>Fitness models usually hover in this body fat range. Some athletes also maintain this body fat percentage. This is still a very low body fat level for women to consistently maintain without intensive exercise and a very strict diet.
+      <br><br></p>
+
+
+      <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>3. Body Fat Percentage between 19% and 22% </strong></h4>
+
+    <p style="text-align: left;">
+  Athletes tend to hover around this body fat range. There isn’t much natural curviness at this range as the body fat tends to be minimal. <br><br>It becomes very apparent from just the woman’s appearance that she maintains a healthy diet. There is a clear separation between the muscles, although not as defined as the previous ranges.
+    <br><br></p>
+
+
+    <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>4. Body Fat Percentage above 25% </strong></h4>
+
+  <p style="text-align: left;">
+Women at this body fat range look neither too skinny, nor overweight. Health warning bells haven't gone off just yet. <br><br>A well-balanced diet and lifestyle can keep you healthy in this range. Compared to previous body fat ranges, fat in the buttocks and hips may be more evident.<br><br> It presents more of the curvy hourglass look that is appealing to the majority of men. The accumulation of fat in these areas is not as serious in terms of healthy as the accumulation of fat in the stomach region.
+  <br><br></p>
+
+
+  <h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5. Body Fat Percentage above 30% </strong></h4>
+
+<p style="text-align: left;">
+This range in body fat percentage is more on the larger side of the hour glass image. There is more accumulation of fat in the hips and buttocks. Compared to men, women can still maintain a flat stomach without accumulation of abdominal fat at this range.<br><br> However, this range does indicate you are carrying excess body fat that should be worked off. If the stomach starts accumulating excess body fat, this should be taken as a sign that something needs to be done about it, i.e., lifestyle change consisting of diet and exercise.
+<br><br></p>
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>6. Body Fat Percentage above 35% </strong></h4>
+
+<p style="text-align: left;">
+There is a dramatic increase in the waist, thighs, and hips of women in this body fat range. The belly appears flabby and may even dangle out. A waist-to-hip ratio exceeding 0.8 could be problematic. <br><br>Excess body fat in the hip region in women can increase the risk of <a href="https://www.nhlbi.nih.gov/health-topics/venous-thromboembolism">venous thromboembolism or dangerous blood clots in the veins</a>.<br><br> However, a diet high in fat and low in carbohydrates can produce marvellous results if you stay with it for 3 months. A new workout program accompanying the healthy diet can help accelerate the progress towards a healthier body fat range.
+<br><br></p>
+
+
+<h4 style=" text-align: left; color: #7aa125; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>7. Female - Body Fat Percentage above 40%</strong></h4>
+
+<p style="text-align: left; border-bottom: 2px solid #ffe9e5;">
+Having body fat above 40% is a clear sign that something needs to be done in terms of diet and lifestyle.<br><br> At this stage, the waist, hips and thighs take on most of the extra fat and almost certainly make even everyday activities uncomfortable. Just like men in the 40% body fat range, tasks like walking, bending, moving things, and playing with your children become a chore. <br><br>Also, like the previous range, excess body fat in hips can increase the risk of venous thromboembolism or dangerous blood clots in the veins. At this stage, simple changes in diet can work some magic for overall health and well-being.<br><br> It is certainly possible to feel like a completely new person in just three months by sticking to a new eating plan.
+<br><br>Sources: <a href="https://www.builtlean.com/2012/09/24/body-fat-percentage-men-women/">Body Fat Percentage Pictures of Men and Women</a>, <a href="https://en.wikipedia.org/wiki/Body_fat_percentage">Visually Estimating Body Fat Percentage, Body Fat Percentage </a><br><br></p>
+
+ <br>
+
+
+
+      <link rel=canonical href="https://www.estimatebodyfat.com/#bodyfatpercentageranges"/>
+
+
+
+
+
+
+              <details>
+                <summary>
+
+                <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ;">Disclaimer</h2>
+
+
+              </summary>
+                <p style="text-align: left;">The content on this site is for information purposes only. I (Bruce Rebello) am a licensed industrial engineer in the province of Ontario, Canada, with no medical training whatsoever. None of website content is meant to be taken as medical advice.<br><br>
+                All I have done on this site is aggregate information that I think is beneficial. Speak to your healthcare professional for medical advice and read the book I mentioned in the resources section that is written by a healthcare professional.<br><br> I or the company that owns this web app will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content. <br><br>
+                As a way of generating revenue to sustain this web app, estimatebodyfat.com is a member of Amazon’s Affiliate program and may earn a commission if you decide to buy any of the products recommended on this website through Amazon.
+
+
+                <br><br></p></details><br>
+
+
+
+
+            <footer>
+
+            <div>
+
+
+
+            <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://forums.estimatebodyfat.com/privacy">Privacy Policy</a></p>
+
+
+              <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2019</a> </p>
+
+  </div>
+          </footer>
+
+
+
+    </div>
+</div>
+
+<div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
+<script src='../static/jquery.min.js'></script>
+<script src='../static/sweetalert.min.js'></script>
+<script src="../static/croppie.js"></script>
+<script src="../static/script.js"></script>
+<script src="../static/exif.js"></script>
+<script src='../static/client.js'></script>
+<script>       CropImage.init();   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow23.png" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();</script>
+<noscript>Not seeing a <a href="https://www.scrolltotop.com/">Scroll to Top Button</a>? Go to our FAQ page for more info.</noscript>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#ffd3cf",
+      "text": "#000000"
+    },
+    "button": {
+      "background": "#ff9080",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right",
+  "content": {
+    "message": "Estimate Body Fat uses cookies to ensure you get the best experience on our web app. ",
+    "dismiss": "GOT IT!",
+    "href": "https://forums.estimatebodyfat.com/privacy"
+  }
+});
+</script> -->
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>
