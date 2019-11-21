@@ -1,2 +1,1 @@
-Beta App Release
-Extra Pages Added to Website ~ 10 in total 
+This application was built on based on Jeremy Howard's Bear Classifier Webapp. It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin
