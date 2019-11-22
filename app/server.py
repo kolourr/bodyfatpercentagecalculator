@@ -212,6 +212,20 @@ async def sitemap(request):
     html_file = path / 'view' / 'free-weight-loss-resources.html'
     return HTMLResponse(html_file.open().read())
 
+@app.route('/termsofuse.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'termsofuse.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/privacy.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'privacy.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
+
 
 
 
