@@ -229,6 +229,12 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/weight-loss-jealousy.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'weight-loss-jealousy.html'
+    return HTMLResponse(html_file.open().read())
+
+
 
 
 
