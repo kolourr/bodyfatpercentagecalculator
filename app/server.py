@@ -243,7 +243,7 @@ async def sitemap(request):
 
 @app.route('/how-to-lose-weight-fast-and-easy.html')
 async def sitemap(request):
-    return RedirectResponse("http://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html")
+    return RedirectResponse("https://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html")
 
 
 
