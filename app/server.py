@@ -234,8 +234,10 @@ async def sitemap(request):
     html_file = path / 'view' / 'weight-loss-jealousy.html'
     return HTMLResponse(html_file.open().read())
 
-
-
+@app.route('/how-to-motivate-yourself-to-lose-weight.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-to-motivate-yourself-to-lose-weight.html'
+    return HTMLResponse(html_file.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
