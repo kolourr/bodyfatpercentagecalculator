@@ -241,14 +241,11 @@ async def sitemap(request):
 #     html_file = path / 'view' / 'how-to-lose-weight-fast-without-exercise.html'
 #     return HTMLResponse(html_file.open().read())
 
+@app.route('/how-to-lose-weight-fast-and-easy.html')
+async def sitemap(request):
+    return RedirectResponse("http://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html")
 
-async def app(scope, receive, send):
-    assert scope['type'] == 'http'
-    if scope['path'] != '/how-to-lose-weight-fast-and-easy.html':
-        response = RedirectResponse(url='/how-to-lose-weight-fast-without-exercise.html')
-    else:
-        response = PlainTextResponse('Hello, world!')
-    await response(scope, receive, send)
+
 
 
 @app.route('/analyze', methods=['POST'])
