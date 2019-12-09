@@ -236,12 +236,14 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
-
 @app.route('/how-to-lose-weight-fast-and-easy.html')
 async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html')
 
-
+@app.route('/how-to-lose-face-fat.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'how-to-lose-face-fat.html'
+    return HTMLResponse(html_file.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
