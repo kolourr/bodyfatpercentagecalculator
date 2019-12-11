@@ -891,7 +891,7 @@ function analyze() {
 		var uploadFiles = el("upload").files;
 
 
-		el("analyze-button").innerHTML = "ANALYZING...";
+		el("analyze-button").innerHTML = "ESTIMATING...";
 	  var xhr = new XMLHttpRequest();
 	  var loc = window.location;
 	  xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
