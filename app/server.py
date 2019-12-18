@@ -250,10 +250,10 @@ async def sitemap(request):
     html_file = path / 'view' / 'psychological-blocks-to-weight-loss.html'
     return HTMLResponse(html_file.open().read())
 
-@app.route('/ways-to-lower-body-fat-percentage.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'ways-to-lower-body-fat-percentage.html'
-    return HTMLResponse(html_file.open().read())
+# @app.route('/ways-to-lower-body-fat-percentage.html')
+# async def sitemap(request):
+#     html_file = path / 'view' / 'ways-to-lower-body-fat-percentage.html'
+#     return HTMLResponse(html_file.open().read())
 
 
 
