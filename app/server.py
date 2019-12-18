@@ -257,12 +257,7 @@ async def sitemap(request):
 
 
 
-
-
-@app.route('/firebase-messaging-sw.js')
-async def sitemap(request):
-    html_file = path / 'firebase-messaging-sw.js'
-    return HTMLResponse(html_file.open().read())
+ 
 
 
 
