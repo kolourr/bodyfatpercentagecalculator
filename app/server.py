@@ -251,6 +251,11 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/ways-to-lower-body-fat-percentage.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'ways-to-lower-body-fat-percentage.html'
+    return HTMLResponse(html_file.open().read())
+
 
 
 @app.route('/analyze', methods=['POST'])
