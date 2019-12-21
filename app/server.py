@@ -21,16 +21,10 @@ from starlette.staticfiles import StaticFiles
 from PIL import Image
 
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1uj5o7n116mq-KY0XPI9AH0vwYKnySNUD'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1qqwWp_QIb2BkHqLKlccBNrdW2kJz9zIB'
 export_file_name = 'export.pkl'
 
-classes = ['5 to 7%', '7.5 to 9%', '10 to 12%', '13 to 15%',
-            '16 to 17%', '18 to 19%', '20 to 22%', '23 to 25%', '26 to 28%',
-            '30 to 33%', '34 to 38%', '40+%',
-            'Error - please upload image as described in instructions above!',
-            '8 to 11%', '13 to 15.5%', '16 to 18%', '19 to 20%', '21 to 23%',
-            '24 to 25%', '26 to 28.5%', '29 to 30%', '31 to 33%', '35 to 39%',
-            '40+ %']
+classes = ['5 to 7', '7.5 to 9', '8 to 11', '10 to 12', '13 to 15', '13 to 15.5', '16 to 17', '16 to 18', '18 to 19', '19 to 20', '20 to 22', '21 to 23', '23 to 25', '24 to 25', '26 to 28', '26 to 28.5', '29 to 30', '29 to 33', '31 to 33', '34 to 38', '35 to 39', '40 plus', '40+']
 path = Path(__file__).parent
 
 app = Starlette()
