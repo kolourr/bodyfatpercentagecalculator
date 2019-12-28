@@ -927,22 +927,248 @@ function analyze() {
 
 
 
-//     if (uploadFiles.length != 1) {alert('Please select 1 file to analyze!');}
-//
-//     el('analyze-button').innerHTML = 'ANALYZING...';
-//     var xhr = new XMLHttpRequest();
-//     var loc = window.location
-//     xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
-//     xhr.onerror = function() {alert (xhr.responseText);}
-//     xhr.onload = function(e) {
-//         if (this.readyState === 4) {
-//             var response = JSON.parse(e.target.responseText);
-//             el('result-label').innerHTML = `Your body fat percentage (range) identifies as: ${response['result']} %. Get Your Free Fat Loss Guide Below. `;
-//         }
-//         el('analyze-button').innerHTML = 'Analyze';
-//     }
-//
-//     var fileData = new FormData();
-//     fileData.append('file', uploadFiles);
-//     xhr.send(fileData);
-// }
+
+
+
+
+	function usnavy() {
+
+		var gender;
+		if (document.getElementById('male').checked) {
+  		gender = document.getElementById('male').value;
+		}
+		else if(document.getElementById('female').checked){
+			gender = document.getElementById('female').value;
+		}
+
+		var age = document.getElementById('age').value;
+		var weight = document.getElementById('weight').value;
+		var height_feet = document.getElementById('height_feet').value;
+		var height_inches = document.getElementById('height_inches').value;
+		var neck_feet = document.getElementById('neck_feet').value;
+		var neck_inches = document.getElementById('neck_inches').value;
+		var waist_feet = document.getElementById('waist_feet').value;
+		var waist_inches = document.getElementById('waist_inches').value;
+		var hip_feet = document.getElementById('hip_feet').value;
+		var hip_inches = document.getElementById('hip_inches').value;
+
+		if (hip_feet ===""){
+			hip_feet=0;
+		}
+
+		if (hip_inches ===""){
+			hip_inches=0;
+		}
+
+
+		var xhr = new XMLHttpRequest();
+	  var loc = window.location;
+	  xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/usunitnavy`,
+	    true);
+	  xhr.onerror = function() {
+	    alert(xhr.responseText);
+	  };
+	  xhr.onload = function(e) {
+	    if (this.readyState === 4) {
+	      var response = JSON.parse(e.target.responseText);
+
+
+
+
+
+				el("usnavy-label").innerHTML = `${response['answer']} %`;
+
+				el("fatmass").innerHTML = `${response['fatmass']} Pounds`;
+
+
+				el("leanmass").innerHTML = `${response['leanmass']} Pounds` ;
+
+
+				el("bmi").innerHTML = `${response['bmi']}`;
+
+
+				el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+
+				el("army-note").innerHTML = `${response['army-note']}`;
+
+
+				el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
+
+
+				el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
+
+
+
+				el("marine-note").innerHTML = `${response['marine-note']}`;
+
+
+				el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
+
+
+
+
+				el("navy-note").innerHTML = `${response['navy-note']}`;
+
+
+				el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
+
+
+
+
+
+	    }
+	  };
+
+	  var fileData = new FormData();
+		fileData.append('gender',gender);
+	  fileData.append('age',age);
+		fileData.append('weight',weight);
+		fileData.append('height_feet',height_feet);
+		fileData.append('height_inches',height_inches);
+		fileData.append('neck_feet',neck_feet);
+		fileData.append('neck_inches',neck_inches);
+		fileData.append('waist_feet',waist_feet);
+		fileData.append('waist_inches',waist_inches);
+		fileData.append('hip_feet',hip_feet);
+		fileData.append('hip_inches',hip_inches);
+	  xhr.send(fileData);
+
+	}
+
+
+
+
+	function hideA(x) {
+	   if (x.checked) {
+	     document.getElementById("navy-form").style.display = "none";
+	     document.getElementById("metric-navy-form").style.display = "block";
+	   }
+
+	 }
+
+	 function hideB(x) {
+	   if (x.checked) {
+	     document.getElementById("metric-navy-form").style.display = "none";
+	     document.getElementById("navy-form").style.display = "block";
+	   }
+	 }
+
+
+	 $(function() {
+	     $('input[name="gender"]').on('click', function() {
+	         if ($(this).val() == '2') {
+	             $('#textboxes').show();
+	         }
+	         else {
+	             $('#textboxes').hide();
+	         }
+	     });
+	 });
+
+
+	 $(function() {
+			 $('input[name="gender"]').on('click', function() {
+					 if ($(this).val() == '4') {
+							 $('#metrictextboxes').show();
+					 }
+					 else {
+							 $('#metrictextboxes').hide();
+					 }
+			 });
+	 });
+
+
+
+
+
+	 	function metricusnavy() {
+
+	 		var gender;
+	 		if (document.getElementById('m').checked) {
+	   		gender = document.getElementById('m').value;
+	 		}
+	 		else if(document.getElementById('f').checked){
+	 			gender = document.getElementById('f').value;
+	 		}
+
+	 		var age = document.getElementById('age123').value;
+	 		var weight = document.getElementById('weight123').value;
+
+
+	 		var height = document.getElementById('height').value;
+	 		var neck = document.getElementById('neck').value;
+	 		var waist = document.getElementById('waist').value;
+	 		var hip = document.getElementById('hip').value;
+
+
+			if (hip ===""){
+				hip=0;
+			}
+
+
+
+	 		var xhr = new XMLHttpRequest();
+	 	  var loc = window.location;
+	 	  xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/metricunitnavy`,
+	 	    true);
+	 	  xhr.onerror = function() {
+	 	    alert(xhr.responseText);
+	 	  };
+	 	  xhr.onload = function(e) {
+	 	    if (this.readyState === 4) {
+	 	      var response = JSON.parse(e.target.responseText);
+
+					el("usnavy-label").innerHTML = `${response['answer']} %`;
+
+					el("fatmass").innerHTML = `${response['fatmass']} Kgs`;
+
+
+					el("leanmass").innerHTML = `${response['leanmass']} Kgs` ;
+
+
+					el("bmi").innerHTML = `${response['bmi']}`;
+
+
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+
+					el("army-note").innerHTML = `${response['army-note']}`;
+
+
+					el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
+
+
+					el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
+
+
+
+					el("marine-note").innerHTML = `${response['marine-note']}`;
+
+
+					el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
+
+
+
+
+					el("navy-note").innerHTML = `${response['navy-note']}`;
+
+
+					el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
+
+
+
+	 	    }
+	 	  };
+
+	 	  var fileData = new FormData();
+	 		fileData.append('gender',gender);
+	 	  fileData.append('age',age);
+	 		fileData.append('weight',weight);
+	 		fileData.append('height',height);
+	 		fileData.append('neck',neck);
+	 		fileData.append('waist',waist);
+	 		fileData.append('hip',hip);
+	 	  xhr.send(fileData);
+
+	 	}

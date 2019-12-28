@@ -8,7 +8,9 @@ import aiohttp
 import asyncio
 import uvicorn
 import base64
+import math
 import cv2
+import requests
 import numpy as np
 import os
 from fastai import *
@@ -18,6 +20,7 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse
 from starlette.staticfiles import StaticFiles
+from starlette.requests import Request
 from PIL import Image
 
 
@@ -249,6 +252,382 @@ async def sitemap(request):
 async def sitemap(request):
     html_file = path / 'view' / 'ways-to-lower-body-fat-percentage.html'
     return HTMLResponse(html_file.open().read())
+
+
+@app.route('/body-fat-calculator.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'body-fat-calculator.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
+@app.route('/usunitnavy', methods=['POST'])
+async def usunitnavy(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight =  float(form['weight'])
+    height_feet =  float(form['height_feet'])
+    height_inches =  float(form['height_inches'])
+    neck_feet =  float(form['neck_feet'])
+    neck_inches =  float(form['neck_inches'])
+    waist_feet =  float(form['waist_feet'])
+    waist_inches =  float(form['waist_inches'])
+    hip_feet =  float(form['hip_feet'])
+    hip_inches =  float(form['hip_inches'])
+
+    height = height_feet * 12 + height_inches
+    neck = neck_feet * 12 + neck_inches
+    waist = waist_feet * 12 + waist_inches
+    hip = hip_feet * 12 + hip_inches
+
+
+    bfpm= 86.010 * math.log10(waist-neck) - 70.041 * math.log10(height) + 36.76
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    bfpf = 163.205 * math.log10(waist+hip-neck) - 97.684 * math.log10(height) - 78.387
+    fbmf =  weight * bfpf/100
+    lbmf =  weight - fbmf
+
+    bmi = 703 * (weight/height**2)
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if age <= 20.9:
+        army_men_bf = 26.0
+        army_women_bf = 32.0
+        army_ideal_men_bf = 20.0
+        army_ideal_women_bf = 30.0
+    elif age >= 21 and age <=27.9:
+        army_men_bf = 26.0
+        army_women_bf = 32.0
+        army_ideal_men_bf = 22.0
+        army_ideal_women_bf = 32.0
+    elif age >= 28 and age <=39.9:
+        army_men_bf = 28.0
+        army_women_bf = 34.0
+        army_ideal_men_bf = 24.0
+        army_ideal_women_bf = 34.0
+    else:
+        army_men_bf = 30.0
+        army_women_bf = 36.0
+        army_ideal_men_bf = 26.0
+        army_ideal_women_bf = 36.0
+
+
+
+    if age <= 20.9:
+        marine_men_bf = 18.0
+        marine_women_bf = 26.0
+    elif age >= 21 and age <=25.9:
+        marine_men_bf = 18.0
+        marine_women_bf = 26.0
+    elif age >= 26 and age <=30.9:
+        marine_men_bf = 19.0
+        marine_women_bf = 27.0
+    elif age >= 31 and age <=35.9:
+        marine_men_bf = 19.0
+        marine_women_bf = 27.0
+    elif age >= 36 and age <=40.9:
+        marine_men_bf = 20.0
+        marine_women_bf = 28.0
+    elif age >= 41 and age <=45.9:
+        marine_men_bf = 20.0
+        marine_women_bf = 28.0
+    elif age >= 46 and age <=50.9:
+        marine_men_bf = 21.0
+        marine_women_bf = 29.0
+    else:
+        marine_men_bf = 21.0
+        marine_women_bf = 29.0
+
+    if age <= 21.9:
+        navy_men_bf = 22.0
+        navy_women_bf = 33.0
+    elif age >= 22 and age <=29.9:
+        navy_men_bf = 23.0
+        navy_women_bf = 34.0
+    elif age >= 30 and age <=39.9:
+        navy_men_bf = 24.0
+        navy_women_bf = 35.0
+    else:
+        navy_men_bf = 26.0
+        navy_women_bf = 36.0
+
+
+
+    if gender == 1:
+
+        initial_army = bfpm - army_men_bf
+        post_army = bfpm - army_ideal_men_bf
+
+        if initial_army <= 0:
+            iarmy = 0
+            army_note = 'YES'
+        else:
+            iarmy = initial_army
+            army_note = 'NO'
+
+        if post_army <= 0:
+            parmy = 0
+        else:
+            parmy = post_army
+
+        initial_marine = bfpm - marine_men_bf
+
+        if initial_marine <= 0:
+            imarine = 0
+            marine_note = 'YES'
+        else:
+            imarine = initial_marine
+            marine_note = 'NO'
+
+        initial_navy = bfpm - navy_men_bf
+
+        if initial_marine <= 0:
+            inavy = 0
+            navy_note = 'YES'
+        else:
+            inavy = initial_navy
+            navy_note = 'NO'
+
+
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'army-note': str(army_note),'army-standard-answer': round(iarmy,1), 'army-post-answer': round(parmy,1), 'marine-note': str(marine_note),'marine-standard-answer': round(imarine,1),'navy-note': str(navy_note),'navy-standard-answer': round(inavy,1)})
+
+    else:
+
+        initial_army = bfpf - army_women_bf
+        post_army = bfpf - army_ideal_women_bf
+
+        if initial_army <= 0:
+            iarmy = 0
+            army_note = 'YES'
+        else:
+            iarmy = initial_army
+            army_note = 'NO'
+
+        if post_army <= 0:
+            parmy = 0
+        else:
+            parmy = post_army
+
+        initial_marine = bfpf - marine_women_bf
+
+        if initial_marine <= 0:
+            imarine = 0
+            marine_note = 'YES'
+        else:
+            imarine = initial_marine
+            marine_note = 'NO'
+
+
+        initial_navy = bfpf - navy_women_bf
+
+        if initial_navy <= 0:
+            inavy = 0
+            navy_note = 'YES'
+        else:
+            inavy = initial_navy
+            navy_note = 'NO'
+
+
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'army-note': str(army_note),'army-standard-answer': round(iarmy,1), 'army-post-answer': round(parmy,1), 'marine-note': str(marine_note),'marine-standard-answer': round(imarine,1),'navy-note': str(navy_note),'navy-standard-answer': round(inavy,1)})
+
+
+
+@app.route('/metricunitnavy', methods=['POST'])
+async def usunitnavy(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight =  float(form['weight'])
+    height =  float(form['height'])
+    neck =  float(form['neck'])
+    waist =  float(form['waist'])
+    hip =  float(form['hip'])
+
+
+
+    bfpm= 495/(1.0324 - 0.19077*math.log10(waist-neck) +0.15456 * math.log10(height)) - 450
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    bfpf = 495/(1.29579 - 0.35004*math.log10(waist+hip-neck) +0.22100 * math.log10(height)) - 450
+    fbmf =  weight * bfpf/100
+    lbmf =  weight - fbmf
+
+    bmi = weight/(height/100)**2
+
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+
+    if age <= 20.9:
+        army_men_bf = 26.0
+        army_women_bf = 32.0
+        army_ideal_men_bf = 20.0
+        army_ideal_women_bf = 30.0
+    elif age >= 21 and age <=27.9:
+        army_men_bf = 26.0
+        army_women_bf = 32.0
+        army_ideal_men_bf = 22.0
+        army_ideal_women_bf = 32.0
+    elif age >= 28 and age <=39.9:
+        army_men_bf = 28.0
+        army_women_bf = 34.0
+        army_ideal_men_bf = 24.0
+        army_ideal_women_bf = 34.0
+    else:
+        army_men_bf = 30.0
+        army_women_bf = 36.0
+        army_ideal_men_bf = 26.0
+        army_ideal_women_bf = 36.0
+
+
+    if age <= 20.9:
+        marine_men_bf = 18.0
+        marine_women_bf = 26.0
+    elif age >= 21 and age <=25.9:
+        marine_men_bf = 18.0
+        marine_women_bf = 26.0
+    elif age >= 26 and age <=30.9:
+        marine_men_bf = 19.0
+        marine_women_bf = 27.0
+    elif age >= 31 and age <=35.9:
+        marine_men_bf = 19.0
+        marine_women_bf = 27.0
+    elif age >= 36 and age <=40.9:
+        marine_men_bf = 20.0
+        marine_women_bf = 28.0
+    elif age >= 41 and age <=45.9:
+        marine_men_bf = 20.0
+        marine_women_bf = 28.0
+    elif age >= 46 and age <=50.9:
+        marine_men_bf = 21.0
+        marine_women_bf = 29.0
+    else:
+        marine_men_bf = 21.0
+        marine_women_bf = 29.0
+
+    if age <= 21.9:
+        navy_men_bf = 22.0
+        navy_women_bf = 33.0
+    elif age >= 22 and age <=29.9:
+        navy_men_bf = 23.0
+        navy_women_bf = 34.0
+    elif age >= 30 and age <=39.9:
+        navy_men_bf = 24.0
+        navy_women_bf = 35.0
+    else:
+        navy_men_bf = 26.0
+        navy_women_bf = 36.0
+
+
+    if gender == 3:
+
+        initial_army = bfpm - army_men_bf
+        post_army = bfpm - army_ideal_men_bf
+
+        if initial_army <= 0:
+            iarmy = 0
+            army_note = 'YES'
+        else:
+            iarmy = initial_army
+            army_note = 'NO'
+
+        if post_army <= 0:
+            parmy = 0
+        else:
+            parmy = post_army
+
+
+
+        initial_marine = bfpm - marine_men_bf
+
+        if initial_marine <= 0:
+            imarine = 0
+            marine_note = 'YES'
+        else:
+            imarine = initial_marine
+            marine_note = 'NO'
+
+
+        initial_navy = bfpm - navy_men_bf
+
+        if initial_marine <= 0:
+            inavy = 0
+            navy_note = 'YES'
+        else:
+            inavy = initial_navy
+            navy_note = 'NO'
+
+
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'army-note': str(army_note),'army-standard-answer': round(iarmy,1), 'army-post-answer': round(parmy,1), 'marine-note': str(marine_note),'marine-standard-answer': round(imarine,1),'navy-note': str(navy_note),'navy-standard-answer': round(inavy,1)})
+
+
+    else:
+
+        initial_army = bfpf - army_women_bf
+        post_army = bfpf - army_ideal_women_bf
+
+        if initial_army <= 0:
+            iarmy = 0
+            army_note = 'YES'
+        else:
+            iarmy = initial_army
+            army_note = 'NO'
+
+        if post_army <= 0:
+            parmy = 0
+        else:
+            parmy = post_army
+
+
+        initial_marine = bfpf - marine_women_bf
+
+        if initial_marine <= 0:
+            imarine = 0
+            marine_note = 'YES'
+        else:
+            imarine = initial_marine
+            marine_note = 'NO'
+
+
+
+        initial_navy = bfpf - navy_women_bf
+
+        if initial_navy <= 0:
+            inavy = 0
+            navy_note = 'YES'
+        else:
+            inavy = initial_navy
+            navy_note = 'NO'
+
+
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'army-note': str(army_note),'army-standard-answer': round(iarmy,1), 'army-post-answer': round(parmy,1), 'marine-note': str(marine_note),'marine-standard-answer': round(imarine,1),'navy-note': str(navy_note),'navy-standard-answer': round(inavy,1)})
+
+
+
+
+
+
+
 
 
 

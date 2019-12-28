@@ -7,10 +7,9 @@
 
 
 
-
 @media screen and (min-width: 1681px) {
 
-    h1, h2,p,h3,h4,form,     .content  {
+    h1, h2,p,h3,h4,form,   .content  {
     width:70%%;
     margin: 0px 350px 0px 350px;
     padding: 10px;
