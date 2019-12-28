@@ -92,14 +92,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- method="POST"  action="/usunitnavy"-->
 
-  <form    accept-charset="utf-8" class="navycalculator" style="border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;">
+  <form    accept-charset="utf-8" class="navycalculator">
 
-  <UL>  <li>
+  <ul>
 
+<li>
+  <label for="name" >UNITS</label>
+  <input type="radio"   onchange="hideB(this)" name="aorb"    checked required>U.S. Customary System</input>
+  <input type="radio"   onchange="hideA(this)"    name="aorb">Metric System</input>
 
-  <label for="name">UNITS</label>
-  <input type="radio" onchange="hideB(this)" name="aorb" checked>U.S. Customary System</input>
-  <input type="radio" onchange="hideA(this)" name="aorb">Metric System</input> </LI></UL></form>
+ </li></ul></form>
 
         <form   id ="navy-form" accept-charset="utf-8" class="navycalculator" onsubmit ="usnavy(); return false;">
 
@@ -487,7 +489,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           padding: 2px 5px 2px 5px;
           color: black;
           border: 2px solid #ffd3cf;
-          font-size: 19px;
+          font-size: 16px;
           overflow: hidden;
           font-family: futura;
         }
@@ -510,9 +512,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           display: block;
           outline: none;
           border: none;
-          height: 10px;
+          height: 15px;
           line-height: 10px;
-          font-size: 16px;
+          font-size: 23px;
           padding: 10px;
           font-family: futura;
         }
@@ -532,12 +534,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .navycalculator li > span{
           background: #F3F3F3;
           display: block;
-          padding: 3px;
+          padding: 1px;
           margin: 0 -9px -9px -9px;
           text-align: center;
           color: #C0C0C0;
           font-family: futura;
-          font-size: 15px;
+          font-size: 12px;
 
         }
         .navycalculator textarea{
@@ -551,9 +553,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           border: none;
           padding: 15px 40px 15px 40px;
           /* border-bottom: 3px solid #5994FF; */
-          border-radius: 5px;
+          border-radius: 1px;
           color: #D2E2FF;
-          font-size: 20px;
+          font-size: 25px;
         }
         .navycalculator input[type="submit"]:hover,
         .navycalculator input[type="button"]:hover{
@@ -567,7 +569,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
-            h.style.height = "20px";
+            h.style.height = "30px";
             h.style.height = (h.scrollHeight)+"px";
         }
         </script>
@@ -613,7 +615,7 @@ Included below are the cut-off body fat percentages for the different age groups
 
 
 
-The calculator below includes settings for the Metric System as well as the U.S. Customary System.<br><br></p>
+The calculator above includes settings for the Metric System as well as the U.S. Customary System.<br><br></p>
 
 
 
