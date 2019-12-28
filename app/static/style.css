@@ -23,34 +23,6 @@
 
 
 
-  .navycalculator input[type="text"],
-  .navycalculator input[type="date"],
-  .navycalculator input[type="datetime"],
-  .navycalculator input[type="email"],
-  .navycalculator input[type="number"],
-  .navycalculator input[type="search"],
-  .navycalculator input[type="time"],
-  .navycalculator input[type="url"],
-  .navycalculator input[type="password"],
-  .navycalculator textarea,
-  .navycalculator select
-  {
-    /* box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; */
-    width: 100%;
-    display: block;
-    outline: none;
-    border: none;
-    height: 15px;
-    line-height: 10px;
-    font-size: 25px;
-    padding: 15px;
-    font-family: futura;
-    color: black;
-
-  }
-
 
 
   h1 {
@@ -180,34 +152,7 @@ footer {
     text-align: center;
   }
 
-  .navycalculator input[type="text"],
-  .navycalculator input[type="date"],
-  .navycalculator input[type="datetime"],
-  .navycalculator input[type="email"],
-  .navycalculator input[type="number"],
-  .navycalculator input[type="search"],
-  .navycalculator input[type="time"],
-  .navycalculator input[type="url"],
-  .navycalculator input[type="password"],
-  .navycalculator textarea,
-  .navycalculator select
-  {
-    /* box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; */
-    width: 100%;
-    display: block;
-    outline: none;
-    border: none;
-    height: 15px;
-    line-height: 10px;
-    font-size: 25px;
-    padding: 15px;
-    font-family: futura;
-    color: black;
 
-
-  }
 
   h1 {
       font-size: 26px;
@@ -297,34 +242,7 @@ footer {
     text-align: center;
   }
 
-  .navycalculator input[type="text"],
-  .navycalculator input[type="date"],
-  .navycalculator input[type="datetime"],
-  .navycalculator input[type="email"],
-  .navycalculator input[type="number"],
-  .navycalculator input[type="search"],
-  .navycalculator input[type="time"],
-  .navycalculator input[type="url"],
-  .navycalculator input[type="password"],
-  .navycalculator textarea,
-  .navycalculator select
-  {
-    /* box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; */
-    width: 100%;
-    display: block;
-    outline: none;
-    border: none;
-    height: 15px;
-    line-height: 10px;
-    font-size: 25px;
-    padding: 15px;
-    font-family: futura;
-    color: black;
 
-
-  }
 
   h1 {
       font-size: 23px;
@@ -415,34 +333,7 @@ h1, h2, p, h4, h3,form,  .content {
     text-align: center;
   }
 
-  .navycalculator input[type="text"],
-  .navycalculator input[type="date"],
-  .navycalculator input[type="datetime"],
-  .navycalculator input[type="email"],
-  .navycalculator input[type="number"],
-  .navycalculator input[type="search"],
-  .navycalculator input[type="time"],
-  .navycalculator input[type="url"],
-  .navycalculator input[type="password"],
-  .navycalculator textarea,
-  .navycalculator select
-  {
-    /* box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; */
-    width: 100%;
-    display: block;
-    outline: none;
-    border: none;
-    height: 15px;
-    line-height: 10px;
-    font-size: 25px;
-    padding: 15px;
-    font-family: futura;
-    color: black;
 
-
-  }
 
 
   h1 {
@@ -532,34 +423,7 @@ h1, h2, p, h4, h3,form,  .content {
     text-align: center;
   }
 
-  .navycalculator input[type="text"],
-  .navycalculator input[type="date"],
-  .navycalculator input[type="datetime"],
-  .navycalculator input[type="email"],
-  .navycalculator input[type="number"],
-  .navycalculator input[type="search"],
-  .navycalculator input[type="time"],
-  .navycalculator input[type="url"],
-  .navycalculator input[type="password"],
-  .navycalculator textarea,
-  .navycalculator select
-  {
-    /* box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; */
-    width: 100%;
-    display: block;
-    outline: none;
-    border: none;
-    height: 15px;
-    line-height: 10px;
-    font-size: 25px;
-    padding: 15px;
-    font-family: futura;
-    color: black;
-
-
-  }
+   
 
 
 
