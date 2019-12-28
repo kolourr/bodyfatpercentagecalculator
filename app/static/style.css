@@ -35,9 +35,9 @@
   .navycalculator textarea,
   .navycalculator select
   {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     width: 100%;
     display: block;
     outline: none;
@@ -192,9 +192,9 @@ footer {
   .navycalculator textarea,
   .navycalculator select
   {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     width: 100%;
     display: block;
     outline: none;
@@ -309,9 +309,9 @@ footer {
   .navycalculator textarea,
   .navycalculator select
   {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     width: 100%;
     display: block;
     outline: none;
@@ -427,9 +427,9 @@ h1, h2, p, h4, h3,form,  .content {
   .navycalculator textarea,
   .navycalculator select
   {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     width: 100%;
     display: block;
     outline: none;
@@ -544,9 +544,9 @@ h1, h2, p, h4, h3,form,  .content {
   .navycalculator textarea,
   .navycalculator select
   {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
     width: 100%;
     display: block;
     outline: none;
