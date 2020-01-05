@@ -104,58 +104,47 @@
             </p>
 
             <form accept-charset="utf-8" class="form-style-7">
-                <ul>
+                <ul >
                     <li style="text-align: left;">
                         <label>Skinfold Caliper Method</label>
                         <br>
                         <br>
 
-                        <label>
+                        <label style="border: none;">
                             <input type="radio" name="method" id="jp3" value="7" onchange="hideC(this)" checked required>
-                            <label for="jp3">Jackson/Pollock 3-Site Measurement</label>
+                            Jackson/Pollock 3-Site Measurement</input></label>
+                          <br>
+                            <br>
+
+                            <label style="border: none;">
+                                <input type="radio" name="method" id="jp4" onchange="hideD(this)" value="8">Jackson/Pollock 4-Site Measurement</input></label>
                             <br>
                             <br>
 
-                            <label>
-                                <input type="radio" name="method" id="jp4" onchange="hideD(this)" value="8">Jackson/Pollock 4-Site Measurement</label>
+                            <label style="border: none;">
+                                <input type="radio" name="method" id="dw4" onchange="hideE(this)" value="9">Durnin/Womersley 4-Site Measurement</input></label>
                             <br>
                             <br>
 
-                            <label>
-                                <input type="radio" name="method" id="dw4" onchange="hideE(this)" value="9">Durnin/Womersley 4-Site Measurement</label>
+                            <label style="border: none;">
+                                <input type="radio" name="method" id="jp7" onchange="hideF(this)" value="10">Jackson/Pollock 7-Site Measurement</input></label>
                             <br>
                             <br>
 
-                            <label>
-                                <input type="radio" name="method" id="jp7" onchange="hideF(this)" value="10">Jackson/Pollock 7-Site Measurement</label>
-                            <br>
-                            <br>
+                            <label style="border: none;">
+                                <input type="radio" name="method" id="p9" onchange="hideG(this)" value="11">Parrillo 9-Site Measurement  </input></label>
 
-                            <label>
-                                <input type="radio" name="method" id="p9" onchange="hideG(this)" value="11">Parrillo 9-Site Measurement </label>
 
                     </li>
                 </ul>
 
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
 
             </form>
 
-            <p>
-               </p>
+
 
             <form id="jp3-form" accept-charset="utf-8" class="form-style-7" onsubmit="jp3(); return false;">
+              <ul>
 
                 <li>
                     <div id="gender">
@@ -244,11 +233,12 @@
 
                 <br>
                 <li>
-                    <input type="submit" name="submit" id="submit" onclick="showDiv()" value="CALCULATE" /> </li>
+                    <input type="submit" name="submit" id="submit-caliper" onclick="showDiv()" value="CALCULATE" /> </li>
                 </ul>
             </form>
 
             <form id="jp4-form" accept-charset="utf-8" class="form-style-7" style="display: none" onsubmit="jp4(); return false;">
+              <ul>
 
                 <li>
                     <div id="2323">
@@ -319,11 +309,12 @@
 
                 <br>
                 <li>
-                    <input type="submit" name="submit" id="submit" onclick="showDiv()" value="CALCULATE" /> </li>
+                    <input type="submit" name="submit" id="submit-caliper" onclick="showDiv()" value="CALCULATE" /> </li>
                 </ul>
             </form>
 
             <form id="jp7-form" accept-charset="utf-8" class="form-style-7" style="display: none" onsubmit="jp7(); return false;">
+              <ul>
 
                 <li>
                     <div id="geneder">
@@ -406,11 +397,12 @@
 
                 <br>
                 <li>
-                    <input type="submit" name="submit" id="submit" onclick="showDiv()" value="CALCULATE" /> </li>
+                    <input type="submit" name="submit" id="submit-caliper" onclick="showDiv()" value="CALCULATE" /> </li>
                 </ul>
             </form>
 
             <form id="p9-form" accept-charset="utf-8" style="display: none" class="form-style-7" onsubmit="p9(); return false;">
+              <ul>
 
                 <li>
                     <div id="gender_p9">
@@ -509,11 +501,12 @@
                 <br>
 
                 <li>
-                    <input type="submit" name="submit" id="submit" onclick="showDiv()" value="CALCULATE" /> </li>
+                    <input type="submit" name="submit" id="submit-caliper" onclick="showDiv()" value="CALCULATE" /> </li>
                 </ul>
             </form>
 
             <form id="dw4-form" accept-charset="utf-8" style="display: none" class="form-style-7" onsubmit="dw4(); return false;">
+              <ul>
 
                 <li>
                     <div id="gend3556er">
@@ -584,7 +577,7 @@
 
                 <br>
                 <li>
-                    <input type="submit" name="submit" id="submit" onclick="showDiv()" value="CALCULATE" /> </li>
+                    <input type="submit" name="submit" id="submit-caliper" onclick="showDiv()" value="CALCULATE" /> </li>
                 </ul>
             </form>
 
@@ -1337,7 +1330,7 @@ The reviews on this caliper are mixed with some loving it and some hating it. Ho
                     <input type="hidden" name="list" value="cTpuBoYwRzvcOIOIIHcUCQ" />
                     <input type="hidden" name="subform" value="yes" />
                     <li>
-                        <input type="submit" name="submit" id="submit" value="SUBMIT" /> </li>
+                        <input type="submit" name="submit" id="submit-caliper" value="SUBMIT" /> </li>
 
                 </ul>
             </form>
