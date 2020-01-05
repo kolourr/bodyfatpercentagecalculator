@@ -1055,6 +1055,66 @@ function analyze() {
 	 }
 
 
+	 function hideC(x) {
+		if (x.checked) {
+			document.getElementById("jp3-form").style.display = "block";
+			document.getElementById("jp4-form").style.display = "none";
+			document.getElementById("jp7-form").style.display = "none";
+			document.getElementById("p9-form").style.display = "none";
+			document.getElementById("dw4-form").style.display = "none";
+
+		}
+	}
+
+	function hideD(x) {
+	 if (x.checked) {
+		 document.getElementById("jp3-form").style.display = "none";
+		 document.getElementById("jp4-form").style.display = "block";
+		 document.getElementById("jp7-form").style.display = "none";
+		 document.getElementById("p9-form").style.display = "none";
+		 document.getElementById("dw4-form").style.display = "none";
+
+	 }
+ }
+
+ function hideE(x) {
+	if (x.checked) {
+		document.getElementById("jp3-form").style.display = "none";
+		document.getElementById("jp4-form").style.display = "none";
+		document.getElementById("jp7-form").style.display = "none";
+		document.getElementById("p9-form").style.display = "none";
+		document.getElementById("dw4-form").style.display = "block";
+
+	}
+}
+
+function hideF(x) {
+ if (x.checked) {
+	 document.getElementById("jp3-form").style.display = "none";
+	 document.getElementById("jp4-form").style.display = "none";
+	 document.getElementById("jp7-form").style.display = "block";
+	 document.getElementById("p9-form").style.display = "none";
+	 document.getElementById("dw4-form").style.display = "none";
+
+ }
+}
+
+function hideG(x) {
+ if (x.checked) {
+	 document.getElementById("jp3-form").style.display = "none";
+	 document.getElementById("jp4-form").style.display = "none";
+	 document.getElementById("jp7-form").style.display = "none";
+	 document.getElementById("p9-form").style.display = "block";
+	 document.getElementById("dw4-form").style.display = "none";
+
+ }
+}
+
+
+
+
+
+
 	 $(function() {
 	     $('input[name="gender"]').on('click', function() {
 	         if ($(this).val() == '2') {
@@ -1076,6 +1136,30 @@ function analyze() {
 							 $('#metrictextboxes').hide();
 					 }
 			 });
+	 });
+
+
+	 $(function() {
+	 		$('input[name="gender3f"]').on('click', function() {
+	 				if ($(this).val() == '16') {
+	 						$('#women3f').show();
+	 				}
+	 				else {
+	 						$('#women3f').hide();
+	 				}
+	 		});
+	 });
+
+
+	 $(function() {
+	 	 $('input[name="gender3f"]').on('click', function() {
+	 			 if ($(this).val() == '15') {
+	 					 $('#men3f').show();
+	 			 }
+	 			 else {
+	 					 $('#men3f').hide();
+	 			 }
+	 	 });
 	 });
 
 
@@ -1172,3 +1256,542 @@ function analyze() {
 	 	  xhr.send(fileData);
 
 	 	}
+
+
+
+
+
+
+		function jp3() {
+
+			var gender;
+			if (document.getElementById('male123').checked) {
+				gender = document.getElementById('male123').value;
+			}
+			else if(document.getElementById('female123').checked){
+				gender = document.getElementById('female123').value;
+			}
+
+			var age = document.getElementById('age345').value;
+
+			var weight_choice;
+			if (document.getElementById('kgs123').checked) {
+				weight_choice = document.getElementById('kgs123').value;
+			}
+			else if(document.getElementById('pounds123').checked){
+				weight_choice = document.getElementById('pounds123').value;
+			}
+
+			var weight = document.getElementById('weight345').value;
+
+			var height_choice;
+			if (document.getElementById('feet_inchesjp3').checked) {
+				height_choice = document.getElementById('feet_inchesjp3').value;
+			}
+			else if(document.getElementById('cmjp3').checked){
+				height_choice = document.getElementById('cmjp3').value;
+			}
+
+			var height = document.getElementById('height').value;
+			var pectoral = document.getElementById('pectoral').value;
+			var abdomen_men = document.getElementById('abdomen_men').value;
+			var quadricep_men = document.getElementById('quadricep_men').value;
+			var women_tricep = document.getElementById('women_tricep').value;
+			var quadricep_women = document.getElementById('quadricep_women').value;
+			var suprailiac = document.getElementById('suprailiac').value;
+
+
+			if (pectoral ===""){
+				pectoral=0;
+			}
+			if(abdomen_men===""){
+				abdomen_men=0;
+			}
+			if(quadricep_men===""){
+				quadricep_men=0;
+			}
+			if(women_tricep===""){
+				women_tricep=0;
+			}
+			if(quadricep_women===""){
+				quadricep_women=0;
+			}
+			if(suprailiac===""){
+				suprailiac=0;
+			}
+
+
+
+			var xhr = new XMLHttpRequest();
+			var loc = window.location;
+			xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/jp3python`,
+				true);
+			xhr.onerror = function() {
+				alert(xhr.responseText);
+			};
+			xhr.onload = function(e) {
+				if (this.readyState === 4) {
+					var response = JSON.parse(e.target.responseText);
+
+					el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+					el("total-fatmass").innerHTML = `${response['fatmass']}`;
+					el("total-leanmass").innerHTML = `${response['leanmass']}` ;
+
+					el("total-bmi").innerHTML = `${response['bmi']}`;
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+					el("weight-unit-1").innerHTML = `${response['weightunit']}` ;
+
+					el("weight-unit-2").innerHTML = `${response['weightunit']}` ;
+
+				}
+			};
+
+			var fileData = new FormData();
+			fileData.append('gender',gender);
+			fileData.append('age',age);
+			fileData.append('weight_choice',weight_choice);
+			fileData.append('weight',weight);
+			fileData.append('height_choice',height_choice);
+			fileData.append('height',height);
+			fileData.append('pectoral',pectoral);
+			fileData.append('abdomen_men',abdomen_men);
+			fileData.append('quadricep_men',quadricep_men);
+			fileData.append('women_tricep',women_tricep);
+			fileData.append('quadricep_women',quadricep_women);
+			fileData.append('suprailiac',suprailiac);
+			xhr.send(fileData);
+
+		}
+
+		function jp4() {
+
+
+			var gender;
+			if (document.getElementById('male12222').checked) {
+				gender = document.getElementById('male12222').value;
+			}
+			else if(document.getElementById('female1233333').checked){
+				gender = document.getElementById('female1233333').value;
+			}
+
+			var age = document.getElementById('age_478478').value;
+
+			var weight_choice;
+			if (document.getElementById('kgs_17817123').checked) {
+				weight_choice = document.getElementById('kgs_17817123').value;
+			}
+			else if(document.getElementById('pounds_1891123').checked){
+				weight_choice = document.getElementById('pounds_1891123').value;
+			}
+
+			var weight = document.getElementById('weight_289282345').value;
+
+
+			var height_choice;
+			if (document.getElementById('feet_inches_2902jp3').checked) {
+				height_choice = document.getElementById('feet_inches_2902jp3').value;
+			}
+			else if(document.getElementById('cmjp_29023').checked){
+				height_choice = document.getElementById('cmjp_29023').value;
+			}
+
+			var height = document.getElementById('height12345').value;
+
+
+			var abdomen = document.getElementById('abdomen_123').value;
+			var tricep = document.getElementById('tricep_123').value;
+			var quadricep = document.getElementById('quadricep_123').value;
+			var suprailiac = document.getElementById('suprailiac_123').value;
+
+
+
+			if (abdomen ===""){
+				abdomen=0;
+			}
+			if(tricep===""){
+				tricep=0;
+			}
+			if(quadricep===""){
+				quadricep=0;
+			}
+			if(suprailiac===""){
+				suprailiac=0;
+			}
+
+
+
+			var xhr = new XMLHttpRequest();
+			var loc = window.location;
+			xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/jp4python`,
+				true);
+			xhr.onerror = function() {
+				alert(xhr.responseText);
+			};
+			xhr.onload = function(e) {
+				if (this.readyState === 4) {
+					var response = JSON.parse(e.target.responseText);
+
+					el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+					el("total-fatmass").innerHTML = `${response['fatmass']}`;
+					el("total-leanmass").innerHTML = `${response['leanmass']}` ;
+
+					el("total-bmi").innerHTML = `${response['bmi']}`;
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+					el("weight-unit-1").innerHTML = `${response['weightunit']}` ;
+
+					el("weight-unit-2").innerHTML = `${response['weightunit']}` ;
+
+
+				}
+			};
+
+			var fileData = new FormData();
+			fileData.append('gender',gender);
+			fileData.append('age',age);
+			fileData.append('weight_choice',weight_choice);
+			fileData.append('weight',weight);
+			fileData.append('height_choice',height_choice);
+			fileData.append('height',height);
+			fileData.append('abdomen',abdomen);
+			fileData.append('tricep',tricep);
+			fileData.append('quadricep',quadricep);
+			fileData.append('suprailiac',suprailiac);
+			xhr.send(fileData);
+
+		}
+
+
+		function jp7() {
+
+
+
+			var gender;
+			if (document.getElementById('male_jp7').checked) {
+				gender = document.getElementById('male_jp7').value;
+			}
+			else if(document.getElementById('female_jp7').checked){
+				gender = document.getElementById('female_jp7').value;
+			}
+
+			var age = document.getElementById('age_jp7').value;
+
+			var weight_choice;
+			if (document.getElementById('kgs_jp7').checked) {
+				weight_choice = document.getElementById('kgs_jp7').value;
+			}
+			else if(document.getElementById('pounds_jp7').checked){
+				weight_choice = document.getElementById('pounds_jp7').value;
+			}
+
+			var weight = document.getElementById('weight_jp7').value;
+
+			var height_choice;
+			if (document.getElementById('feet_inches_jp7').checked) {
+				height_choice = document.getElementById('feet_inches_jp7').value;
+			}
+			else if(document.getElementById('cmjp_jp7').checked){
+				height_choice = document.getElementById('cmjp_jp7').value;
+			}
+			var height = document.getElementById('height_jp7').value;
+
+
+			var pectoral = document.getElementById('pectoraljp7').value;
+			var midaxilla = document.getElementById('midaxilla_jp7').value;
+			var tricep = document.getElementById('tricep_jp7').value;
+			var subscapular = document.getElementById('subscapular_jp7').value;
+			var abdomen = document.getElementById('abdomen_jp7').value;
+			var suprailiac = document.getElementById('suprailiac_jp7').value;
+			var quadricep = document.getElementById('quadricep_jp7').value;
+
+
+
+			if (pectoral ===""){
+				pectoral=0;
+			}
+			else if(midaxilla===""){
+				midaxilla=0;
+			}
+			else if(tricep===""){
+				tricep=0;
+			}
+			else if(subscapular===""){
+				subscapular=0;
+			}
+			else if(abdomen===""){
+				abdomen=0;
+			}
+			else if(suprailiac===""){
+				suprailiac=0;
+			}
+			else if(suprailiac===""){
+				quadricep=0;
+			}
+
+
+
+
+			var xhr = new XMLHttpRequest();
+			var loc = window.location;
+			xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/jp7python`,
+				true);
+			xhr.onerror = function() {
+				alert(xhr.responseText);
+			};
+			xhr.onload = function(e) {
+				if (this.readyState === 4) {
+					var response = JSON.parse(e.target.responseText);
+
+					el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+					el("total-fatmass").innerHTML = `${response['fatmass']}`;
+					el("total-leanmass").innerHTML = `${response['leanmass']}` ;
+
+					el("total-bmi").innerHTML = `${response['bmi']}`;
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+					el("weight-unit-1").innerHTML = `${response['weightunit']}` ;
+
+					el("weight-unit-2").innerHTML = `${response['weightunit']}` ;
+
+
+				}
+			};
+
+			var fileData = new FormData();
+			fileData.append('gender',gender);
+			fileData.append('age',age);
+			fileData.append('weight_choice',weight_choice);
+			fileData.append('weight',weight);
+			fileData.append('height_choice',height_choice);
+			fileData.append('height',height);
+			fileData.append('pectoral',pectoral);
+			fileData.append('midaxilla',midaxilla);
+			fileData.append('tricep',tricep);
+			fileData.append('subscapular',subscapular);
+			fileData.append('abdomen',abdomen);
+			fileData.append('suprailiac',suprailiac);
+			fileData.append('quadricep',quadricep);
+			xhr.send(fileData);
+
+		}
+
+
+
+
+		function p9() {
+
+
+
+			var gender;
+			if (document.getElementById('malep9').checked) {
+				gender = document.getElementById('malep9').value;
+			}
+			else if(document.getElementById('femalep9').checked){
+				gender = document.getElementById('femalep9').value;
+			}
+
+			var age = document.getElementById('agep9').value;
+
+			var weight_choice;
+			if (document.getElementById('kgsp9').checked) {
+				weight_choice = document.getElementById('kgsp9').value;
+			}
+			else if(document.getElementById('poundsp9').checked){
+				weight_choice = document.getElementById('poundsp9').value;
+			}
+
+			var weight = document.getElementById('weightp9').value;
+
+			var height_choice;
+			if (document.getElementById('feetinchesp9').checked) {
+				height_choice = document.getElementById('feetinchesp9').value;
+			}
+			else if(document.getElementById('cmjpp9').checked){
+				height_choice = document.getElementById('cmjpp9').value;
+			}
+			var height = document.getElementById('heightp9').value;
+
+
+			var pectoral = document.getElementById('pectoralp9').value;
+			var abdomen = document.getElementById('abdomenp9').value;
+			var quadricep = document.getElementById('quadricepp9').value;
+			var bicep = document.getElementById('bicepp9').value;
+			var tricep = document.getElementById('tricepp9').value;
+			var subscapular = document.getElementById('subscapularp9').value;
+			var suprailiac = document.getElementById('suprailiacp9').value;
+			var lowerback = document.getElementById('lowerbackp9').value;
+			var calf = document.getElementById('calfp9').value;
+
+
+
+			if (pectoral ===""){
+				pectoral=0;
+			}
+			else if(abdomen===""){
+				abdomen=0;
+			}
+			else if(quadricep===""){
+				quadricep=0;
+			}
+			else if(bicep===""){
+				bicep=0;
+			}
+			else if(tricep===""){
+				tricep=0;
+			}
+			else if(subscapular===""){
+				subscapular=0;
+			}
+			else if(suprailiac===""){
+				suprailiac=0;
+			}
+			else if(lowerback===""){
+				lowerback=0;
+			}
+			else if(calf===""){
+				calf=0;
+			}
+
+
+
+			var xhr = new XMLHttpRequest();
+			var loc = window.location;
+			xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/p9python`,
+				true);
+			xhr.onerror = function() {
+				alert(xhr.responseText);
+			};
+			xhr.onload = function(e) {
+				if (this.readyState === 4) {
+					var response = JSON.parse(e.target.responseText);
+
+					el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+					el("total-fatmass").innerHTML = `${response['fatmass']}`;
+					el("total-leanmass").innerHTML = `${response['leanmass']}` ;
+
+					el("total-bmi").innerHTML = `${response['bmi']}`;
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+					el("weight-unit-1").innerHTML = `${response['weightunit']}` ;
+
+					el("weight-unit-2").innerHTML = `${response['weightunit']}` ;
+
+
+				}
+			};
+
+			var fileData = new FormData();
+			fileData.append('gender',gender);
+			fileData.append('age',age);
+			fileData.append('weight_choice',weight_choice);
+			fileData.append('weight',weight);
+			fileData.append('height_choice',height_choice);
+			fileData.append('height',height);
+			fileData.append('pectoral',pectoral);
+			fileData.append('abdomen',abdomen);
+			fileData.append('quadricep',quadricep);
+			fileData.append('bicep',bicep);
+			fileData.append('tricep',tricep);
+			fileData.append('subscapular',subscapular);
+			fileData.append('suprailiac',suprailiac);
+			fileData.append('lowerback',lowerback);
+			fileData.append('calf',calf);
+			xhr.send(fileData);
+
+		}
+
+
+
+		function dw4() {
+
+			var gender;
+			if (document.getElementById('maledw4').checked) {
+				gender = document.getElementById('maledw4').value;
+			}
+			else if(document.getElementById('femaledw4').checked){
+				gender = document.getElementById('femaledw4').value;
+			}
+
+			var age = document.getElementById('agedw4').value;
+
+			var weight_choice;
+			if (document.getElementById('kgsdw4').checked) {
+				weight_choice = document.getElementById('kgsdw4').value;
+			}
+			else if(document.getElementById('poundsdw4').checked){
+				weight_choice = document.getElementById('poundsdw4').value;
+			}
+
+			var weight = document.getElementById('weightdw4').value;
+
+			var height_choice;
+			if (document.getElementById('feetinchesdw4').checked) {
+				height_choice = document.getElementById('feetinchesdw4').value;
+			}
+			else if(document.getElementById('cmjpdw4').checked){
+				height_choice = document.getElementById('cmjpdw4').value;
+			}
+
+			var height = document.getElementById('heightdw4').value;
+			var tricep = document.getElementById('tricepdw4').value;
+			var bicep = document.getElementById('bicepdw4').value;
+			var subscapular = document.getElementById('subscapulardw4').value;
+			var suprailiac = document.getElementById('suprailiacdw4').value;
+
+
+
+			if (tricep ===""){
+				tricep=0;
+			}
+			if(bicep===""){
+				bicep=0;
+			}
+			if(subscapular===""){
+				subscapular=0;
+			}
+			if(suprailiac===""){
+				suprailiac=0;
+			}
+
+
+
+			var xhr = new XMLHttpRequest();
+			var loc = window.location;
+			xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/dw4python`,
+				true);
+			xhr.onerror = function() {
+				alert(xhr.responseText);
+			};
+			xhr.onload = function(e) {
+				if (this.readyState === 4) {
+					var response = JSON.parse(e.target.responseText);
+
+					el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+					el("total-fatmass").innerHTML = `${response['fatmass']}`;
+					el("total-leanmass").innerHTML = `${response['leanmass']}` ;
+
+					el("total-bmi").innerHTML = `${response['bmi']}`;
+					el("bmi-category").innerHTML = `${response['bmi-category']}`;
+
+					el("weight-unit-1").innerHTML = `${response['weightunit']}` ;
+
+					el("weight-unit-2").innerHTML = `${response['weightunit']}` ;
+
+				}
+			};
+
+			var fileData = new FormData();
+			fileData.append('gender',gender);
+			fileData.append('age',age);
+			fileData.append('weight_choice',weight_choice);
+			fileData.append('weight',weight);
+			fileData.append('height_choice',height_choice);
+			fileData.append('height',height);
+			fileData.append('tricep',tricep);
+			fileData.append('bicep',bicep);
+			fileData.append('subscapular',subscapular);
+			fileData.append('suprailiac',suprailiac);
+			xhr.send(fileData);
+
+		}

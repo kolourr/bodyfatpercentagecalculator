@@ -259,6 +259,361 @@ async def sitemap(request):
     html_file = path / 'view' / 'body-fat-calculator.html'
     return HTMLResponse(html_file.open().read())
 
+@app.route('/caliper-calculator.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'caliper-calculator.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
+@app.route('/jp3python', methods=['POST'])
+async def jp3python(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight_choice =  float(form['weight_choice'])
+    weight =  float(form['weight'])
+    height_choice =  float(form['height_choice'])
+    height =  float(form['height'])
+    pectoral =  float(form['pectoral'])
+    abdomen_men =  float(form['abdomen_men'])
+    quadricep_men =  float(form['quadricep_men'])
+    women_tricep =  float(form['women_tricep'])
+    quadricep_women =  float(form['quadricep_women'])
+    suprailiac =  float(form['suprailiac'])
+
+    if height_choice == 177:
+        inches, feet  = math.modf(height)
+        new_height = 12.0 * feet + inches
+    elif height_choice == 188:
+        new_height = height
+
+    bm_men =  1.1093800 - 0.0008267 * (pectoral +abdomen_men+quadricep_men) + 0.0000016 * (pectoral +abdomen_men+quadricep_men)**2 - (0.0002574 * age)
+
+    bm_women = 1.0994921 - 0.0009929 * (women_tricep +quadricep_women+suprailiac) + 0.0000023 * (women_tricep +quadricep_women+suprailiac)**2- (0.0001392 * age)
+
+    bfpm= 495/bm_men - 450
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    bfpf =  495/bm_women - 450
+    fbmf =  weight * bfpf/100
+    lbmf =  weight - fbmf
+
+    if weight_choice == 118:
+        bmi = 703 * (weight/new_height**2)
+        weightunit = 'pounds'
+    elif weight_choice == 117:
+        bmi =  weight/(new_height/100)**2
+        weightunit = 'kgs'
+
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if gender == 15:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+    else:
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+
+
+
+@app.route('/jp4python', methods=['POST'])
+async def jp4python(request):
+    form = await request.form()
+    print(form)
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight_choice =  float(form['weight_choice'])
+    weight =  float(form['weight'])
+    height_choice =  float(form['height_choice'])
+    height =  float(form['height'])
+    abdomen =  float(form['abdomen'])
+    tricep =  float(form['tricep'])
+    quadricep =  float(form['quadricep'])
+    suprailiac =  float(form['suprailiac'])
+
+
+    if height_choice == 1177:
+        inches, feet  = math.modf(height)
+        new_height = 12.0 * feet + inches
+    elif height_choice == 1188:
+        new_height = height
+
+
+    bfpm= 0.29288 * (abdomen+tricep+quadricep+suprailiac) - 0.0005 * (abdomen+tricep+quadricep+suprailiac)**2 + 0.15845 * age - 5.76377
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    bfpf =  0.29669 * (abdomen+tricep+quadricep+suprailiac) - 0.00043 * (abdomen+tricep+quadricep+suprailiac)**2 + 0.02963 * age + 1.4072
+    fbmf =  weight * bfpf/100
+    lbmf =  weight - fbmf
+
+    if weight_choice == 1118:
+        bmi = 703 * (weight/new_height**2)
+        weightunit = 'pounds'
+    elif weight_choice == 1117:
+        bmi =  weight/(new_height/100)**2
+        weightunit = 'kgs'
+
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if gender == 55:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+    else:
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+@app.route('/jp7python', methods=['POST'])
+async def jp7python(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight_choice =  float(form['weight_choice'])
+    weight =  float(form['weight'])
+    height_choice =  float(form['height_choice'])
+    height =  float(form['height'])
+    pectoral =  float(form['pectoral'])
+    midaxilla =  float(form['midaxilla'])
+    tricep =  float(form['tricep'])
+    subscapular =  float(form['subscapular'])
+    abdomen =  float(form['abdomen'])
+    suprailiac =  float(form['suprailiac'])
+    quadricep =  float(form['quadricep'])
+
+    if height_choice == 1091:
+        inches, feet  = math.modf(height)
+        new_height = 12.0 * feet + inches
+    elif height_choice == 1092:
+        new_height = height
+
+    bm_men =  1.112 - 0.00043499  * (pectoral +midaxilla+tricep+subscapular+abdomen+suprailiac+quadricep) + 0.00000055  * (pectoral +midaxilla+tricep+subscapular+abdomen+suprailiac+quadricep)**2 - (0.00028826  * age)
+
+    bm_women = 1.097  - 0.00046971  * (pectoral +midaxilla+tricep+subscapular+abdomen+suprailiac+quadricep) + 0.00000056  * (pectoral +midaxilla+tricep+subscapular+abdomen+suprailiac+quadricep)**2- (0.00012828  * age)
+
+    bfpm= 495/bm_men - 450
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    bfpf =  495/bm_women - 450
+    fbmf =  weight * bfpf/100
+    lbmf =  weight - fbmf
+
+    if weight_choice == 1018:
+        bmi = 703 * (weight/new_height**2)
+        weightunit = 'pounds'
+    elif weight_choice == 1017:
+        bmi =  weight/(new_height/100)**2
+        weightunit = 'kgs'
+
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if gender == 1555:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+    else:
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+
+
+@app.route('/p9python', methods=['POST'])
+async def p9python(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight_choice =  float(form['weight_choice'])
+    weight =  float(form['weight'])
+    height_choice =  float(form['height_choice'])
+    height =  float(form['height'])
+    pectoral =  float(form['pectoral'])
+    abdomen =  float(form['abdomen'])
+    quadricep =  float(form['quadricep'])
+    bicep =  float(form['bicep'])
+    tricep =  float(form['tricep'])
+    subscapular =  float(form['subscapular'])
+    suprailiac =  float(form['suprailiac'])
+    lowerback =  float(form['lowerback'])
+    calf =  float(form['calf'])
+
+    if height_choice == 109100:
+        inches, feet  = math.modf(height)
+        new_height = 12.0 * feet + inches
+    elif height_choice == 109200:
+        new_height = height
+
+    if weight_choice == 18000:
+        bmi = 703 * (weight/new_height**2)
+        weightunit = 'pounds'
+        bfpm =  (pectoral+abdomen+quadricep+bicep+tricep+subscapular+suprailiac+lowerback+calf) * 27 /weight
+    elif weight_choice == 17000:
+        bmi =  weight/(new_height/100)**2
+        weightunit = 'kgs'
+        bfpm =  (pectoral+abdomen+quadricep+bicep+tricep+subscapular+suprailiac+lowerback+calf) * 27 /(weight*2.20462)
+
+    fbmm = weight * bfpm/100
+    lbmm = weight - fbmm
+
+    fbmf =  weight * bfpm/100
+    lbmf =  weight - fbmf
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if gender == 15000:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+    else:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+
+@app.route('/dw4python', methods=['POST'])
+async def dw4python(request):
+    form = await request.form()
+    gender = int(form['gender'])
+    age =  float(form['age'])
+    weight_choice =  float(form['weight_choice'])
+    weight =  float(form['weight'])
+    height_choice =  float(form['height_choice'])
+    height =  float(form['height'])
+    tricep =  float(form['tricep'])
+    bicep =  float(form['bicep'])
+    subscapular =  float(form['subscapular'])
+    suprailiac =  float(form['suprailiac'])
+
+
+    if height_choice == 10539100:
+        inches, feet  = math.modf(height)
+        new_height = 12.0 * feet + inches
+    elif height_choice == 102239200:
+        new_height = height
+
+    if age < 16.9:
+        bm_men = 1.1533 - 0.0643 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1369 - 0.0598 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+    elif age >= 17 and age<= 19.9:
+
+        bm_men = 1.1620 - 0.0630 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1549 - 0.0678 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+    elif age >= 20 and age<= 29.9:
+
+        bm_men = 1.1631 - 0.0632 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1599 - 0.0717 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+    elif age >= 30 and age<= 39.9:
+
+        bm_men = 1.1422 - 0.0544 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1423 - 0.0632 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+    elif age >= 40 and age<= 49.9:
+
+        bm_men = 1.1620 - 0.0700 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1333 - 0.0612 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+    else:
+
+        bm_men = 1.1715 - 0.0779 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpm= 495/bm_men - 450
+        fbmm = weight * bfpm/100
+        lbmm = weight - fbmm
+
+        bm_women =1.1339 - 0.0645 * math.log10(tricep+bicep+subscapular+suprailiac)
+        bfpf =  495/bm_women - 450
+        fbmf =  weight * bfpf/100
+        lbmf =  weight - fbmf
+
+
+
+    if weight_choice == 180000:
+        bmi = 703 * (weight/new_height**2)
+        weightunit = 'pounds'
+    elif weight_choice == 170000:
+        bmi =  weight/(new_height/100)**2
+        weightunit = 'kgs'
+
+
+    if bmi < 18.50:
+        bmi_category = 'UNDERWEIGHT'
+    elif bmi >= 18.50 and bmi <= 24.9:
+        bmi_category = 'NORMAL'
+    elif bmi >= 25.0 and bmi <= 29.9:
+        bmi_category = 'OVERWEIGHT'
+    else:
+        bmi_category = 'OBESE'
+
+    if gender == 150000:
+        return JSONResponse({'answer': round(bfpm, 2), 'fatmass': round(fbmm, 2), 'leanmass': round(lbmm, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
+    else:
+        return JSONResponse({'answer': round(bfpf, 2), 'fatmass': round(fbmf, 2), 'leanmass': round(lbmf, 2), 'bmi': round(bmi, 1), 'bmi-category': str(bmi_category), 'weightunit': str(weightunit)})
+
 
 
 

@@ -1,39 +1,54 @@
 <html lang='en'>
-     <!--   This application was built based on Jeremy Howard's Bear Classifier Webapp.
+<!--   This application was built based on Jeremy Howard's Bear Classifier Webapp.
 It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
+
 <head>
 
-  <style>
-  a {
-   text-decoration: none;
-  }
-</style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144324144-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-144324144-1');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TXR2CSP');</script>
-<!-- End Google Tag Manager -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e0f8364b601870012fd415c&cms=sop' async='async'></script>
 
 
-<title>How does the AI body fat calculator work?</title>
-<link rel="shortcut icon" type="image/png" href="../static/images/favicon-32x32.png">
-<meta name="description" content="The inner workings of the AI body fat calculator (detailed explanation)">
-<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
-<meta name="viewport" collapse="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144324144-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
+        gtag('config', 'UA-144324144-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TXR2CSP');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <title>How does the AI body fat calculator work?</title>
+    <link rel="shortcut icon" type="image/png" href="../static/images/favicon-32x32.png">
+    <meta name="description" content="The inner workings of the AI body fat calculator (detailed explanation)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
+    <meta name="viewport" collapse="width=device-width, initial-scale=1">
 
     <meta name="robots" content="index, follow">
     <meta charset='utf-8'>
@@ -43,414 +58,437 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="../static/sweetalert.css" />
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
-
-
-
-
-
-
-
-
     <script type="text/javascript">
-    //auto expand textarea
-    function adjust_textarea(h) {
-        h.style.height = "20px";
-        h.style.height = (h.scrollHeight)+"px";
-    }
+        //auto expand textarea
+        function adjust_textarea(h) {
+            h.style.height = "20px";
+            h.style.height = (h.scrollHeight) + "px";
+        }
     </script>
-
-
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
-
-
 </head>
+
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-
-<div>
-<div class='center'>
-<a href='./'><div class="header"> <img src="../static/images/estimatebodyfat-header-main.png" class="logo" alt="logo"> </div></a>
-<div id='cssmenu'>
-
-
-  <ul>
-
-    <li class='last'><a href='./'><span>A.I. Body Fat Calculator</span></a></li>
-       <li class='last'><a href="/body-fat-calculator.html"><span>U.S. Military Body Fat & BMI Calculator</span></a>
-  </li></ul>
-  </div>
-
-
-
-
-
-
-
-
-<br>
-
-
-     <h1 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ; text-align: center;"> How Does the A.I. Body Fat Calculator Work?</h1></a>
-
-
-
-
-      <p style="text-align: left;"> Have you ever been able to remember someone’s face while walking on the street even though you’ve only seen them once before? <br><br>You don’t remember the person’s name but you remember their face quite distinctly. I know this has happened to me plenty of times.
-      <br><br></p>
-
-      <p>
-       <img class="lazy" data-src="../static/images/Visual%20Cortex.jpg" alt="How does vision work?"style="max-width:100%;height:auto; "  ><br><br></p>
-
-       <p style="text-align: left;"> The reason you were able to identify the individual is due to the <a href="https://medicalxpress.com/news/2019-01-neurons-human-visual-cortex.html">firing of a neuron in the visual cortex of your brain</a> corresponding a memory of the individual. The face (memory) of the individual was stored in the fired neuron. <br><br>
-
-        The <a href="https://www.estimatebodyfat.com/">AI body fat calculator </a>replicates this process using a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural network </a>(CNN) that artificially simulates the way memory works, i.e., neurons fired in the visual cortex. Instead of faces, however, we hope to identify an individual’s body fat percentage. <br><br>Just as the human face has some distinct characteristics, body fat percentages at different ranges share similar characteristics as well. It should be noted that the distribution of fat, overall muscle mass, age, and gender can skew results, and this will be expanded in the section below.
-
-       <br><br></p>
-       <p>
-
-       <img class="lazy" data-src="../static/images/Layout%20of%20a%20Convolutional%20Neural%20Network.png" alt="Layout of a Convolutional Neural Network"style="max-width:100%;height:auto; "  ><br><br></p>
-
-       <p> Source: <a href="https://www.mathworks.com/videos/introduction-to-deep-learning-what-are-convolutional-neural-networks--1489512765771.html">Architecture of a CNN</a><br>
-
-       <p style="text-align: left; border-bottom: 2px solid #ffe9e5 ;"> The CNN used by Estimate Body Fat was trained to distinguish between different body fat percentages using <a href="https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry">Dexa Scan </a>results as a reference. <br><br>Dexa scans were chosen as the go-to body fat identifier due to their high level of accuracy and extremely small margin of error.
-       <br><br></p>
-
- <br>
-
-
- <center>
-   <p>
-
-     <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audible&banner=0652HSXVKTC0T3YNQQ02&f=ifr&linkID=14c390e0e1c62ee0bb91d0f7aa3315cd&t=1haptho-20&tracking_id=1haptho-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-
-
-     <br><br> </p>
- </center>
-
-
-  <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ; text-align: center;"> What are the Limitations of the A.I. Model?</h2>
-
-
-       <p style="text-align: left;"> As with anything new and interesting, there are always limitations to what can be achieved. I tried to break down everything I could think of that is holding this web app back from being the best of the best.
-       <br><br></p>
-
-       <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 1. Data </strong></h3>
-
-       <p style="text-align: left;"> As with most projects of this nature, the biggest limiting factor is data. Yes, a data set was put together to build the model running on this web app; however, I am afraid there could be biases against individuals of certain ethnicities and age groups as they are underrepresented in the model.<br><br></p>
-
-       <p><img class="lazy" data-src="../static/images/A.I.%20Data.jpg" alt="Data"style="max-width:100%;height:auto; "  ><br><br></p>
-
-       <p style="text-align: left;"> I tried to make the best of what was available but I know that is not enough. If you are interested in helping make this web app run even better, there is a way you can help me. Check the Help Make The Body Fat Calculator Better section below.
-       <br><br></p>
-
-      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 2. Difference Between Visceral and Subcutaneous Fat</strong></h3>
-
-      <p style="text-align: left;"> Visceral fat is the fat surrounding your organs, while subcutaneous fat is the fat under your skin. The fat most people know of is the one that they grab onto, which is the subcutaneous type. However, visceral fat is the one that is more dangerous. <br><br>This web app can only give you an estimate of your total body fat percentage. It does not estimate a breakdown of visceral to subcutaneous fat. If you are looking for a breakdown of your visceral to subcutaneous fat, I suggest getting a Dexa Scan done if you can afford the $150.
-      <br><br></p>
-
-      <p><img class="lazy" data-src="../static/images/Visceral%20And%20Subcutaneous%20Fat.jpg" alt="Subcutaneous and Visceral Fat"style="max-width:100%;height:auto; "  ><br><br></p>
-
-      <p style="text-align: left;"> Dexa Scans shoot two low frequency x-rays through your body and are able to identify your muscle mass, bone density, and type of fat distribution. <br><br>Unless the modern cell phone can shoot low frequency x-rays, the probability of this model being able to detect visceral fat is zero. <br><br>The reason this is important to know is because even individuals with low body fat percentages can have a high visceral fat level if they lead an unhealthy lifestyle, which can be equally dangerous as someone who is obese. <br><br>An easy way to tell if you potentially have visceral fat (this won’t work for individuals with low body fat percentages for obvious reasons) is if you have a waist-to-hip ratio over 1.0 for men and over 0.8 for women. Use this web app as a reference guide only.
-      <br><br></p>
-
-
-      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 3.	Individuals with Gynoid Fat Distribution (Pear Body Shape) </strong></h3>
-
-      <p style="text-align: left;"> This limitation in the model will affect individuals (mostly women) with a higher fat distribution in the thighs and buttocks, as the image classifier is built to detect the body fat percentage from just the upper torso. <br><br></p>
-
-      <p><img class="lazy" data-src="../static/images/Android%20and%20Gynoid.jpg" alt="Subcutaneous and Visceral Fat"style="max-width:100%;height:auto; "  ><br><br></p>
-
-
-      <p style="text-align: left;">The gynoid fat distribution is influenced by the hormone estrogen, which is higher in women and contributes to the natural ‘hourglass’ figure. Excess body fat in a woman’s hips can increase the risk of <a href="https://www.nhlbi.nih.gov/health-topics/venous-thromboembolism">venous thromboembolism or dangerous blood clots in the veins</a>. If this web app becomes popular and more data becomes available, hopefully this limitation can be eliminated.
-      <br><br></p>
-
-
-      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 4.	Low Body Fat Percentage but Living an Unhealthy Lifestyle</strong></h3>
-
-      <p style="text-align: left;"> This is not a specific limitation of the web app; however, I need to touch upon this issue as the result obtained through the app could be misleading. Just because you’ve received a body fat percentage in a healthy range doesn't guarantee that you are automatically healthy. <br><br>If you smoke cigarettes, eat junk food more often than wholesome food, drink sweetened fruit juices or carbonated sodas or alcohol in excess, and generally lead an unhealthy lifestyle, there’s a high probability that your internal organs are surrounded by visceral fat.
-      <br><br></p>
-
-      <p><img class="lazy" data-src="../static/images/Good%20Body%20Weight%20but%20very%20unhealthy.png" alt="Good body weight but unhealthy"style="max-width:100%;height:auto; "  ><br><br></p>
-
-      <p style="text-align: left;"> The reason for your healthy body fat percentage is that you probably have fast metabolism and great genetics. This helps to keep you looking skinny, which may lead you to (falsely) believe that you must be healthy simply because you are not overweight. <br><br>However, because the web app cannot detect the type of fat you have, it is very important to keep this in mind and always aim to lead a healthy lifestyle.
-      <br><br></p>
-
-      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5.	Having a Higher Body Fat Percentage but Living a Healthy Lifestyle</strong></h3>
-
-
-      <p style="text-align: left;"> If you work out and are muscular but still overweight (with low belly fat), a BMI calculator and even the calculator on Estimate Body Fat will be doing you injustice.<br><br> Externally you may have all the markings of an unhealthy person, but internally your body is very healthy based on the lifestyle you lead. <br><br> </p>
-
-        <p><img class="lazy" data-src="../static/images/Overweight%20But%20Healthy%20Female.jpg" alt="Overweight but healthy female"style="max-width:100%;height:auto; "  ><br><br></p>
-
-      <p style="text-align: left;"> But keep in mind that bringing your body fat percentage to a healthier range can help ease the pressure on your knees, help you run faster, help in getting more proportional clothing, and maybe even trim some of the fat from your double chin.
-      <br><br></p>
-
-      <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>6.	Being Under Muscled and Overweight (i.e., Skinny Fat)</strong></h3>
-
-      <p style="text-align: left; border-bottom: 2px solid #ffe9e5 ;"> The model in the web app seems to have the most issues with skinny fat bodies mainly due to the lack of these types of bodies in the dataset. <br><br>This can lead to the model underfitting, and sometimes even overfitting the results. Hopefully, this will change as more users decide to help me out (hint: see last section). Try your best to follow the upload instructions ‘to a T’ to ensure the best results. <br><br><u>As a side note</u>: If you are skinny fat, focus on losing the excess fat first (through a healthy diet) and becoming stronger through body weight exercises (push ups, pull ups, chin ups, air squats). <br><br>If you focus on heavy lifting while you’re skinny fat, you’ll overeat and become the fatter version of your current self.  This happened to me, and trust me, it's not an attractive look.<br><br> Focus on your diet first and you’ll never have this problem. I’ll touch upon on how to go about thinking about your diet in the sections below. To find out your body fat percentage, check out our <a href="https://www.estimatebodyfat.com">body fat percentage calculator</a>. It's free and very simple to use.
-
-      <br><br></p>
-
-
-
-
-     <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <a style="text-decoration:none"  name="downloadweightlossguide">
-                               <h2 style="background-color: #ff9e8c; text-align:center; border-bottom: #ff9e8c;">Don't Miss Any Future Updates!</h2></a>
-
-
-
-                                   <form action="https://sendy.estimatebodyfat.com//subscribe" method="POST" accept-charset="utf-8" class="form-style-7" style="border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;" >
-                                   <ul>
-                                   <li>
-                                       <label for="name">Name</label>
-                                       <input type="text" name="name" maxlength="100">
-                                       <span>Enter your full name here</span>
-                                   </li>
-                                   <li>
-                                       <label for="email">Email</label>
-                                       <input type="email" name="email" maxlength="100">
-                                       <span>Enter a valid email address</span>
-                                   </li>
-
-                                   <input type="checkbox" name="gdpr" id="gdpr"/>
-                                   <span><strong>Marketing permission</strong>: I give my consent to  to be in touch with me via email using the information I have provided in this form for the purpose of news, updates and marketing.</span>
-                                   <br/><br/>
-                                   <span style="text-align: left;"><strong>What to expect</strong>: If you wish to withdraw your consent and stop hearing from us, simply click the unsubscribe link at the bottom of every email we send or contact us at contact@estimatebodyfat.com. We value and respect your personal data and privacy. To view our privacy policy, see link below. By submitting this form, you agree that we may process your information in accordance with these terms.</span>
-                                   <br/><br/><div style="display:none;">
-                                     <label for="hp">HP</label><br/>
-                                     <input type="text" name="hp" id="hp"/>
-                                     </div>
-                                     <input type="hidden" name="list" value="cTpuBoYwRzvcOIOIIHcUCQ"/>
-                                     <input type="hidden" name="subform" value="yes"/>
-                                   <li>	<input type="submit" name="submit" id="submit" value="SUBMIT"/>  </li>
-
-
-
-                                 </ul>
-                                   </form>
-
-                                   <style type="text/css">
-                                   .form-style-7{
-
-
-                                     /* max-width:700px;
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div>
+        <div class='center'>
+            <a href='./'>
+                <div class="header"> <img src="../static/images/estimatebodyfat-header-main.png" class="logo" alt="logo"> </div>
+            </a>
+            <div id='cssmenu'>
+
+                <ul>
+
+                    <li class='last'><a href='./'><span>A.I. Body Fat Calculator</span></a></li>
+                    <li class='last'><a href="/body-fat-calculator.html"><span>Military Body Fat Calculator</span></a>
+                      <li class='last'><a href="/caliper-calculator.html"><span>Caliper Body Fat Calculator</span></a>
+
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+
+            <h1 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ; text-align: center;"> How Does the A.I. Body Fat Calculator Work?</h1></a>
+
+            <p style="text-align: left;"> Have you ever been able to remember someone’s face while walking on the street even though you’ve only seen them once before?
+                <br>
+                <br>You don’t remember the person’s name but you remember their face quite distinctly. I know this has happened to me plenty of times.
+                <br>
+                <br>
+            </p>
+
+            <p>
+                <img class="lazy" data-src="../static/images/Visual%20Cortex.jpg" alt="How does vision work?" style="max-width:100%;height:auto; ">
+                <br>
+                <br>
+            </p>
+
+            <p style="text-align: left;"> The reason you were able to identify the individual is due to the <a href="https://medicalxpress.com/news/2019-01-neurons-human-visual-cortex.html">firing of a neuron in the visual cortex of your brain</a> corresponding a memory of the individual. The face (memory) of the individual was stored in the fired neuron.
+                <br>
+                <br> The <a href="https://www.estimatebodyfat.com/">AI body fat calculator </a>replicates this process using a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural network </a>(CNN) that artificially simulates the way memory works, i.e., neurons fired in the visual cortex. Instead of faces, however, we hope to identify an individual’s body fat percentage.
+                <br>
+                <br>Just as the human face has some distinct characteristics, body fat percentages at different ranges share similar characteristics as well. It should be noted that the distribution of fat, overall muscle mass, age, and gender can skew results, and this will be expanded in the section below.
+
+                <br>
+                <br>
+            </p>
+            <p>
+
+                <img class="lazy" data-src="../static/images/Layout%20of%20a%20Convolutional%20Neural%20Network.png" alt="Layout of a Convolutional Neural Network" style="max-width:100%;height:auto; ">
+                <br>
+                <br>
+            </p>
+
+            <p> Source: <a href="https://www.mathworks.com/videos/introduction-to-deep-learning-what-are-convolutional-neural-networks--1489512765771.html">Architecture of a CNN</a>
+                <br>
+
+                <p style="text-align: left; border-bottom: 2px solid #ffe9e5 ;"> The CNN used by Estimate Body Fat was trained to distinguish between different body fat percentages using <a href="https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry">Dexa Scan </a>results as a reference.
+                    <br>
+                    <br>Dexa scans were chosen as the go-to body fat identifier due to their high level of accuracy and extremely small margin of error.
+                    <br>
+                    <br>
+                </p>
+
+                <br>
+
+                <center>
+                    <p>
+
+                        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audible&banner=0652HSXVKTC0T3YNQQ02&f=ifr&linkID=14c390e0e1c62ee0bb91d0f7aa3315cd&t=1haptho-20&tracking_id=1haptho-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+                        <br>
+                        <br> </p>
+                </center>
+
+                <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5 ; text-align: center;"> What are the Limitations of the A.I. Model?</h2>
+
+                <p style="text-align: left;"> As with anything new and interesting, there are always limitations to what can be achieved. I tried to break down everything I could think of that is holding this web app back from being the best of the best.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 1. Data </strong></h3>
+
+                <p style="text-align: left;"> As with most projects of this nature, the biggest limiting factor is data. Yes, a data set was put together to build the model running on this web app; however, I am afraid there could be biases against individuals of certain ethnicities and age groups as they are underrepresented in the model.
+                    <br>
+                    <br>
+                </p>
+
+                <p><img class="lazy" data-src="../static/images/A.I.%20Data.jpg" alt="Data" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;"> I tried to make the best of what was available but I know that is not enough. If you are interested in helping make this web app run even better, there is a way you can help me. Check the Help Make The Body Fat Calculator Better section below.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 2. Difference Between Visceral and Subcutaneous Fat</strong></h3>
+
+                <p style="text-align: left;"> Visceral fat is the fat surrounding your organs, while subcutaneous fat is the fat under your skin. The fat most people know of is the one that they grab onto, which is the subcutaneous type. However, visceral fat is the one that is more dangerous.
+                    <br>
+                    <br>This web app can only give you an estimate of your total body fat percentage. It does not estimate a breakdown of visceral to subcutaneous fat. If you are looking for a breakdown of your visceral to subcutaneous fat, I suggest getting a Dexa Scan done if you can afford the $150.
+                    <br>
+                    <br>
+                </p>
+
+                <p><img class="lazy" data-src="../static/images/Visceral%20And%20Subcutaneous%20Fat.jpg" alt="Subcutaneous and Visceral Fat" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;"> Dexa Scans shoot two low frequency x-rays through your body and are able to identify your muscle mass, bone density, and type of fat distribution.
+                    <br>
+                    <br>Unless the modern cell phone can shoot low frequency x-rays, the probability of this model being able to detect visceral fat is zero.
+                    <br>
+                    <br>The reason this is important to know is because even individuals with low body fat percentages can have a high visceral fat level if they lead an unhealthy lifestyle, which can be equally dangerous as someone who is obese.
+                    <br>
+                    <br>An easy way to tell if you potentially have visceral fat (this won’t work for individuals with low body fat percentages for obvious reasons) is if you have a waist-to-hip ratio over 1.0 for men and over 0.8 for women. Use this web app as a reference guide only.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 3.	Individuals with Gynoid Fat Distribution (Pear Body Shape) </strong></h3>
+
+                <p style="text-align: left;"> This limitation in the model will affect individuals (mostly women) with a higher fat distribution in the thighs and buttocks, as the image classifier is built to detect the body fat percentage from just the upper torso.
+                    <br>
+                    <br>
+                </p>
+
+                <p><img class="lazy" data-src="../static/images/Android%20and%20Gynoid.jpg" alt="Subcutaneous and Visceral Fat" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;">The gynoid fat distribution is influenced by the hormone estrogen, which is higher in women and contributes to the natural ‘hourglass’ figure. Excess body fat in a woman’s hips can increase the risk of <a href="https://www.nhlbi.nih.gov/health-topics/venous-thromboembolism">venous thromboembolism or dangerous blood clots in the veins</a>. If this web app becomes popular and more data becomes available, hopefully this limitation can be eliminated.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong> 4.	Low Body Fat Percentage but Living an Unhealthy Lifestyle</strong></h3>
+
+                <p style="text-align: left;"> This is not a specific limitation of the web app; however, I need to touch upon this issue as the result obtained through the app could be misleading. Just because you’ve received a body fat percentage in a healthy range doesn't guarantee that you are automatically healthy.
+                    <br>
+                    <br>If you smoke cigarettes, eat junk food more often than wholesome food, drink sweetened fruit juices or carbonated sodas or alcohol in excess, and generally lead an unhealthy lifestyle, there’s a high probability that your internal organs are surrounded by visceral fat.
+                    <br>
+                    <br>
+                </p>
+
+                <p><img class="lazy" data-src="../static/images/Good%20Body%20Weight%20but%20very%20unhealthy.png" alt="Good body weight but unhealthy" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;"> The reason for your healthy body fat percentage is that you probably have fast metabolism and great genetics. This helps to keep you looking skinny, which may lead you to (falsely) believe that you must be healthy simply because you are not overweight.
+                    <br>
+                    <br>However, because the web app cannot detect the type of fat you have, it is very important to keep this in mind and always aim to lead a healthy lifestyle.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>5.	Having a Higher Body Fat Percentage but Living a Healthy Lifestyle</strong></h3>
+
+                <p style="text-align: left;"> If you work out and are muscular but still overweight (with low belly fat), a BMI calculator and even the calculator on Estimate Body Fat will be doing you injustice.
+                    <br>
+                    <br> Externally you may have all the markings of an unhealthy person, but internally your body is very healthy based on the lifestyle you lead.
+                    <br>
+                    <br> </p>
+
+                <p><img class="lazy" data-src="../static/images/Overweight%20But%20Healthy%20Female.jpg" alt="Overweight but healthy female" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;"> But keep in mind that bringing your body fat percentage to a healthier range can help ease the pressure on your knees, help you run faster, help in getting more proportional clothing, and maybe even trim some of the fat from your double chin.
+                    <br>
+                    <br>
+                </p>
+
+                <h3 style=" text-align: left; color: #0563c1; border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;"> <strong>6.	Being Under Muscled and Overweight (i.e., Skinny Fat)</strong></h3>
+
+                <p style="text-align: left; border-bottom: 2px solid #ffe9e5 ;"> The model in the web app seems to have the most issues with skinny fat bodies mainly due to the lack of these types of bodies in the dataset.
+                    <br>
+                    <br>This can lead to the model underfitting, and sometimes even overfitting the results. Hopefully, this will change as more users decide to help me out (hint: see last section). Try your best to follow the upload instructions ‘to a T’ to ensure the best results.
+                    <br>
+                    <br><u>As a side note</u>: If you are skinny fat, focus on losing the excess fat first (through a healthy diet) and becoming stronger through body weight exercises (push ups, pull ups, chin ups, air squats).
+                    <br>
+                    <br>If you focus on heavy lifting while you’re skinny fat, you’ll overeat and become the fatter version of your current self. This happened to me, and trust me, it's not an attractive look.
+                    <br>
+                    <br> Focus on your diet first and you’ll never have this problem. I’ll touch upon on how to go about thinking about your diet in the sections below. To find out your body fat percentage, check out our <a href="https://www.estimatebodyfat.com">body fat percentage calculator</a>. It's free and very simple to use.
+
+                    <br>
+                    <br>
+                </p>
+
+                <br>
+
+                <a style="text-decoration:none" name="downloadweightlossguide">
+                    <h2 style="background-color: #ff9e8c; text-align:center; border-bottom: #ff9e8c;">Sign Up for Just One Update a Month</h2></a>
+
+                <form action="https://sendy.estimatebodyfat.com//subscribe" method="POST" accept-charset="utf-8" class="form-style-7" style="border-left: 2px solid #ffd3cf; border-right: 2px solid #ffd3cf;">
+                    <ul>
+                        <li>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" maxlength="100">
+                            <span>Enter your full name here</span>
+                        </li>
+                        <li>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" maxlength="100">
+                            <span>Enter a valid email address</span>
+                        </li>
+
+                        <input type="checkbox" name="gdpr" id="gdpr" />
+                        <span><strong>Marketing permission</strong>: I give my consent to  to be in touch with me via email using the information I have provided in this form for the purpose of news, updates and marketing.</span>
+                        <br/>
+                        <br/>
+                        <span style="text-align: left;"><strong>What to expect</strong>: If you wish to withdraw your consent and stop hearing from us, simply click the unsubscribe link at the bottom of every email we send or contact us at contact@estimatebodyfat.com. We value and respect your personal data and privacy. To view our privacy policy, see link below. By submitting this form, you agree that we may process your information in accordance with these terms.</span>
+                        <br/>
+                        <br/>
+                        <div style="display:none;">
+                            <label for="hp">HP</label>
+                            <br/>
+                            <input type="text" name="hp" id="hp" />
+                        </div>
+                        <input type="hidden" name="list" value="cTpuBoYwRzvcOIOIIHcUCQ" />
+                        <input type="hidden" name="subform" value="yes" />
+                        <li>
+                            <input type="submit" name="submit" id="submit" value="SUBMIT" /> </li>
+
+                    </ul>
+                </form>
+
+                <style type="text/css">
+                    .form-style-7 {
+                        /* max-width:700px;
                                      margin:50px auto;
                                      background:#fff;
                                      border: 2px solid #ffd3cf; */
+                        font-family: futura;
+                        text-align: left;
+                    }
 
+                    .form-style-7 h1 {
+                        display: block;
+                        text-align: center;
+                        padding: 0;
+                        margin: 0px 0px 20px 0px;
+                        color: #5C5C5C;
+                        font-size: x-large;
+                    }
 
-                                     font-family: futura;
-                                     text-align: left;
-                                   }
-                                   .form-style-7 h1{
-                                     display: block;
-                                     text-align: center;
-                                     padding: 0;
-                                     margin: 0px 0px 20px 0px;
-                                     color: #5C5C5C;
-                                     font-size:x-large;
-                                   }
-                                   .form-style-7 ul{
-                                     list-style:none;
-                                     padding:0;
-                                     margin:0;
-                                   }
-                                   .form-style-7 li{
-                                     display: block;
-                                     padding: 9px;
-                                     border:1px solid #DDDDDD;
-                                     margin-bottom: 30px;
-                                     border-radius: 3px;
-                                   }
-                                   .form-style-7 li:last-child{
-                                     border:none;
-                                     margin-bottom: 0px;
-                                     text-align: center;
-                                   }
-                                   .form-style-7 li > label{
-                                     display: block;
-                                     float: left;
-                                     margin-top: -19px;
-                                     background: #FFFFFF;
-                                     /* height: 14px; */
-                                     padding: 2px 5px 2px 5px;
-                                     color: black;
-                                     border: 2px solid #ffd3cf;
-                                     font-size: 19px;
-                                     overflow: hidden;
-                                     font-family: futura;
-                                   }
-                                   .form-style-7 input[type="text"],
-                                   .form-style-7 input[type="date"],
-                                   .form-style-7 input[type="datetime"],
-                                   .form-style-7 input[type="email"],
-                                   .form-style-7 input[type="number"],
-                                   .form-style-7 input[type="search"],
-                                   .form-style-7 input[type="time"],
-                                   .form-style-7 input[type="url"],
-                                   .form-style-7 input[type="password"],
-                                   .form-style-7 textarea,
-                                   .form-style-7 select
-                                   {
-                                     box-sizing: border-box;
-                                     -webkit-box-sizing: border-box;
-                                     -moz-box-sizing: border-box;
-                                     width: 100%;
-                                     display: block;
-                                     outline: none;
-                                     border: none;
-                                     height: 25px;
-                                     line-height: 25px;
-                                     font-size: 16px;
-                                     padding: 10px;
-                                     font-family: futura;
-                                   }
-                                   .form-style-7 input[type="text"]:focus,
-                                   .form-style-7 input[type="date"]:focus,
-                                   .form-style-7 input[type="datetime"]:focus,
-                                   .form-style-7 input[type="email"]:focus,
-                                   .form-style-7 input[type="number"]:focus,
-                                   .form-style-7 input[type="search"]:focus,
-                                   .form-style-7 input[type="time"]:focus,
-                                   .form-style-7 input[type="url"]:focus,
-                                   .form-style-7 input[type="password"]:focus,
-                                   .form-style-7 textarea:focus,
-                                   .form-style-7 select:focus
-                                   {
-                                   }
-                                   .form-style-7 li > span{
-                                     background: #F3F3F3;
-                                     display: block;
-                                     padding: 3px;
-                                     margin: 0 -9px -9px -9px;
-                                     text-align: center;
-                                     color: #C0C0C0;
-                                     font-family: futura;
-                                     font-size: 15px;
+                    .form-style-7 ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
 
-                                   }
-                                   .form-style-7 textarea{
-                                     resize:none;
-                                   }
-                                   .form-style-7 input[type="submit"],
-                                   .form-style-7 input[type="button"]{
-                                     background: #c83636;
-                                     border: none;
-                                     padding: 15px 40px 15px 40px;
-                                     /* border-bottom: 3px solid #5994FF; */
-                                     border-radius: 5px;
-                                     color: #D2E2FF;
-                                     font-size: 20px;
-                                   }
-                                   .form-style-7 input[type="submit"]:hover,
-                                   .form-style-7 input[type="button"]:hover{
-                                     background: #278357;
-                                     color:#fff;
-                                   }
-                                   </style>
+                    .form-style-7 li {
+                        display: block;
+                        padding: 9px;
+                        border: 1px solid #DDDDDD;
+                        margin-bottom: 30px;
+                        border-radius: 3px;
+                    }
 
+                    .form-style-7 li:last-child {
+                        border: none;
+                        margin-bottom: 0px;
+                        text-align: center;
+                    }
 
+                    .form-style-7 li > label {
+                        display: block;
+                        float: left;
+                        margin-top: -19px;
+                        background: #FFFFFF;
+                        /* height: 14px; */
+                        padding: 2px 5px 2px 5px;
+                        color: black;
+                        border: 2px solid #ffd3cf;
+                        font-size: 19px;
+                        overflow: hidden;
+                        font-family: futura;
+                    }
 
+                    .form-style-7 input[type="text"],
+                    .form-style-7 input[type="date"],
+                    .form-style-7 input[type="datetime"],
+                    .form-style-7 input[type="email"],
+                    .form-style-7 input[type="number"],
+                    .form-style-7 input[type="search"],
+                    .form-style-7 input[type="time"],
+                    .form-style-7 input[type="url"],
+                    .form-style-7 input[type="password"],
+                    .form-style-7 textarea,
+                    .form-style-7 select {
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        width: 100%;
+                        display: block;
+                        outline: none;
+                        border: none;
+                        height: 25px;
+                        line-height: 25px;
+                        font-size: 16px;
+                        padding: 10px;
+                        font-family: futura;
+                    }
 
+                    .form-style-7 input[type="text"]:focus,
+                    .form-style-7 input[type="date"]:focus,
+                    .form-style-7 input[type="datetime"]:focus,
+                    .form-style-7 input[type="email"]:focus,
+                    .form-style-7 input[type="number"]:focus,
+                    .form-style-7 input[type="search"]:focus,
+                    .form-style-7 input[type="time"]:focus,
+                    .form-style-7 input[type="url"]:focus,
+                    .form-style-7 input[type="password"]:focus,
+                    .form-style-7 textarea:focus,
+                    .form-style-7 select:focus {}
 
-                                   <script type="text/javascript">
-                                   //auto expand textarea
-                                   function adjust_textarea(h) {
-                                       h.style.height = "20px";
-                                       h.style.height = (h.scrollHeight)+"px";
-                                   }
-                                   </script>
+                    .form-style-7 li > span {
+                        background: #F3F3F3;
+                        display: block;
+                        padding: 3px;
+                        margin: 0 -9px -9px -9px;
+                        text-align: center;
+                        color: #C0C0C0;
+                        font-family: futura;
+                        font-size: 15px;
+                    }
 
+                    .form-style-7 textarea {
+                        resize: none;
+                    }
 
+                    .form-style-7 input[type="submit"],
+                    .form-style-7 input[type="button"] {
+                        background: #c83636;
+                        border: none;
+                        padding: 15px 40px 15px 40px;
+                        /* border-bottom: 3px solid #5994FF; */
+                        border-radius: 5px;
+                        color: #D2E2FF;
+                        font-size: 20px;
+                    }
 
-                                   <details>
-                                     <summary>
+                    .form-style-7 input[type="submit"]:hover,
+                    .form-style-7 input[type="button"]:hover {
+                        background: #278357;
+                        color: #fff;
+                    }
+                </style>
 
-                                     <h2 style="background-color: #ffe9e5; border-bottom: none">Disclaimer</h2>
+                <script type="text/javascript">
+                    //auto expand textarea
+                    function adjust_textarea(h) {
+                        h.style.height = "20px";
+                        h.style.height = (h.scrollHeight) + "px";
+                    }
+                </script>
 
+                <details>
+                    <summary>
 
-                                   </summary>
-                                     <p style="text-align: left;">The content on this site is for entertainment purposes only. None of the website's content is meant to be taken as medical advice.<br><br>
-                                     Speak to your healthcare professional for medical advice<br><br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content. <br><br>
-                                     As a way of generating revenue to sustain this web app, estimatebodyfat.com is a member of Amazon’s Affiliate program and Clickbank's Affiliate Program and may earn a commission if you decide to buy any of the products recommended on this website through Amazon.
+                        <h2 style="background-color: #ffe9e5; border-bottom: none">Disclaimer</h2>
 
+                    </summary>
+                    <p style="text-align: left;">None of the website's content is meant to be taken as medical advice.
 
-                                     <br><br></p></details>
+                        Speak to your healthcare professional for medical advice
+                        <br>
+                        <br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content.
+                        <br>
+                        <br> As a way of generating revenue to sustain this web app, estimatebodyfat.com is a member of Amazon’s Affiliate program and Clickbank's Affiliate Program and may earn a commission if you decide to buy any of the products recommended.
 
+                        <br>
+                        <br>
+                    </p>
+                </details>
 
+                <footer>
 
-            <footer>
+                    <div>
 
-            <div>
+                        <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
+                        <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
+                        <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
 
+                    </div>
 
-                            <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
-                            <p  ><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
+                    <div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div>
+                    <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
 
-              <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2019</a> </p>
+                </footer>
 
-  </div>
-
-  <div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
-
-          </footer>
-
-
-
+        </div>
     </div>
-</div>
 
-<script src='../static/jquery.min.js'></script>
-<script src='../static/sweetalert.min.js'></script>
-<script src="../static/croppie.js"></script>
-<script src="../static/script.js"></script>
-<script src="../static/exif.js"></script>
-<script src='../static/client.js'></script>
-<script>       CropImage.init();   </script>
+    <script src='../static/jquery.min.js'></script>
+    <script src='../static/sweetalert.min.js'></script>
+    <script src="../static/croppie.js"></script>
+    <script src="../static/script.js"></script>
+    <script src="../static/exif.js"></script>
+    <script src='../static/client.js'></script>
+    <script>
+        CropImage.init();
+    </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
 window.cookieconsent.initialise({
   "palette": {
@@ -473,13 +511,9 @@ window.cookieconsent.initialise({
 });
 </script> -->
 
-
-
-
-
-
-</div>
-</div>
+    </div>
+    </div>
 
 </body>
+
 </html>
