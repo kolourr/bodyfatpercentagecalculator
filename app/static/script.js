@@ -1795,3 +1795,48 @@ function hideG(x) {
 			xhr.send(fileData);
 
 		}
+
+
+
+
+
+
+		function faceanalyze() {
+
+				// var uploadFiles = dataURItoBlob(newbase64);
+
+				var uploadFiles = el("upload").files;
+
+
+				el("analyze-button").innerHTML = "ESTIMATING...";
+			  var xhr = new XMLHttpRequest();
+			  var loc = window.location;
+			  xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/faceanalyze`,
+			    true);
+			  xhr.onerror = function() {
+			    alert(xhr.responseText);
+			  };
+			  xhr.onload = function(e) {
+			    if (this.readyState === 4) {
+			      var response = JSON.parse(e.target.responseText);
+
+						 el("result-text").innerHTML = `Your body fat percentage (range) based on your face is: <br><br>`;
+
+
+						el("result-label").innerHTML = `${response['result']} %`;
+			    }
+			    el("analyze-button").innerHTML = "UPLOAD IMAGE";
+			  };
+
+			  var fileData = new FormData();
+			  fileData.append("file", uploadFiles[0]);
+			  xhr.send(fileData);
+			}
+
+			function showDiv() {
+			   document.getElementById('welcomeDiv').style.display = "block";
+
+				//  $('#welcomeDiv').toggle(10000, function() {
+		 	  //   // Animation complete.
+		 	  // });
+			}

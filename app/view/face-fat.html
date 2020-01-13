@@ -44,9 +44,9 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
     </script>
     <!-- End Google Tag Manager -->
 
-    <title>Estimate Body Fat - Artificial Intelligence Body Fat Percentage Calculator</title>
+    <title>Face Fat Percentage Calculator</title>
     <link rel="shortcut icon" type="image/png" href="../static/images/favicon-32x32.png">
-    <meta name="description" content="Determine your body fat percentage using the Artificial Intelligence body fat percentage calculator with only a picture. No Tape. No Scales. No Measurements.">
+    <meta name="description" content="Determine your body fat percentage using a picture of your face and learn simply ways to reduce face fat and overall puffiness in the face.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
     <meta name="viewport" collapse="width=device-width, initial-scale=1">
 
@@ -96,26 +96,28 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                 </ul>
             </div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">FACE FAT CALCULATOR</h1>
 
-            <p style="background-color:white; text-align: left; border-top: none; ">Our Body Fat Percentage Calculator is a visual body fat calculator that can be used to estimate your total body fat percentage with just a picture of yourself. For the body fat calculator to work, you must upload a picture of yourself.
-                <br>
-                <br> In the picture you upload, you must stand straight, flex and be the only one in it. Men must be shirtless and women in gym attire/form fitting clothing.
-                <br>
-                <br>You can use a bathroom selfie or ask someone to take a picture of yourself. Make sure the image is a close-up picture. The picture you upload must follow these rules, otherwise, the results will be greatly skewed.
-                <br>
-                <br>
+            <p style="background-color:white; text-align: left; border-top: none; ">The Face Fat Calculator is a visual fat calculator that uses artificial intelligence to determine your overall body fat percentage using just a picture of your face.    <br><br>           All you have to do is take a selfie (like the picture below) and upload it using our custom face fat calculator. You will receive your overall body fat percentage within 5 seconds (based on the closest body fat percentage range).
 
-                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="How to get my body fat percentage?" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
-                <br> When you upload your picture, a neural network (A.I.) gives you an answer within 5 seconds (based on the closest body fat percentage range). It is important to remember that this number is just an estimate.
-                <br>
-                <br> </p>
+
+
+<br><br>
+
+
+                <img class="lazy" data-src="../static/images/face_fat.png" alt="How to Lose face Fat?" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
+                <br>               It is important to remember that this number is just a rough estimate as factors such as height, body shape and overall fat distribtion is not taken into account.
+
+
+                Also included below is simply ways to lose face fat and reduce the puffiness in your face.
+
+                 </p>
 
             <!-- <h1 class="calculator"> Body Fat Percentage Calculator</h1> -->
 
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">FACE FAT CALCULATOR</h2>
 
-            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: January 12, 2020</p>
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Face Fat Model Updated: January 12, 2020</p>
 
             <div class="content">
                 <div class="upload-demo-wrap">
@@ -127,7 +129,7 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                     <a class="btn file-btn">
                         <span id='analyze-button' class="analyze-button" type='button'>UPLOAD IMAGE </span>
 
-                        <input type="file" id="upload" value="Choose a file" accept="image/*" onchange='analyze()' onclick="showDiv()"> </a>
+                        <input type="file" id="upload" value="Choose a file" accept="image/*" onchange='faceanalyze()' onclick="showDiv()"> </a>
 
                     <br>
                     <br>
@@ -148,23 +150,216 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
             <div id="welcomeDiv" style="display:none;" class="answer_list">
 
-              <h2 style="background-color: #ffe9e5; border-bottom: none; text-align: center">How to Lose the Extra Body Fat Percentage</h2>
-              <p>
-                  <a target="_blank" href="https://www.amazon.com/gp/product/1771641258/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1771641258&linkCode=as2&tag=1haptho-20&linkId=a4e59123b9f53360912d1419feeabb01"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=1771641258&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=1haptho-20"></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=1haptho-20&l=am2&o=1&a=1771641258" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> </p>
+                <h2 style="background-color: #ffe9e5; border-bottom: none; text-align: center">How to Lose the Extra Body Fat Percentage</h2>
+                <p>
+                    <a target="_blank" href="https://www.amazon.com/gp/product/1771641258/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1771641258&linkCode=as2&tag=1haptho-20&linkId=a4e59123b9f53360912d1419feeabb01"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=1771641258&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=1haptho-20"></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=1haptho-20&l=am2&o=1&a=1771641258" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> </p>
 
-              <p style="text-align: left;">
-                  If you are interested in losing extra fat, I highly recommend reading Dr. Jason Fung’s book – <a href="https://www.amazon.com/gp/product/1771641258/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=1haptho-20&creative=9325&linkCode=as2&creativeASIN=1771641258&linkId=69bae52e15146ec190cb1c61ba9989ec"> The Obesity Code: Unlocking the Secrets of Weight Loss</a>.
-                  <br>
-              </p>
-              <p style="text-align: left;">As someone that made the switch to a low-carb lifestyle to lose weight (thanks to Dr. Jason Fung’s book), it was important to me to find recipes I would actually enjoy eating.
-                  <br><br>
-                <mark>  <strong>The 28 Day Keto</strong></mark>   will teach you the basics of the keto diet (low-carb) and give you recipes for breakfast, lunch, dinner and desert. To get it, <strong><mark><a href="https://e9f3efmaa3z6v5-8udyjfp6q4m.hop.clickbank.net/?tid=ESTIMATEBODYFAT" rel="nofollow" target="_blank">CLICK HERE</a>.</mark></strong>
-                  <br>
-</p>
+                <p style="text-align: left;">
+                    If you are interested in losing extra fat, I highly recommend reading Dr. Jason Fung’s book – <a href="https://www.amazon.com/gp/product/1771641258/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=1haptho-20&creative=9325&linkCode=as2&creativeASIN=1771641258&linkId=69bae52e15146ec190cb1c61ba9989ec"> The Obesity Code: Unlocking the Secrets of Weight Loss</a>.
+                    <br>
+                </p>
+                <p style="text-align: left;">As someone that made the switch to a low-carb lifestyle to lose weight (thanks to Dr. Jason Fung’s book), it was important to me to find recipes I would actually enjoy eating.
+                    <br><br>
+                  <mark>  <strong>The 28 Day Keto</strong></mark>   will teach you the basics of the keto diet (low-carb) and give you recipes for breakfast, lunch, dinner and desert. To get it, <strong><mark><a href="https://e9f3efmaa3z6v5-8udyjfp6q4m.hop.clickbank.net/?tid=ESTIMATEBODYFAT" rel="nofollow" target="_blank">CLICK HERE</a>.</mark></strong>
+                    <br>
+ </p>
 
             </div>
 
-            <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;"> Body Fat and BMI Calculators </h2>
+
+            <h2 style="background-color: #ffe9e5; text-align: center;border-bottom: 2px solid #ffe9e5; ">Why is my face fat but my body skinny?</h2>
+            <p>                <img class="lazy" data-src="../static/images/puffyface.png" alt="Why is my face fat but my body skinny?" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
+</p>
+
+            <p style="text-align: left;">There are many reason why you might have a fat face with a skinny body but here are some of the main culprits:<br><br>
+
+
+
+            <mark>  Inflammation   </mark> <br><br>
+              <mark>   Genetics </mark><br><br>
+              <mark>   Not Getting Enough Sleep </mark><br><br>
+            <mark>     Not Exercising </mark><br><br>
+            <mark>     Not Drinking Enough Water </mark><br><br>
+            <mark>     Being on Certain Medications </mark><br><br>
+            <mark>     Abusing Drugs or Alcohol</mark> <br><br>
+            <mark>     Poor Nutrition </mark><br><br>
+
+                </p>
+
+
+
+
+
+
+                        <h2 style="background-color: #ffe9e5; text-align: center;border-bottom: 2px solid #ffe9e5; ">How to Lose Face Fat?</h2>
+
+                        <p style="text-align: left;">Having a puffy face does not necessarily mean you have a high body fat percentage. The shape of your face can fluctuate from day to day depending on the food you eat (due to inflammation). Just remember, as you keep slimming down, your face will gradually get more toned. <br><br>
+
+
+                          So, let’s look at some practical changes you can make in your life to reduce the puffiness in your face. You can lose face fat by:
+                            <br>
+                            <br> <mark>Reducing your overall body fat percentage</mark>
+                            <br>
+                            <br> <mark>Reducing sodium and refined carbohydrate intake</mark>
+                            <br>
+                            <br> <mark>Limiting alcohol consumption</mark>
+                            <br>
+                            <br> <mark> Drink more water</mark>
+                            <br>
+                            <br> <mark>Getting more sleep</mark>
+                            <br>
+                            <br>
+
+                        </p>
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;  ">Reducing Your Overall Body Fat Percentage </h3>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">It is not possible to lose fat in your face without reducing your overall body fat percentage. You need to first <a href="https://www.estimatebodyfat.com/how-to-lose-weight-fast-and-easy.html">set yourself on the path to losing
+            weight</a> before any facial sculpting can begin. &nbsp;Spot reduction procedures such as Cool Sculpting are only temporary fixes, so don’t bother with it.
+
+                        </p>
+                        <!-- /wp:paragraph -->
+
+                        <p><img class="lazy" data-src="../static/images/overallbodyfatpercentage.jpg" alt="Overall Body Fat Percentage" style="max-width:100%;height:auto; ">
+                            <br>
+                            <br>
+                        </p>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">
+                             Set out to clean out your diet and improve your lifestyle over the next two years. Two years might seem long but it will give you that chance to make mistakes along the way.
+                            <br>
+                            <br> The two-year timeframe is important because you don’t want to set an unrealistic timeframe, fail and get depressed because you haven’t achieved your goal. <a href="https://www.estimatebodyfat.com/why-did-i-lose-weight-and-then-gain-it-back.html">Severely restricting your calories</a> in the hopes of toning your face actually reduces your Body Metabolic Rate, which in turn makes it much harder to lose overall fat.
+
+                        </p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">
+                            You will notice subtle changes in your appearance when you begin your diet as the fat drops. Make sure to take pictures to track the changes in your appearance. Getting a slimmer face is possible if you are willing to give it time and maintain a good diet all year round.
+                            <br>
+                            <br>
+                        </p>
+                        <!-- /wp:paragraph -->
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; ">Reducing Sodium and Refined Carbohydrates Intake  </h3>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">Foods high in refined carbohydrates such as chips, bread, cereal, rice, and pasta are usually heavily processed and contain empty calories, lack the nutritional fiber that helps with digestion and causes <a href="https://www.estimatebodyfat.com/what-factors-influence-your-body-weight.html">insulin spikes in the blood that lead to higher fat storage</a>.
+                            <br>
+                            <br>If you are serious about losing fat in your face, you must eliminate refined carbohydrates.
+
+                        </p>
+
+                        <p><img class="lazy" data-src="../static/images/sodium.jpg" alt="Sodium Consumption" style="max-width:100%;height:auto; ">
+                            <br>
+                            <br>
+                        </p>
+
+                        <p style="text-align: left;">
+                            Most of these refined carbohydrates are also heavily laced with sugar and salt. The excessive sodium leads to bloating and puffiness in the face, which in no way helps you look good. Another side effect of excess sodium is water retention which makes you look heavier than you really are.
+                            <br>
+                            <br>
+
+                        </p>
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; ">Limiting Alcohol Consumption  </h3>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">
+
+                            Limiting alcohol consumption is a sure-fire way to lose weight. This is because alcohol is full of empty calories without nutritional value. When you drink alcohol, the liver stops breaking down fats, carbohydrates or protein as it is must process alcohol first (since alcohol is also a macronutrient), meaning the fat burning process is instantly brought to a halt.
+                            <br>
+                            <br> Alcohol also causes dehydration, which in turn makes your body retain water causing bloating and puffiness in your face. Therefore, if you are serious about slimming your face, you need to give alcohol a break.
+                        </p>
+
+                        <p><img class="lazy" data-src="../static/images/alcoholconsumption.jpg" alt="Alcohol Consumption" style="max-width:100%;height:auto; ">
+                            <br>
+                            <br>
+                        </p>
+
+                        <p style="text-align: left;">
+
+                            The best way to do this is by gi<a href="https://www.estimatebodyfat.com/average-weight-loss-on-keto.html">ving up alcohol for a couple of months</a> and see how you feel. I went completely dry and included fasting for 3 months and was surprised by how much my skin and overall appearance improved. You can slowly introduce alcohol after your abstinence period and reap the benefits from this short break.
+
+                            <br>
+                            <br>
+                        </p>
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; ">Drink More Water</h3>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">
+                            Water helps flush out toxins from your body and improve skin tone. It also <a href="https://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html">helps you lose extra weight</a>. This is because water is known to increase your metabolism and help maintain satiety i.e., keeping you full for longer periods so you don’t overeat.
+                            <br>
+                            <br>It also reduces the puffiness in your face and gets rid of the bloating from excessive sodium consumption. This is why you should drink water before, during and after your meals. &nbsp;
+                        </p>
+
+                        <p><img class="lazy" data-src="../static/images/waterconsumption.jpg" alt="Water Consumption" style="max-width:100%;height:auto; ">
+                            <br>
+                            <br>
+                        </p>
+
+                        <!-- wp:paragraph -->
+                        <p style="text-align: left;">
+
+                            No matter what diet plan you might be on, drinking more water is always recommended. Give up the sugary beverages and carry a water bottle wherever you go. This will not only save you money but help in reducing your waistline as well.
+                            <br>
+                            <br> Almost every dermatologist recommends drinking more water for a slimmer face and better-looking skin. Water is free, so what’s the excuse for not making it part of your overall weight loss plan?
+                            <br>
+                            <br>
+                        </p>
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; ">Getting More Sleep    </h3>
+
+                        <p style="text-align: left;">
+
+                            When the body is deprived of sleep, the level of cortisol (stress hormone) and ghrelin (hunger hormone) increase leading to a state where you begin salivating for fried and highly refined foods. No wonder those donuts taste so good in the morning when you haven’t had a good night’s sleep.
+                        </p>
+
+                        <p><img class="lazy" data-src="../static/images/getmoresleep.jpg" alt="Get more sleep" style="max-width:100%;height:auto; ">
+                            <br>
+                            <br>
+                        </p>
+
+                        <p style="text-align: left;">
+                            We all need our beauty sleep to look good. If you are unable to get a good night’s sleep on a regular basis, say goodbye to that dreamy face you’ve always wanted. Not only will you gain more eating as a result of being sleep deprived but get ready to look extra terrible as well.
+
+                        </p>
+
+                        <p style="text-align: left;">
+                            If you want to break your daily craving, make sure you sleep well. Sleep early if you need to. Having a routine where you sleep and wake up at the same time every day will help you eat less and keep you looking the best.
+                            <br>
+                            <br>
+
+                        </p>
+
+                        <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; ">Takeaway Points     </h3>
+
+                        <p style="text-align: left;">
+
+                            1. Reduce your overall body fat percentage first by sticking to a clean diet.
+                            <br>
+                            <br>2. Stay away from fried and high refined foods that contain a lot of salt and sugar. These foods are not helping your appearance. Instead, stick to foods that do not contain multiple ingredients.
+
+                            <br>
+                            <br>3. Cut down on the booze or even give it up altogether for a couple of months if you are serious about looking good and improving your skin. Remember, drinking alcohol stops the fat burning process and gives you ‘alcohol munchies’ instead. It’s no wonder bars can sell you overpriced chicken wings and fries and you gladly give them your money.
+                            <br>
+                            <br>4. Drink water. If you are looking for a cheap way to lose fat in your face, there’s nothing cheaper than water. Leave the sugary drinks alone.
+                            <br>
+                            <br>5. Most importantly, make sure you get a good night’s sleep every night. When you are well-rested, you crave fatty fried foods less. Not only will you not overeat, but being well-rested with result in your looking your Sunday best, every day of the week.
+
+                        </p>
+
+
+
+
+
+
+
+
+            <h3 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;">Other Body Fat Calculators </h3>
             <p style="text-align: left;">
                 <a href="https://www.estimatebodyfat.com/"> A.I. Body Fat Percentage Calculator</a>
                 <br>
@@ -172,71 +367,11 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                 <a href="https://www.estimatebodyfat.com/body-fat-calculator.html"> U.S. Military Body Fat and BMI Calculator</a>
                 <br><br>
                 <a href="https://www.estimatebodyfat.com/caliper-fat-calculator.html"> Skinfold Caliper Body Fat and BMI Calculator</a>
-                <br>  <br>
-                <a href="https://www.estimatebodyfat.com/face-fat.html"> Face Fat Calculator</a>
-  <br>
-
-            </p>
-
-            <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;"> Articles on Body Fat Percentage and Body Fat Calculators </h2>
-            <p style="text-align: left;">
-                <a href="https://www.estimatebodyfat.com/what-is-body-fat-percentage.html"> What is Body Fat Percentage?</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/how-does-the-ai-body-fat-calculator-work.html">How Does the A.I. Body Fat Calculator Work?</a>
-                <br>
-                <br>
-                <a href=" https://www.estimatebodyfat.com/different-ways-to-measure-body-fat.html">7 Ways to Determine Body Fat Percentage</a>
                 <br>
 
             </p>
 
-            <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;">Articles on the Human Body, Hormones and Fat Distribution</h2>
-            <p style="text-align: left;">
-                <a href="https://www.estimatebodyfat.com/what-factors-influence-your-body-weight.html"> Hormones, Fat Distribution and Weight Loss</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/body-fat-percentages-of-men-and-women-with-pictures-and-charts.html"> Body Fat Percentage Pictures of Male and Female (with analysis)</a>
-            </p>
 
-            <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;">Articles on Weight Loss and Diets</h2>
-            <p style="text-align: left;">
-                <a href="https://www.estimatebodyfat.com/free-weight-loss-resources.html"> 4 Key Weight Loss Resources</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/how-to-lose-weight-fast-without-exercise.html"> 16 Tips on Losing Weight Without Exercise</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/average-weight-loss-on-keto.html"> What is the Average Weight Loss on Keto?</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/how-to-resist-temptation-of-junk-food.html"> How to Resist the Temptation of Junk Food?</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/why-did-i-lose-weight-and-then-gain-it-back.html"> 3 Main Reasons You Regained Weight</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/ways-to-lower-body-fat-percentage.html"> 7 Ways to Lower Body Fat Percentage</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/how-to-lose-face-fat.html"> 5 Ways to Lose Face Fat</a>
-
-            </p>
-
-            <h2 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5;">Articles on Psychology and Weight Loss</h2>
-            <p style="text-align: left;">
-                <a href="https://www.estimatebodyfat.com/weight-loss-jealousy.html"> 2 Main Reasons for Weight Loss Jealousy</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/how-to-motivate-yourself-to-lose-weight.html"> 3 Ways to Motivate Yourself to Lose Weight</a>
-                <br>
-                <br>
-                <a href="https://www.estimatebodyfat.com/psychological-blocks-to-weight-loss.html"> 6 Main Psychological Blocks to Weight Loss</a>
-
-                <br>
-                <br>
-
-            </p>
 
             <a style="text-decoration:none" name="downloadweightlossguide">
                 <h2 style="background-color: #ff9e8c; text-align:center; border-bottom: #ff9e8c;">Sign Up for Just One Update a Month</h2></a>
@@ -426,68 +561,7 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
             <details>
                 <summary>
                     <a style="text-decoration:none" name="about">
-                        <h2 style="background-color: #ffe9e5; border-bottom: none">Whose Idea Was This?</h2></a>
-                </summary>
 
-                <p style="text-align: left;">That would be Bruce Rebello, an industrial engineer and amateur programmer from Toronto, Canada.
-                    <br>
-                    <br>My journey with trying to lose fat and study programming started around the same time in November of 2018. These two areas of my life would converge during a subway ride in early May 2019 while listening to <a href="https://amzn.to/2LxeHKo">The Power of Now by Eckhart Tolle</a>. Wild, right? Let me explain.
-                    <br>
-                    <br>
-                </p>
-
-                <p> <img class="lazy" data-src="../static/images/bruce%20rebello.jpg" alt="Bruce Rebello - founder - Estimate Body Fat" style="max-width:100%;height:auto; "></a>
-                    <br>
-                    <br> </p>
-
-                <p style="text-align: left;">2018 wasn’t the greatest year for me, professionally or personally. My life in an alternate universe was probably sour as well. And to top it off, I was getting fat. Really fat.
-                    <br>
-                    <br> I knew that something had to be done about my health, and also maybe it was time to pick up a new skill to bring the drive back into my life. So I took a course in Python programming and dove into books on nutrition. As it turned out, I really enjoyed learning to program and was also drawn to the work of Dr. Jason Fung on fat reduction.
-                    <br>
-                    <br> Reading <a href="https://amzn.to/2IFVioL">The Obesity Code: Unlocking the Secrets of Weight Loss </a>helped bust many myths and lies on nutrition and working out that had consumed me for most of my adult life. I highly recommend the book to anyone stuck in a never ending cycle of going on diets only to gain all the weight back plus some.
-                    <br>
-                    <br>This was the only book that addressed the root cause of obesity and how it could be reversed permanently. As part of making this positive change in my life, I got a Dexa Scan. As I mentioned in the sections above, Dexa Scans are by far the most accurate forms of fat detection, except they cost $150/session.
-                    <br>
-                    <br> I started 2019 with a renewed sense of self and a focus on eating healthy and mastering programming. By mid April 2019, I lost quite a bit of fat and had completed my initial course in Python. With the same forward momentum, I decided to jump into <a href="https://www.fast.ai/"> Fast AI’s course on Deep Learning </a>(A.I. Development).
-                    <br>
-                    <br>The course is free and if you are willing to do the work, you will learn a lot. One of the homework assignments was to build an image classification model on something that interested you. I didn’t think much about it at the time and figured I would build an image classifier on differentiating between species of birds or wild animals.
-                    <br>
-                    <br> I was listening to the audiobook of <a href="https://amzn.to/2LxeHKo"> The Power of Now by Eckhart Tolle</a> on the subway ride to my day job when the idea for this app hit me. For those who are interested, the focus of Tolle’s book is on staying present (in the moment), training your mind to reach your deeper self, on creating a blank canvas in the mind for ideas, and learning to fight off pain that stems from your mind.
-                    <br>
-                    <br> What if I build a dataset that referenced Dexa Scan Images representing different body fat percentages of men and women, train a neural net on it, and use that to help anyone, anywhere in the world get their body fat percentage with just a single picture. Now, the body fat percentages obtained through the app could never match the accuracy of a Dexa Scan. However, it would certainly give you a pretty good idea of where you stand.
-                    <br>
-                    <br>This could go a long way in keeping your health in check and would also save you $150 every time you want to figure out what your body fat percentage is. It was a long shot that it would work, but as this was something I wished I had had when I started thinking about losing fat, I saw great value in it.
-                    <br>
-                    <br> I do hope you find it useful and keep coming back to check on your progress. If you want to reach out, send an email to contact@estimatebodyfat.com
-
-                    <br>
-                    <br>
-                </p>
-
-            </details>
-            <br>
-
-            <details>
-                <summary>
-                    <h2 style="background-color: #ffe9e5; border-bottom: none">Help Make Us Better</h2></a>
-
-                </summary>
-
-                <p style="text-align: left;">I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
-                    <br>
-                    <br>A lot of data. Sadly, this is very hard to come by. However, there is a way you can help me if you’ve got a Dexa Scan done or plan on getting one in the future.
-                    <br>
-                    <br> Here’s how you can help: If you can send me a picture of the upper half of your body, just like the one you uploaded to the web app along with your Dexa Scan results (visceral and subcutaneous fat percentages), that would help solve some of my data needs. I don't need to know your name or see your face. Your identity will be protected.
-                    <br>
-                    <br> I know this is asking a lot, but if I can make this application even 20% better than what it is today, that is a 20% improvement in the lives of everyone using this application, including those who cannot afford to get a Dexa Scan.
-                    <br>
-                    <br> If you can help out, please send the images and stats to contact@estimatebodyfat.com.
-
-                    <br>
-                    <br>
-                </p>
-            </details>
-            <br>
 
             <details>
                 <summary>

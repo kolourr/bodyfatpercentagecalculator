@@ -28,11 +28,19 @@ export_file_url = 'https://drive.google.com/uc?export=download&id=1qqwWp_QIb2BkH
 export_file_name = 'export.pkl'
 
 classes = ['5 to 7', '7.5 to 9', '8 to 11', '10 to 12', '13 to 15', '13 to 15.5', '16 to 17', '16 to 18', '18 to 19', '19 to 20', '20 to 22', '21 to 23', '23 to 25', '24 to 25', '26 to 28', '26 to 28.5', '29 to 30', '29 to 33', '31 to 33', '34 to 38', '35 to 39', '40 plus', '40+']
+
+
+
+
+
+
 path = Path(__file__).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+
+
 
 
 
@@ -58,11 +66,11 @@ async def setup_learner():
         else:
             raise
 
-
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
+
 
 
 async def facecrop(image):
@@ -263,6 +271,21 @@ async def sitemap(request):
 async def sitemap(request):
     html_file = path / 'view' / 'caliper-calculator.html'
     return HTMLResponse(html_file.open().read())
+
+
+@app.route('/face-fat.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'face-fat.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1010,6 +1033,97 @@ async def analyze(request):
     success_new = encoded_image.tobytes()
     img2 = open_image(BytesIO(success_new))
     prediction = learn.predict(img2)[0]
+    return JSONResponse({'result': str(prediction)})
+
+
+
+export_file_url_face = 'https://drive.google.com/uc?export=download&id=1UXqh5B0WtqwCbZMmYTeBY74uzWgasy4z'
+export_file_name_face = 'face_export.pkl'
+
+classes_face = ['5 to 7', '10 to 12', '13 to 15', '16 to 17.5', '18 to 19', '20 to 22', '23 to 25', '26 to 28','29 to 33', '34 to 38', '40plus', '7.5 to 9', '8 to 11','13.5 to 15', '16 to 18', '21 to 23', '26.5 to 28', '19 to 20','40+','35 to 39', '29 to 30', '31 to 33' ]
+
+
+
+async def setup_learner_face():
+    await download_file(export_file_url_face, path / export_file_name_face)
+    try:
+        learn = load_learner(path, export_file_name_face)
+        return learn
+    except RuntimeError as e:
+        if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
+            print(e)
+            message = "\n\nThis model was trained with an old version of fastai and will not work in a CPU environment.\n\nPlease update the fastai library in your training environment and export your model again.\n\nSee instructions for 'Returning to work' at https://course.fast.ai."
+            raise RuntimeError(message)
+        else:
+            raise
+
+
+loop_face = asyncio.set_event_loop(asyncio.new_event_loop())
+loop_face1 = asyncio.get_event_loop()
+tasks_face = [asyncio.ensure_future(setup_learner_face())]
+learn_face = loop_face1.run_until_complete(asyncio.gather(*tasks_face))[0]
+loop_face1.close()
+
+
+async def realfacecrop(image):
+
+
+    global sub_face9
+    women_file_name = 'face.xml'
+    women_url = 'https://drive.google.com/uc?export=download&id=1Vmq6hUfnP6DXwg6YDNPNC8T7YP0hnSMs'
+    await download_file(women_url, path / women_file_name)
+    f = str(path)
+
+    cascade1 = cv2.CascadeClassifier(f + '/' + women_file_name)
+
+    img = cv2.imread(image)
+    minisize = (img.shape[1],img.shape[0])
+    miniframe = cv2.resize(img, minisize)
+
+
+    faces1 = cascade1.detectMultiScale(miniframe, scaleFactor=1.3, minNeighbors=12, minSize=(700, 950))
+
+
+    for f in faces1:
+        x, y, w, h = [ v for v in f ]
+        cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0))
+        sub_face9 = img[y:y+h, x:x+w]
+
+
+    if len(faces1) !=0:
+        return sub_face9
+    else:
+        return img
+
+
+
+
+
+
+@app.route('/faceanalyze', methods=['POST'])
+async def faceanalyze(request):
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    img = Image.open(BytesIO(img_bytes))
+    img = img.convert('RGB')
+
+
+    basewidth = 1000
+    f = str(path)
+    image_file_name = "imageToSave2.jpg"
+    new_path = f + '/' + image_file_name
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    size =(basewidth, hsize)
+    img = img.resize(size, Image.LANCZOS)
+    img.save(new_path)
+
+
+    main = await realfacecrop(new_path)
+    success, encoded_image = cv2.imencode('.jpg', main)
+    success_new = encoded_image.tobytes()
+    img2 = open_image(BytesIO(success_new))
+    prediction = learn_face.predict(img2)[0]
     return JSONResponse({'result': str(prediction)})
 
 
