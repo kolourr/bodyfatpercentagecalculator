@@ -278,8 +278,10 @@ async def sitemap(request):
     html_file = path / 'view' / 'face-fat.html'
     return HTMLResponse(html_file.open().read())
 
-
-
+@app.route('/motivational-quote-email.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'motivational-quote-email.html'
+    return HTMLResponse(html_file.open().read())
 
 
 
