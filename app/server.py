@@ -284,6 +284,19 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/body-goal-project.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'body-goal-project.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/fitness-goal-accountability.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/body-goal-project.html')
+
+@app.route('/ai-calculator.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'ai-calculator.html'
+    return HTMLResponse(html_file.open().read())
 
 
 
