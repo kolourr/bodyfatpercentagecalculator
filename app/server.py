@@ -278,18 +278,13 @@ async def sitemap(request):
     html_file = path / 'view' / 'face-fat.html'
     return HTMLResponse(html_file.open().read())
 
-@app.route('/motivational-quote-email.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'motivational-quote-email.html'
-    return HTMLResponse(html_file.open().read())
-
 
 @app.route('/body-goal-project.html')
 async def sitemap(request):
     html_file = path / 'view' / 'body-goal-project.html'
     return HTMLResponse(html_file.open().read())
 
-@app.route('/fitness-goal-accountability.html')
+@app.route('/motivational-quote-email.html')
 async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/body-goal-project.html')
 
