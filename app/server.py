@@ -296,6 +296,31 @@ async def sitemap(request):
 
 
 
+@app.route('/analyze', methods=['POST'])
+async def analyze(request):
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    img = Image.open(BytesIO(img_bytes))
+    img = img.convert('RGB')
+
+
+    basewidth = 2000
+    f = str(path)
+    image_file_name = "imageToSave.jpg"
+    new_path = f + '/' + image_file_name
+    wpercent = (basewidth/float(img.size[0]))
+    hsize = int((float(img.size[1])*float(wpercent)))
+    size =(basewidth, hsize)
+    img = img.resize(size, Image.LANCZOS)
+    img.save(new_path)
+
+
+    main = await facecrop(new_path)
+    success, encoded_image = cv2.imencode('.jpg', main)
+    success_new = encoded_image.tobytes()
+    img2 = open_image(BytesIO(success_new))
+    prediction = learn.predict(img2)[0]
+    return JSONResponse({'result': str(prediction)})
 
 
 
@@ -1019,31 +1044,6 @@ async def usunitnavy(request):
 
 
 
-@app.route('/analyze', methods=['POST'])
-async def analyze(request):
-    img_data = await request.form()
-    img_bytes = await (img_data['file'].read())
-    img = Image.open(BytesIO(img_bytes))
-    img = img.convert('RGB')
-
-
-    basewidth = 2000
-    f = str(path)
-    image_file_name = "imageToSave.jpg"
-    new_path = f + '/' + image_file_name
-    wpercent = (basewidth/float(img.size[0]))
-    hsize = int((float(img.size[1])*float(wpercent)))
-    size =(basewidth, hsize)
-    img = img.resize(size, Image.LANCZOS)
-    img.save(new_path)
-
-
-    main = await facecrop(new_path)
-    success, encoded_image = cv2.imencode('.jpg', main)
-    success_new = encoded_image.tobytes()
-    img2 = open_image(BytesIO(success_new))
-    prediction = learn.predict(img2)[0]
-    return JSONResponse({'result': str(prediction)})
 
 
 
