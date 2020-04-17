@@ -24,6 +24,7 @@ from starlette.requests import Request
 from PIL import Image
 
 
+
 export_file_url = 'https://drive.google.com/uc?export=download&id=1qqwWp_QIb2BkHqLKlccBNrdW2kJz9zIB'
 export_file_name = 'export.pkl'
 
@@ -293,7 +294,20 @@ async def sitemap(request):
     html_file = path / 'view' / 'ai-calculator.html'
     return HTMLResponse(html_file.open().read())
 
+@app.route('/ketoebook.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'ketoebook.html'
+    return HTMLResponse(html_file.open().read())
 
+@app.route('/success.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'success.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/cancel.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'cancel.html'
+    return HTMLResponse(html_file.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
@@ -1135,6 +1149,8 @@ async def faceanalyze(request):
     img2 = open_image(BytesIO(success_new))
     prediction = learn_face.predict(img2)[0]
     return JSONResponse({'result': str(prediction)})
+
+
 
 
 if __name__ == '__main__':
