@@ -310,6 +310,15 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/coronavirus-weight-risk-calculator.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'coronavirus-weight-risk-calculator.html'
+    return HTMLResponse(html_file.open().read())
+
+
+
+
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()
