@@ -316,7 +316,13 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/ketoebook.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
 
+@app.route('/cancel.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
 
 
 @app.route('/analyze', methods=['POST'])
