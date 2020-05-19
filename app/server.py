@@ -325,6 +325,12 @@ async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/')
 
 
+@app.route('/fitness-goal-survey.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'fitness-goal-survey.html'
+    return HTMLResponse(html_file.open().read())
+
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()
