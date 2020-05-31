@@ -1,1 +1,1 @@
-Estimate Body Fat is a collection of free body fat calculators 
+Estimate Body Fat is a collection of body fat calculators 
