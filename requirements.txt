@@ -10,4 +10,4 @@ uvicorn==0.7.1
 python-multipart==0.0.5
 opencv-python==4.1.2.30
 Pillow==6.2.1
- 
+stripe==2.48.0

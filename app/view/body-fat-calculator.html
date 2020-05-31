@@ -78,6 +78,7 @@
     <meta name="robots" content="index, follow">
     <meta charset='utf-8'>
     <link rel='stylesheet' href='../static/style.css'>
+    <link rel='stylesheet' href='../static/stripe.css'>
     <script src="jquery-3.4.0.min.js"></script>
     <link rel="stylesheet" href="../static/croppie.css" />
     <link rel="stylesheet" href="../static/sweetalert.css" />
@@ -103,6 +104,10 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <div id="notification" style="display: none;">
+        <div id="notification_content"></div>
+        <span class="dismiss"><a title="dismiss this notification">X</a></span>
+    </div>
     <div>
         <div class='center'>
             <a href='./'>
@@ -135,8 +140,9 @@
                 <br>
                 <br>
                 <!-- Btw, we also have our own <a href="https://shop.estimatebodyfat.com/">personal grooming store</a> to help you smell and look the best you can be. See below! -->
-
-
+                Get 3 body fat percentage estimates for just $1.99. This small fee helps with the development of these calculators and the maintenance of the site. All payments are handled safety and securely through Stripe.
+                <br>
+                <br>
             </p>
 
             <!-- method="POST"  action="/usunitnavy"-->
@@ -154,7 +160,8 @@
                 </ul>
             </form>
 
-            <form id="navy-form" accept-charset="utf-8" class="form-style-7" onsubmit="usnavy(); return false;">
+            <form id="navy-form" accept-charset="utf-8" class="form-style-7"
+                  onsubmit="invoke_paid_estimation(usnavy); return false;">
 
                 <ul>
 
@@ -238,7 +245,8 @@
 
             </form>
 
-            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none" onsubmit="metricusnavy(); return false;">
+            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none"
+                  onsubmit="invoke_paid_estimation(metricusnavy); return false;">
 
                 <ul>
 
@@ -1232,7 +1240,8 @@
         CropImage.init();
     </script>
 
-
+    <script src='../static/stripe.js'></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

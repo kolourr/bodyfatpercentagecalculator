@@ -2,10 +2,13 @@
 This application was built based on Jeremy Howard's Bear Classifier Webapp. It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin
 
 """
-
+import sys
+from pathlib import Path
 
 import aiohttp
 import asyncio
+
+import stripe
 import uvicorn
 import base64
 import math
@@ -40,6 +43,8 @@ path = Path(__file__).parent
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+
+stripe.api_key = os.getenv("stripe_api_key")
 
 
 
@@ -331,9 +336,36 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/initiatepayment', methods=['POST'])
+async def initiatepayment(request):
+    publishable_key = os.getenv("stripe_publishable_key")
+
+    # amount in cents
+    amount_to_pay = 199
+
+    intent = stripe.PaymentIntent.create(
+        amount=amount_to_pay,
+        currency='usd',
+        description='3 body fat % estimates',
+        # Verify your integration in this guide by including this parameter
+        metadata={'integration_check': 'accept_a_payment'},
+    )
+
+    return JSONResponse({
+        "payment_amount": amount_to_pay,
+        "payment_key": intent.client_secret,
+        "payment_id": intent.id,
+        "publishable_key": publishable_key
+    })
+
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()
+
+    if not payment_processed_successfully(img_data['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     img_bytes = await (img_data['file'].read())
     img = Image.open(BytesIO(img_bytes))
     img = img.convert('RGB')
@@ -363,6 +395,10 @@ async def analyze(request):
 @app.route('/jp3python', methods=['POST'])
 async def jp3python(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight_choice =  float(form['weight_choice'])
@@ -423,6 +459,10 @@ async def jp3python(request):
 @app.route('/jp4python', methods=['POST'])
 async def jp4python(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     print(form)
     gender = int(form['gender'])
     age =  float(form['age'])
@@ -477,6 +517,10 @@ async def jp4python(request):
 @app.route('/jp7python', methods=['POST'])
 async def jp7python(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight_choice =  float(form['weight_choice'])
@@ -537,6 +581,10 @@ async def jp7python(request):
 @app.route('/p9python', methods=['POST'])
 async def p9python(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight_choice =  float(form['weight_choice'])
@@ -593,6 +641,10 @@ async def p9python(request):
 @app.route('/dw4python', methods=['POST'])
 async def dw4python(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight_choice =  float(form['weight_choice'])
@@ -713,6 +765,10 @@ async def dw4python(request):
 @app.route('/usunitnavy', methods=['POST'])
 async def usunitnavy(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight =  float(form['weight'])
@@ -893,8 +949,12 @@ async def usunitnavy(request):
 
 
 @app.route('/metricunitnavy', methods=['POST'])
-async def usunitnavy(request):
+async def metricunitnavy(request):
     form = await request.form()
+
+    if not payment_processed_successfully(form['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     gender = int(form['gender'])
     age =  float(form['age'])
     weight =  float(form['weight'])
@@ -1148,6 +1208,10 @@ async def realfacecrop(image):
 @app.route('/faceanalyze', methods=['POST'])
 async def faceanalyze(request):
     img_data = await request.form()
+
+    if not payment_processed_successfully(img_data['payment_id']):
+        return JSONResponse({"payment_failed": True})
+
     img_bytes = await (img_data['file'].read())
     img = Image.open(BytesIO(img_bytes))
     img = img.convert('RGB')
@@ -1172,6 +1236,9 @@ async def faceanalyze(request):
     return JSONResponse({'result': str(prediction)})
 
 
+def payment_processed_successfully(payment_id):
+    intent = stripe.PaymentIntent.retrieve(payment_id)
+    return intent is not None and intent.get("status") == "succeeded"
 
 
 if __name__ == '__main__':
