@@ -58,7 +58,7 @@ function start_payment(paymentData, paymentCallback) {
     var card = elements.create("card", {
         hidePostalCode: true
     });
-    
+
     // Add an instance of the card Element into the `card-element` <div>.
     card.mount("#card-element");
 
@@ -175,8 +175,8 @@ function init(content) {
       <div class="ElementsModal--product ElementsModal--details">
         <div>
             <div>3 Body Fat % Estimates</div>
-            <div style="text-align: center; font-weight: bold">+</div>
-            <div>Keto Diet eBook, Audio & Video Series</div>
+            <!-- <div style="text-align: center; font-weight: bold">+</div>
+            <div>Keto Diet eBook, Audio & Video Series</div> -->
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
@@ -228,7 +228,7 @@ function init(content) {
           </div>
           <!-- Edit your terms and conditions here   -->
           <div class="footer ElementsModal--footer-text">
-            By purchasing this body fat estimate, you agree to estimatebodyfat.com 
+            By purchasing this body fat estimate, you agree to estimatebodyfat.com
             <a target="_blank" class="ElementsModal--footer-text" href="https://www.estimatebodyfat.com/termsofuse.html"
               > Terms and Conditions.</a
             >
@@ -285,5 +285,3 @@ function create(content) {
 window.paymentModal = (() => {
     return { create, toggleElementsModalVisibility: togglePaymentModalVisibility };
 })();
-
-
