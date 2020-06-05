@@ -348,13 +348,15 @@ async def initiatepayment(request):
         currency='usd',
         description=
         """
-        Thanks for purchasing the 3 Body Fat Estimations
+        Thanks for purchasing the 3 Body Fat Estimations.
+
+        To download the ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
+
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
     )
 
-            # To download the ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
 
 
     return JSONResponse({
