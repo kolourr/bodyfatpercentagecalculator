@@ -177,6 +177,7 @@ function init(content) {
             <div>3 Body Fat % Estimates</div>
             <div style="text-align: center; font-weight: bold">+</div>
             <div>Keto Course</div>
+            <div>Risk Free 7-day 100% Money Back Guarantee</div>
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
