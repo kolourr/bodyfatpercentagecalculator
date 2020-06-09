@@ -355,8 +355,8 @@ async def initiatepayment(request):
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
-    )
- 
+    ) 
+
 
 
     return JSONResponse({
