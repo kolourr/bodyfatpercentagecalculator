@@ -341,7 +341,7 @@ async def initiatepayment(request):
     publishable_key = os.getenv("stripe_publishable_key")
 
     # amount in cents
-    amount_to_pay = 2499
+    amount_to_pay = 999
 
     intent = stripe.PaymentIntent.create(
         amount=amount_to_pay,
@@ -355,7 +355,7 @@ async def initiatepayment(request):
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
-    ) 
+    )
 
 
 
