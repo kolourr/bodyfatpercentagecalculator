@@ -180,7 +180,7 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div class="ElementsModal--company">Join 8,304 Happy Fitness Users</div>
+      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Join 8,304 Happy Fitness Users</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
