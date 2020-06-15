@@ -180,6 +180,7 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
+      <div>Join 8,304 Happy Fitness Users</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
@@ -191,7 +192,7 @@ function init(content) {
         <div class="ElementsModal--forms">
           <div class="ElementsModal--form">
             <label for="ElementsModal--card-element">
-              <span class="ElementsModal--form-label spacer" 
+              <span class="ElementsModal--form-label spacer"
                 >Card details</span
               >
               <div class="StripeElement" id="card-element">
