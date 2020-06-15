@@ -191,7 +191,7 @@ function init(content) {
         <div class="ElementsModal--forms">
           <div class="ElementsModal--form">
             <label for="ElementsModal--card-element">
-              <span class="ElementsModal--form-label spacer"
+              <span class="ElementsModal--form-label spacer" 
                 >Card details</span
               >
               <div class="StripeElement" id="card-element">
