@@ -81,9 +81,9 @@
 }
 
 .ElementsModal--price {
-    color: rgb(232, 0, 0);
+    color: rgb(255, 0, 0);
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
 }
 .ElementsModal--top-banner {
     text-align: center;
