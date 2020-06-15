@@ -82,7 +82,7 @@
 
 .ElementsModal--price {
     color: rgb(255, 0, 0);
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 700;
 }
 .ElementsModal--top-banner {
@@ -99,7 +99,7 @@
 }
 .ElementsModal--product {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 8px;
 }
