@@ -174,9 +174,7 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>3 Body Fat % Estimates</div>
-            <div style="text-align: center; font-weight: bold">+</div>
-            <div>FREE Keto Course ($75 value)</div>
+            <div>3 Body Fat % Estimations</div>
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
