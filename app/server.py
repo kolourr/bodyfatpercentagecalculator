@@ -341,24 +341,22 @@ async def initiatepayment(request):
     publishable_key = os.getenv("stripe_publishable_key")
 
     # amount in cents
-    amount_to_pay = 499
+    amount_to_pay = 299
 
     intent = stripe.PaymentIntent.create(
         amount=amount_to_pay,
         currency='usd',
         description=
         """
-        Thanks for purchasing the 3 Body Fat Estimations and Keto Course.
-
-
-        To download the ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
-
+        Thanks for purchasing the 3 Body Fat Estimations.
 
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
     )
 
+    # and Keto Course.
+    #     To download the ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
 
 
 
