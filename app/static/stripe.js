@@ -113,7 +113,7 @@ function init(content) {
     var amount = calculateDisplayAmountFromCurrency(content.amount);
     var modal = document.createElement("div");
     modal.className = "ElementsModal--modal";
-    modal.innerHTML =
+    modal.innerHTML = `
   <div id="stripe-modal" class="ElementsModal--modal-content">
   <div id="overlay"> </div>
   <div class="ElementsModal--top-banner">
