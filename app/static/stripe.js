@@ -1,4 +1,3 @@
-
 function getAbsoluteUrl(path) {
     var loc = window.location
     return `${loc.protocol}//${loc.hostname}:${loc.port}${path}`;
@@ -175,6 +174,8 @@ function init(content) {
       <div class="ElementsModal--product ElementsModal--details">
         <div>
             <div>3 Body Fat % Estimations</div>
+            <div style="text-align: center; font-weight: bold">+</div>
+            <div>FREE Keto Course ($75 value)</div>
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
