@@ -179,7 +179,9 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Join thousands of Happy Fitness Users</div>
+      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below as soon as payment is made. Plus, you get 2 additional trys.</div>
+      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Keto Course (eBook, Audio, Video series) will also be sent instantly to your email as a download link.</div>
+
     </div>
   </div>
   <div class="ElementsModal--payment-details">
