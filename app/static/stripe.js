@@ -174,13 +174,11 @@ function init(content) {
       <div class="ElementsModal--product ElementsModal--details">
         <div>
             <div>3 Body Fat % Estimations</div>
-            <div style="text-align: center; font-weight: bold">+</div>
-            <div>FREE Keto Course ($75 value)</div>
+
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made (You get 2 more chances after)</div>
-      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">The Keto Course (eBook, Audio, Video series) will be sent instantly to your email</div>
+      <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made (Plus, you get 2 more attempts)</div>
 
     </div>
   </div>
