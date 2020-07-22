@@ -1,0 +1,410 @@
+<html lang='en'>
+
+<!--   The AI body fat calculator was built based on Jeremy Howard's Bear Classifier Webapp.
+It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
+
+<head>
+
+  <!-- Hotjar Tracking Code for www.estimatebodyfat.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1845510,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1501324103503738');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1501324103503738&ev=PageView&noscript=1"
+  /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <script data-ad-client="ca-pub-3816550543780833" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script type="text/javascript">
+        window._mNHandle = window._mNHandle || {};
+          window._mNHandle.queue = window._mNHandle.queue || [];
+          medianet_versionId = "3121199";
+    </script>
+    <script src="https://contextual.media.net/dmedianet.js?cid=8CUCX2JKR" async="async"></script>
+
+
+    <meta name="p:domain_verify" content="deb898c6eb6394ff1950a053b6569502" />
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144324144-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144324144-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TXR2CSP');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <title>Artificial Intelligence Body Fat Percentage Calculator</title>
+    <link rel="shortcut icon" type="image/png" href="../static/images/favicon-32x32.png">
+    <meta name="description" content="Determine your body fat percentage using the Artificial Intelligence body fat percentage calculator with only a picture. No Tape. No Scales. No Measurements.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,maximum-scale=1">
+    <meta name="viewport" collapse="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow">
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <link rel='stylesheet' href='../static/stripe.css'>
+    <script src="jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="../static/croppie.css" />
+    <link rel="stylesheet" href="../static/sweetalert.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //auto expand textarea
+        function adjust_textarea(h) {
+            h.style.height = "20px";
+            h.style.height = (h.scrollHeight) + "px";
+        }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e0f8364b601870012fd415c&cms=sop' async='async'></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="notification" style="display: none;">
+        <div id="notification_content"></div>
+        <span class="dismiss"><a title="dismiss this notification">X</a></span>
+    </div>
+    <div>
+        <div class='center'>
+            <a href='./'>
+                <div class="header"> <img src="../static/images/estimatebodyfat-header-main.png" class="logo" alt="logo"> </div>
+            </a>
+            <div id='cssmenu'>
+                <ul>
+
+
+                    <li class='last'><a href="./"><span>Home</span></a>
+                    </li>
+
+
+
+                    <li class="has-sub"><a href='./ai-calculator.html'><span>Body Fat Calculators</span></a>
+                        <ul>
+                            <li><a href='./ai-calculator.html'><span>A.I. Fat Calculator</span></a></li>
+                            <li><a href="/body-fat-calculator.html"><span>Military Fat Calculator</span></a>
+                                <li><a href="/caliper-calculator.html"><span>Caliper Fat Calculator</span></a>
+                                    <li><a href="/coronavirus-weight-risk-calculator.html"><span>Coronavirus Weight Risk Calculator</span></a>
+                                        <li class='last'><a href="/face-fat.html"><span>Face Fat Calculator</span></a></ul>
+                        </li>
+
+                        <!-- <li class='last'><a href="./ketoebook.html"><span>Keto Course</span></a>
+                        </li> -->
+
+                </ul>
+
+            </div>
+
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
+
+            <p style="background-color:white; text-align: left; border-top: none; ">
+
+
+              <b>Get your Body Fat Percentage within 3 Seconds with just a Picture</b><br><br>
+
+
+ I analyzed 1000's of images (using AI) and spent months mapping them to different body fat percentages.
+              <br><br>Upload a picture like the one below and make sure it's just you in the picture.
+                <br>
+                <br>
+<!--
+                <div style="text-align: center; font-weight: bold">+</div>
+                <div>FREE Keto Course ($75 value)</div>
+                <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made (You get 2 more chances after)</div>
+                <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">The Keto Course (eBook, Audio, Video series) will be sent instantly to your email</div> -->
+
+
+
+
+                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
+<br>
+               <!-- We hate Ads (just like you do) and thus charge a small fee of $1.99 (yes, that's just one dollar and nighty-nine cents) for 3 estimations. This small fee (less than the price of a cup of coffee) helps to keep our lights on and aids in the development of new features and tools for you to use.
+
+                <br><br> -->
+                <!-- Btw, we also have our own <a href="https://shop.estimatebodyfat.com/">personal grooming store</a> to help you smell and look the best you can be. See below! -->
+
+                <!-- <br>
+
+
+               -->
+
+               <!-- We charge a very tiny fee of $4.99 for 3 estimations and include the <a href="./ketoebook.html"><span>Keto Course</span></a> ($75 value) for FREE. -->
+
+
+
+               <!-- We love that you are on the healthy track in life. That's why we make improvements weekly. <br><br>
+
+               8,304 fitness users have already used one of our 5 body fat calculators and we LOVE it! <br><br>
+               To keep the development ongoing, we charge a very tiny fee of $4.99 for 3 estimations. We even include the <a href="./ketoebook.html"><span>Keto Course</span></a> ($75 value) for FREE.<br><br>
+
+               We do this because we hate ads and wouldn't want to ruin your experience plastering them all over the site.<br><br> -->
+
+
+
+
+
+
+
+
+
+                <!-- and we even include the  -->
+
+               <!-- Get <b>3 Body Fat % Estimates</b> for just $2.99 and we'll email you the <a href="./ketoebook.html"><span>Keto Course</span></a> which includes:<br><br>34 page Keto Diet eBook, 11 Keto Diet Audio/Video lectures and 11 helpful articles <b>worth more than $75</b> -->
+
+
+<!-- <span style="text-decoration: line-through">$49.99</span> -->
+
+
+                <!-- <br>
+                <br> -->
+
+                      </p>
+
+ 
+
+
+
+
+
+
+
+
+
+            <!-- <h1 class="calculator"> Body Fat Percentage Calculator</h1> -->
+
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
+
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: June 1, 2020</p>
+
+            <div class="content">
+                <div class="upload-demo-wrap">
+                    <div id="upload-demo"></div>
+                </div>
+                <div class="actions" >
+                    <BR>
+                    <BR>
+                    <a class="btn file-btn">
+                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
+
+                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
+                               onchange='invoke_paid_estimation(analyze)' >
+                    </a>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+
+                <div class='result-label'>
+                    <label id='result-text' style="color: #7aa125; font-size: 30px; font-family: futura; text-align:left;"> </label>
+
+                    <label id='result-label' style="color: white; font-size: 30px; font-weight: bold; font-family: futura; background-color: #ff9080;  "></label>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <details>
+                <summary>
+                    <h2 style="background-color:#ffe9e5; text-align: left; ">What happens to my picture when I upload it? </h2>
+                </summary>
+                <p>
+                    <img class="lazy" data-src="../static/images/App%20privacy.png" alt="Estimate Body Fat privacy" style="max-width:100%;height:auto; ">
+                    <br>
+                    <br>
+                </p>
+
+                <p style="text-align: left;">We <strong><u>DO NOT STORE</u></strong> your image. The image belongs to <strong><u>YOU and only YOU.</u></strong>
+                    <br>
+                    <br>
+                </p> <br> <br>
+            </details>
+
+
+
+
+            <details>
+                <summary>
+                    <h2 style="background-color: #ffe9e5; border-bottom: none">Help Make Us Better</h2>
+                    </a>
+
+                </summary>
+
+                <p style="text-align: left;">
+
+                 It is important to remember that this body fat percentage range is just a rough estimate as height, body shape and overall fat distribtion is not taken into account.
+
+                 <br>
+                 <br>
+                  I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
+                    <br>
+                    <br>A lot of data. Sadly, this is very hard to come by. However, there is a way you can help me if you’ve got a Dexa Scan done or plan on getting one in the future.
+                    <br>
+                    <br> Here’s how you can help: If you can send me a picture of the upper half of your body, just like the one you uploaded to the web app along with your Dexa Scan results (visceral and subcutaneous fat percentages), that would help
+                    solve some of my data needs. I don't need to know your name or see your face. Your identity will be protected.
+                    <br>
+                    <br> I know this is asking a lot, but if I can make this application even 20% better than what it is today, that is a 20% improvement in the lives of everyone using this application, including those who cannot afford to get a Dexa
+                    Scan.
+                    <br>
+                    <br> If you can help out, please send the images and stats to contact@estimatebodyfat.com.
+
+                    <br>
+                    <br> <br>
+                </p>
+            </details>
+
+
+            <details>
+                <summary>
+
+                    <h2 style="background-color: #ffe9e5; border-bottom: none">Disclaimer</h2>
+
+                </summary>
+                <p style="text-align: left;">None of the website's content is meant to be taken as medical advice. Speak to your healthcare professional for medical advice
+                    <br>
+                    <br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content.
+
+                    <br>
+                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.
+
+                </p>
+            </details>
+
+
+            <details>
+                <summary>
+
+                    <h2 style="background-color: #ffe9e5; border-bottom: none">Credits</h2>
+
+
+                </summary>
+
+
+                <p style="text-align: left;">Special thanks goes out to Rachel Thomas and Jeremy Howard from <a href="https://www.fast.ai/">Fast A.I. </a>without whom this web application would not be possible. This application is built based on Jeremy's Bear Classifier WebApp. If
+                    you are interested in learning about Deep Learning and how you can use AI in your projects, Fast AI holds free courses anyone can take on their website. Please do give them a look if you are curious. <br><br>In addition to Fast A.I.,
+                    this web application also uses the <a href="https://github.com/Foliotek/Croppie">Croppie Plugin </a> and custom made <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">Haar Cascades </a>. <br><br>I would also
+                    like to thank Dr. Jason Fung for writing such a life-changing book on solving Obesity and Harrison's <a href="https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/ ">Free tutorials on Haar Cascades </a>                    <br><br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories. <br><br>If you notice a discrepancy with anything, feel free
+                    to send me a message at contact@estimatebodyfat.com
+
+                    <br><br></p>
+
+            </details>
+
+            <footer>
+
+                <div>
+
+                    <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
+                    <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
+
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
+
+                </div>
+
+                <div id="amzn-assoc-ad-04a921e3-efd1-4797-9946-32af2861d45e"></div>
+                <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=04a921e3-efd1-4797-9946-32af2861d45e"></script>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src='../static/jquery.min.js'></script>
+    <script src='../static/sweetalert.min.js'></script>
+    <script src="../static/croppie.js"></script>
+    <script src="../static/script.js"></script>
+    <script src="../static/exif.js"></script>
+    <script src='../static/client.js'></script>
+    <script>
+        CropImage.init();
+    </script>
+
+    <script src='../static/stripe.js'></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
+
+
+</body>
+
+</html>
