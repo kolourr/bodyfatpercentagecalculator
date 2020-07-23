@@ -53,39 +53,31 @@ function start_payment(paymentData, paymentCallback) {
     // Create an instance of Elements.
     var elements = stripe.elements();
 
-    // Create an instance of the card Element.
-    var card = elements.create("card", {
-        hidePostalCode: true
+    var paymentRequest = stripe.paymentRequest(
+        {
+            country: 'US',
+            currency: 'usd',
+            total: {
+                label: '3 Body Fat % Estimations',
+                amount: 299,
+            },
+            requestPayerName: true,
+            requestPayerEmail: true,
+        });
+
+    var prButton = elements.create('paymentRequestButton', {
+        paymentRequest: paymentRequest,
     });
 
-    // Add an instance of the card Element into the `card-element` <div>.
-    card.mount("#card-element");
+    // Check the availability of the Payment Request API first.
+    paymentRequest.canMakePayment().then(function (result) {
+        if (result) {
+            // Google Pay, Apple Pay, etc.
+            setupDigitalWalletPaymentButton(prButton, paymentRequest, stripe, paymentData, paymentCallback);
 
-    // Handle payment submission when user clicks the pay button.
-    var form = document.getElementById("payment-form");
-    form.addEventListener("submit", function(event) {
-        document.getElementById("overlay").style.display = "block"
-        event.preventDefault();
-        customerEmail = document.getElementById("stripe-email").value
-        stripe
-            .confirmCardPayment(paymentData.paymentKey, {
-                payment_method: {
-                    card: card,
-                    billing_details: {
-                        email: customerEmail
-                    }
-                },
-                receipt_email: customerEmail
-            })
-            .then(function(result) {
-                document.getElementById("overlay").style.display = "none"
-                if (result.error) {
-                    var displayError = document.getElementById("card-errors");
-                    displayError.textContent = result.error.message;
-                } else {
-                    stripePaymentHandler(paymentData, paymentCallback);
-                }
-            });
+        } else {
+            setupClassicPaymentButton(elements, stripe, paymentData, paymentCallback);
+        }
     });
 }
 
@@ -189,6 +181,7 @@ function init(content) {
     >
       <div class="form-row">
         <div class="ElementsModal--forms">
+        <div id="classic-payment-form">
           <div class="ElementsModal--form">
             <label for="ElementsModal--card-element">
               <span class="ElementsModal--form-label spacer"
@@ -224,8 +217,13 @@ function init(content) {
               name="description"
               value="${content.productName}"
             />
-            <button class="ElementsModal--pay-button">Pay ${amount}</button>
+            <button id="card-payment-button" class="ElementsModal--pay-button" style="display:none;">Pay ${amount}</button>
+            
           </div>
+         </div>
+          <div id="payment-request-button" class="ElementsModal--pay-button" style="display: none">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
           <!-- Edit your terms and conditions here   -->
           <div class="footer ElementsModal--footer-text">
             By purchasing this body fat estimate, you agree to estimatebodyfat.com
@@ -241,6 +239,80 @@ function init(content) {
 `;
     // insert modal in dom
     document.body.insertBefore(modal, document.body.firstChild);
+}
+
+function setupDigitalWalletPaymentButton(prButton, paymentRequest, stripe, paymentData, paymentCallback) {
+    document.getElementById('payment-request-button').style.display = 'block';
+    document.getElementById('classic-payment-form').style.display = 'none';
+
+    prButton.mount('#payment-request-button');
+    paymentRequest.on('paymentmethod', function (ev) {
+        // Confirm the PaymentIntent without handling potential next actions (yet).
+        stripe.confirmCardPayment(
+            paymentData.paymentKey,
+            {payment_method: ev.paymentMethod.id},
+            {handleActions: false}
+        ).then(function (confirmResult) {
+            if (confirmResult.error) {
+                // Report to the browser that the payment failed, prompting it to
+                // re-show the payment interface, or show an error message and close
+                // the payment interface.
+                ev.complete('fail');
+            } else {
+                // Report to the browser that the confirmation was successful, prompting
+                // it to close the browser payment method collection interface.
+                ev.complete('success');
+                // Let Stripe.js handle the rest of the payment flow.
+                stripe.confirmCardPayment(paymentData.paymentKey).then(function (result) {
+                    document.getElementById("overlay").style.display = "none"
+                    if (result.error) {
+                        var displayError = document.getElementById("card-errors");
+                        displayError.textContent = result.error.message;
+                    } else {
+                        stripePaymentHandler(paymentData, paymentCallback);
+                    }
+                });
+            }
+        });
+    });
+}
+
+function setupClassicPaymentButton(elements, stripe, paymentData, paymentCallback) {
+    document.getElementById('card-payment-button').style.display = 'block'
+    // Create an instance of the card Element.
+    var card = elements.create("card", {
+        hidePostalCode: true
+    });
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount("#card-element");
+
+    // Handle payment submission when user clicks the pay button.
+    var form = document.getElementById("payment-form");
+    form.addEventListener("submit", function (event) {
+        document.getElementById("overlay").style.display = "block"
+        event.preventDefault();
+        customerEmail = document.getElementById("stripe-email").value
+        stripe
+            .confirmCardPayment(paymentData.paymentKey, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        email: customerEmail
+                    }
+                },
+                receipt_email: customerEmail
+            })
+            .then(function (result) {
+                document.getElementById("overlay").style.display = "none"
+                if (result.error) {
+                    var displayError = document.getElementById("card-errors");
+                    displayError.textContent = result.error.message;
+                } else {
+                    stripePaymentHandler(paymentData, paymentCallback);
+                }
+            });
+    });
 }
 
 function togglePaymentModalVisibility() {

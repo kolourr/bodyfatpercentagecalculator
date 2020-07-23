@@ -258,3 +258,7 @@ a.ElementsModal--footer-text {
 .StripeElement--webkit-autofill {
     background-color: rgb(254, 253, 229) !important;
 }
+
+.ElementsModal--pay-button {
+    padding: 0 !important;
+}
