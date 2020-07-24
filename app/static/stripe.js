@@ -228,9 +228,10 @@ function init(content) {
           <div class="footer ElementsModal--footer-text">
             By purchasing this body fat estimate, you agree to estimatebodyfat.com
             <a target="_blank" class="ElementsModal--footer-text" href="https://www.estimatebodyfat.com/termsofuse.html"
-              > Terms and Conditions. Depending on your device, you may be presented with option of paying through Apple Pay, Google Pay or Microsoft Pay. If you are not presented with this option, you can pay using a Credit Card. All payments are secured through Stripe.  </a
-            >
+              > Terms and Conditions.</a>
           </div>
+          <div class="footer ElementsModal--footer-text">
+           Depending on your device, payment will be securely processed through Apple Pay, Google Pay, Microsoft Pay or Credit Card.
         </div>
       </div>
     </form>
