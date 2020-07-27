@@ -396,7 +396,7 @@ async def analyze(request):
     img2 = open_image(BytesIO(success_new))
     prediction = learn.predict(img2)[0]
     return JSONResponse({'result': str(prediction)})
-
+ 
 
 
 
