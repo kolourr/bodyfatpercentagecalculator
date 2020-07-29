@@ -81,6 +81,7 @@
     <meta name="robots" content="index, follow">
     <meta charset='utf-8'>
     <link rel='stylesheet' href='../static/style.css'>
+    <link rel='stylesheet' href='../static/stripe.css'>
     <script src="jquery-3.4.0.min.js"></script>
     <link rel="stylesheet" href="../static/croppie.css" />
     <link rel="stylesheet" href="../static/sweetalert.css" />
@@ -182,6 +183,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+
+                                <style>
+                                    #customers {
+                                        font-family: "futura", Arial, Helvetica, sans-serif;
+                                        border-collapse: collapse;
+                                        width: 100%;
+                                    }
+
+                                    #customers td,
+                                    #customers th {
+                                        border: 1px solid #ddd;
+                                        padding: 8px;
+                                    }
+
+                                    #customers tr:nth-child(even) {
+                                        background-color: #f2f2f2;
+                                    }
+
+                                    #customers tr:hover {
+                                        background-color: grey;
+                                    }
+
+                                    #customers th {
+                                        padding-top: 12px;
+                                        padding-bottom: 12px;
+                                        text-align: left;
+                                        background-color: #ff9080;
+                                        color: white;
+                                    }
+                                </style>
+
+
+
+
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
+
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: June 1, 2020</p>
+
+            <div class="content">
+                <div class="upload-demo-wrap">
+                    <div id="upload-demo"></div>
+                </div>
+                <div class="actions" >
+                    <BR>
+                    <BR>
+                    <a class="btn file-btn">
+                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
+
+                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
+                               onchange='invoke_paid_estimation(analyze)' >
+                    </a>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+
+                <div class='result-label'>
+                    <label id='result-text' style="color: #7aa125; font-size: 30px; font-family: futura; text-align:left;"> </label>
+
+                    <label id='result-label' style="color: white; font-size: 30px; font-weight: bold; font-family: futura; background-color: #ff9080;  "></label>
+                </div>
+
+            </div>
 
   <p style="text-align: left;">
 
@@ -622,6 +691,9 @@ window.cookieconsent.initialise({
 
     </div>
     </div>
+
+    <script src='../static/stripe.js'></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 
