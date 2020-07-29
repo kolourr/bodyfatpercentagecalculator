@@ -27,6 +27,27 @@
 As example here is complete html for the AI calculator:
 
 ```
+<h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
+
+<p style="background-color:white; text-align: left; border-top: none; ">
+
+
+    <b>Get your Body Fat Percentage within 3 Seconds with just a Picture</b>
+    <br>
+    <br>
+    I analyzed 1000's of images (using AI) and spent months mapping them to different body fat percentages.
+    <br><br>
+    Upload a picture like the one below and make sure it's just you in the picture.
+    <br>
+    <br>
+
+    <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg"
+         alt="visual body fat percentage detector"
+         style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
+    <br>
+
+</p>
+
 <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
 
 <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: June 1, 2020</p>
