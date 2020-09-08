@@ -59,7 +59,7 @@ function start_payment(paymentData, paymentCallback) {
             currency: 'usd',
             total: {
                 label: '3 Body Fat % Estimations',
-                amount: 299,
+                amount: 999,
             },
             requestPayerName: true,
             requestPayerEmail: true,
