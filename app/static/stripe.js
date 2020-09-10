@@ -171,6 +171,7 @@ function init(content) {
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 16px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made (Plus, you get 2 more attempts)</div>
+      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">We offer a 100% Refund if you are not satisfied!</div>
 
     </div>
   </div>
