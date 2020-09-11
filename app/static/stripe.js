@@ -171,7 +171,7 @@ function init(content) {
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Answer will be displayed below once payment is made</div>
-      <div style="color: orange;font-size: 18px; font-weight: 700; margin-top: 10px;">Full 100% Refund if You are not Satisfied</div>
+      <div style="color: orange;font-size: 18px; font-weight: 700; margin-top: 10px;">100% Money Back Guarantee if not Satisfied</div>
 
     </div>
   </div>
