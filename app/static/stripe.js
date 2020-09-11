@@ -165,7 +165,7 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>Estimate Body Fat % (3 Attempts)</div>
+            <div>Body Fat % (3 Attempts)</div>
 
         </div>
       </div>
