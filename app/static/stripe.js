@@ -165,13 +165,13 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>3 Body Fat % Estimations</div>
+            <div>Body Fat % Estimates (3 Trys)</div>
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made (Plus, you get 2 more attempts)</div>
-      <div style="color: orange;font-size: 18px; font-weight: 700; margin-top: 10px;">No questions asked - Full 100% Refund if you are not satisfied</div>
+      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed below once payment is made</div>
+      <div style="color: orange;font-size: 18px; font-weight: 700; margin-top: 10px;">Full 100% Refund if you are not satisfied - No questions asked</div>
 
     </div>
   </div>
