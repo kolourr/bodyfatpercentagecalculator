@@ -173,10 +173,7 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/how-does-the-ai-body-fat-calculator-work.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'how-does-the-ai-body-fat-calculator-work.html'
-    return HTMLResponse(html_file.open().read())
+
 
 @app.route('/what-factors-influence-your-body-weight.html')
 async def sitemap(request):
@@ -294,6 +291,14 @@ async def sitemap(request):
 @app.route('/motivational-quote-email.html')
 async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/body-goal-project.html')
+
+
+@app.route('/how-does-the-ai-body-fat-calculator-work.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
+
+
+
 
 @app.route('/ai-calculator.html')
 async def sitemap(request):
