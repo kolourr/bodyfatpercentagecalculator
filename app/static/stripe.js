@@ -66,7 +66,7 @@ function start_payment(paymentData, paymentCallback) {
         });
 
     var prButton = elements.create('paymentRequestButton', {
-        paymentRequest: paymentRequest,
+        paymentRequest: paymentRequest, 
     });
 
     // Check the availability of the Payment Request API first.
