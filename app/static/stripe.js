@@ -170,8 +170,8 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you are not satisfied with our service, email contact@estimatebodyfat.com and we'll refund you 100%</div>
- 
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">100% Money Back Guarantee</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you are not satisfied with our service, email contact@estimatebodyfat.com and we'll refund you 100%</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
