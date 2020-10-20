@@ -66,7 +66,7 @@ function start_payment(paymentData, paymentCallback) {
         });
 
     var prButton = elements.create('paymentRequestButton', {
-        paymentRequest: paymentRequest, 
+        paymentRequest: paymentRequest,
     });
 
     // Check the availability of the Payment Request API first.
@@ -170,8 +170,7 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Answer will be displayed below once payment is made</div>
-
+      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Your body fat % will be displayed instantly once payment is paid. If you are not satisfied with our service, email us at contact@estimatebodyfat.com and we'll refund 100%</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
