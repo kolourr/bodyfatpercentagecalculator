@@ -165,12 +165,13 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>3 Body Fat % Estimates</div>
+            <div>3 Body Fat % Estimates - Answer Displayed Below</div>
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">Your body fat % will be displayed instantly once payment is paid. If you are not satisfied with our service, email us at contact@estimatebodyfat.com and we'll refund 100%</div>
+      <div style="color: white;font-size: 20px; font-weight: 500; margin-top: 10px;">If you are not satisfied with our service, just email us at contact@estimatebodyfat.com and we'll refund 100%</div>
+
     </div>
   </div>
   <div class="ElementsModal--payment-details">
