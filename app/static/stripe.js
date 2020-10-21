@@ -58,7 +58,7 @@ function start_payment(paymentData, paymentCallback) {
             country: 'US',
             currency: 'usd',
             total: {
-                label: 'Body Fat % (3 Attempts)',
+                label: '3 Body Fat % Estimates',
                 amount: 500,
             },
             requestPayerName: true,
@@ -165,13 +165,13 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>3 Body Fat % Estimates</div>
+            <div>Body Fat % (3 Attempts)</div>
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">100% Money Back Guarantee</div>
- <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you are not satisfied with our service, email contact@estimatebodyfat.com and we'll refund you 100%</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">That's only $1.67/estimate. If not satisfied, email contact@estimatebodyfat.com and we'll refund you 100%</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
