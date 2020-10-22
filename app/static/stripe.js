@@ -165,13 +165,17 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>Body Fat % (3 Attempts)</div>
+            <!-- <div>Body Fat % (3 Attempts)</div> -->
+
+            <div>This Calculator is not Free but hear us out. It's just:</div>
+
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">100% Money Back Guarantee</div>
- <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you're not satisfied, email contact@estimatebodyfat.com and we'll refund you 100%</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">for 3 different estimates. This small price keeps us Ad-Free.</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you're unsatisfied, email contact@estimatebodyfat.com and we'll refund you 100%</div>
+  <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">Really, if you're unsatisfied, email us and we'll refund you!</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
