@@ -167,14 +167,14 @@ function init(content) {
         <div>
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
-            <div>This BF Calculator is not free but hear us out. It's</div>
- 
+            <div>Your body fat % will be displayed instantly below.</div>
+
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">For 3 unique bf estimates. That's $1.67/estimate</div>
- <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">Plus, if you're unsatisfied, email contact@estimatebodyfat.com and we'll refund you 100%. No questions asked!</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">It costs just $5 for 3 estimates</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">We offer a 100% Money Back Guarantee. If you're unsatisfied, email contact@estimatebodyfat.com for a full refund.</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
