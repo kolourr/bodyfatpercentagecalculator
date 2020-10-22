@@ -167,14 +167,14 @@ function init(content) {
         <div>
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
-            <div>Your body fat % will be displayed instantly below.</div>
+            <div>3 Body Fat % Estimates</div>
 
 
         </div>
       </div>
-      <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">It costs just <div class="ElementsModal--price ElementsModal--details">${amount}</div> for 3 estimates</div>
- <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">We offer a 100% Money Back Guarantee. If you're unsatisfied with your result, email contact@estimatebodyfat.com for a full refund.</div>
+      <div class="ElementsModal--price ElementsModal--details">${amount}</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">100% Money Back Guarantee</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">Email contact@estimatebodyfat.com for a full refund if unsatisfied.</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
