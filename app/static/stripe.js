@@ -173,8 +173,8 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">For 3 unique bf estimates. That's $1.67/estimate.</div>
- <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">If you're unsatisfied, just email contact@estimatebodyfat.com and we'll refund you 100%. No questions asked!</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">For 3 unique bf estimates. That's $1.67/estimate</div>
+ <div style="color: white;font-size: 13px; font-weight: 500; margin-top: 10px;">Plus, if you're unsatisfied, email contact@estimatebodyfat.com and we'll refund you 100%. No questions asked!</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
