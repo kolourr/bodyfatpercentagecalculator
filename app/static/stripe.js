@@ -168,7 +168,7 @@ function init(content) {
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
             <div>This BF Calculator is not free but hear us out. It's</div>
-
+ 
 
         </div>
       </div>
