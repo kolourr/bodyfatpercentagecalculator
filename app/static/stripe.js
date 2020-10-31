@@ -173,7 +173,7 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">You worked too hard NOT to know your body fat %. Plus, it's only $1.66/estimate.</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's just $1.66 per estimate.</div>
  <div style="color: rgba(255, 255, 255, 0.7);font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied.</div>
     </div>
   </div>
