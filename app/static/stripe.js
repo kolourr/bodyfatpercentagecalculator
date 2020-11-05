@@ -68,12 +68,11 @@ function start_payment(paymentData, paymentCallback) {
     var prButton = elements.create('paymentRequestButton', {
         paymentRequest: paymentRequest,
     });
-<<<<<<< HEAD
+
 
     // Add an instance of the card Element into the `card-element` <div>.
     card.mount("#card-element");
-=======
->>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
+
 
     // Check the availability of the Payment Request API first.
     paymentRequest.canMakePayment().then(function (result) {
