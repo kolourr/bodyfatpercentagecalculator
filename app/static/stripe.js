@@ -68,6 +68,12 @@ function start_payment(paymentData, paymentCallback) {
     var prButton = elements.create('paymentRequestButton', {
         paymentRequest: paymentRequest,
     });
+<<<<<<< HEAD
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount("#card-element");
+=======
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
 
     // Check the availability of the Payment Request API first.
     paymentRequest.canMakePayment().then(function (result) {
@@ -165,11 +171,17 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
+<<<<<<< HEAD
+            <div>3 Body Fat % Estimates</div>
+            <!-- <div style="text-align: center; font-weight: bold">+</div>
+            <div>Keto Diet eBook, Audio & Video Series</div> -->
+=======
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
             <div>3 Body Fat % Estimate</div>
 
 
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
