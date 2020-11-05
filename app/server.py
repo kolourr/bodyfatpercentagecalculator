@@ -344,6 +344,7 @@ async def sitemap(request):
 async def initiatepayment(request):
     publishable_key = os.getenv("stripe_publishable_key")
 
+    # amount in cents
     amount_to_pay = 499
 
     intent = stripe.PaymentIntent.create(
@@ -358,6 +359,8 @@ async def initiatepayment(request):
         metadata={'integration_check': 'accept_a_payment'},
     )
 
+
+        # To download the Keto ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
 
 
 

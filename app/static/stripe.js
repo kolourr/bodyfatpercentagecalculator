@@ -69,11 +69,6 @@ function start_payment(paymentData, paymentCallback) {
         paymentRequest: paymentRequest,
     });
 
-
-    // Add an instance of the card Element into the `card-element` <div>.
-    card.mount("#card-element");
-
-
     // Check the availability of the Payment Request API first.
     paymentRequest.canMakePayment().then(function (result) {
         if (result) {
@@ -170,11 +165,15 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
+            <!-- <div>Body Fat % (3 Attempts)</div> -->
+
             <div>3 Body Fat % Estimate</div>
+
+
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's just $1.66 per estimate!</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate!</div>
  <div style="color: rgba(255, 255, 255, 0.7);font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied.</div>
     </div>
   </div>
