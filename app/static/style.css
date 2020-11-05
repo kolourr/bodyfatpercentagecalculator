@@ -4,6 +4,10 @@
     height: 355px;
 }
 */
+
+ 
+
+
 @media screen and (min-width: 1681px) {
     h1, h2,p,h3,h4,form, .content {
         width:70%%;
@@ -1262,12 +1266,12 @@ button, a.btn {
     text-align: center;
     vertical-align: middle;
     padding: 12px 24px;
-    border: 1px solid #ff9e8c;
+    border: 1px solid #f04141;
     border-radius: 8px;
     background: #ff5858;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff5858), to(#ff9e8c));
-    background: -moz-linear-gradient(top, #ff5858, #ff9e8c);
-    background: linear-gradient(to bottom, #ff5858, #ff9e8c);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff5858), to(#f04141));
+    background: -moz-linear-gradient(top, #ff5858, #f04141);
+    background: linear-gradient(to bottom, #ff5858, #f04141);
     -webkit-box-shadow: #ff5252 0px 0px 8px 0px;
     -moz-box-shadow: #ff5252 0px 0px 8px 0px;
     box-shadow: #ff5252 0px 0px 8px 0px;
@@ -1287,10 +1291,10 @@ button, a.btn:hover, button, a.btn:focus {
     text-decoration: none;
 }
 button, a.btn:active {
-    background: #ff9e8c;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff9e8c), to(#ff9e8c));
-    background: -moz-linear-gradient(top, #ff9e8c, #ff9e8c);
-    background: linear-gradient(to bottom, #ff9e8c, #ff9e8c);
+    background: #f04141;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f04141), to(#f04141));
+    background: -moz-linear-gradient(top, #f04141, #f04141);
+    background: linear-gradient(to bottom, #f04141, #f04141);
 }
 input[type="file"], input[type="submit"] {
     cursor: pointer;

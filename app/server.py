@@ -43,6 +43,7 @@ path = Path(__file__).parent
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+app.mount('/.well-known', StaticFiles(directory='app/.well-known'))
 
 stripe.api_key = os.getenv("stripe_api_key")
 
@@ -172,10 +173,7 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/how-does-the-ai-body-fat-calculator-work.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'how-does-the-ai-body-fat-calculator-work.html'
-    return HTMLResponse(html_file.open().read())
+
 
 @app.route('/what-factors-influence-your-body-weight.html')
 async def sitemap(request):
@@ -294,6 +292,14 @@ async def sitemap(request):
 async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/body-goal-project.html')
 
+
+@app.route('/how-does-the-ai-body-fat-calculator-work.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
+
+
+
+
 @app.route('/ai-calculator.html')
 async def sitemap(request):
     html_file = path / 'view' / 'ai-calculator.html'
@@ -321,9 +327,7 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/ketoebook.html')
-async def sitemap(request):
-    return RedirectResponse(url='https://www.estimatebodyfat.com/')
+
 
 @app.route('/cancel.html')
 async def sitemap(request):
@@ -341,20 +345,35 @@ async def initiatepayment(request):
     publishable_key = os.getenv("stripe_publishable_key")
 
     # amount in cents
+<<<<<<< HEAD
     amount_to_pay = 199
+=======
+    amount_to_pay = 499
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
 
     intent = stripe.PaymentIntent.create(
         amount=amount_to_pay,
         currency='usd',
         description=
         """
+<<<<<<< HEAD
         Thanks for purchasing the 3 Body Fat Estimations
+=======
+        Thanks for purchasing the 3 Body Fat Estimations.
+
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
     )
 
+<<<<<<< HEAD
             # To download the ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
+=======
+
+        # To download the Keto ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
+
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
 
 
     return JSONResponse({

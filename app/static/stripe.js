@@ -1,4 +1,3 @@
-
 function getAbsoluteUrl(path) {
     var loc = window.location
     return `${loc.protocol}//${loc.hostname}:${loc.port}${path}`;
@@ -54,39 +53,37 @@ function start_payment(paymentData, paymentCallback) {
     // Create an instance of Elements.
     var elements = stripe.elements();
 
-    // Create an instance of the card Element.
-    var card = elements.create("card", {
-        hidePostalCode: true
+    var paymentRequest = stripe.paymentRequest(
+        {
+            country: 'US',
+            currency: 'usd',
+            total: {
+                label: '3 Body Fat % Estimates',
+                amount: 499,
+            },
+            requestPayerName: true,
+            requestPayerEmail: true,
+        });
+
+    var prButton = elements.create('paymentRequestButton', {
+        paymentRequest: paymentRequest,
     });
+<<<<<<< HEAD
 
     // Add an instance of the card Element into the `card-element` <div>.
     card.mount("#card-element");
+=======
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
 
-    // Handle payment submission when user clicks the pay button.
-    var form = document.getElementById("payment-form");
-    form.addEventListener("submit", function(event) {
-        document.getElementById("overlay").style.display = "block"
-        event.preventDefault();
-        customerEmail = document.getElementById("stripe-email").value
-        stripe
-            .confirmCardPayment(paymentData.paymentKey, {
-                payment_method: {
-                    card: card,
-                    billing_details: {
-                        email: customerEmail
-                    }
-                },
-                receipt_email: customerEmail
-            })
-            .then(function(result) {
-                document.getElementById("overlay").style.display = "none"
-                if (result.error) {
-                    var displayError = document.getElementById("card-errors");
-                    displayError.textContent = result.error.message;
-                } else {
-                    stripePaymentHandler(paymentData, paymentCallback);
-                }
-            });
+    // Check the availability of the Payment Request API first.
+    paymentRequest.canMakePayment().then(function (result) {
+        if (result) {
+            // Google Pay, Apple Pay, etc.
+            setupDigitalWalletPaymentButton(prButton, paymentRequest, stripe, paymentData, paymentCallback);
+
+        } else {
+            setupClassicPaymentButton(elements, stripe, paymentData, paymentCallback);
+        }
     });
 }
 
@@ -174,12 +171,22 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
+<<<<<<< HEAD
             <div>3 Body Fat % Estimates</div>
             <!-- <div style="text-align: center; font-weight: bold">+</div>
             <div>Keto Diet eBook, Audio & Video Series</div> -->
+=======
+            <!-- <div>Body Fat % (3 Attempts)</div> -->
+
+            <div>Body Fat % Estimate</div>
+
+
+>>>>>>> 6e8c1cf64c26333e880c326036c596660c6af24c
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">Buy 1 Body Fat % Estimate and get 2 More Estimates for FREE</div>
+ <div style="color: rgba(255, 255, 255, 0.7);font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied.</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
@@ -189,6 +196,7 @@ function init(content) {
     >
       <div class="form-row">
         <div class="ElementsModal--forms">
+        <div id="classic-payment-form">
           <div class="ElementsModal--form">
             <label for="ElementsModal--card-element">
               <span class="ElementsModal--form-label spacer"
@@ -224,16 +232,20 @@ function init(content) {
               name="description"
               value="${content.productName}"
             />
-            <button class="ElementsModal--pay-button">Pay ${amount}</button>
+            <button id="card-payment-button" class="ElementsModal--pay-button" style="display:none;">Pay ${amount}</button>
+
           </div>
+         </div>
+          <div id="payment-request-button" class="ElementsModal--pay-button" style="display: none">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
           <!-- Edit your terms and conditions here   -->
           <div class="footer ElementsModal--footer-text">
             By purchasing this body fat estimate, you agree to estimatebodyfat.com
             <a target="_blank" class="ElementsModal--footer-text" href="https://www.estimatebodyfat.com/termsofuse.html"
-              > Terms and Conditions.</a
-            >
+              > Terms and Conditions.</a> <br><br>
+              Depending on your device, payment will be securely processed through Apple Pay, Google Pay, Microsoft Pay or Credit Card.
           </div>
-        </div>
       </div>
     </form>
   </div>
@@ -241,6 +253,80 @@ function init(content) {
 `;
     // insert modal in dom
     document.body.insertBefore(modal, document.body.firstChild);
+}
+
+function setupDigitalWalletPaymentButton(prButton, paymentRequest, stripe, paymentData, paymentCallback) {
+    document.getElementById('payment-request-button').style.display = 'block';
+    document.getElementById('classic-payment-form').style.display = 'none';
+
+    prButton.mount('#payment-request-button');
+    paymentRequest.on('paymentmethod', function (ev) {
+        // Confirm the PaymentIntent without handling potential next actions (yet).
+        stripe.confirmCardPayment(
+            paymentData.paymentKey,
+            {payment_method: ev.paymentMethod.id},
+            {handleActions: false}
+        ).then(function (confirmResult) {
+            if (confirmResult.error) {
+                // Report to the browser that the payment failed, prompting it to
+                // re-show the payment interface, or show an error message and close
+                // the payment interface.
+                ev.complete('fail');
+            } else {
+                // Report to the browser that the confirmation was successful, prompting
+                // it to close the browser payment method collection interface.
+                ev.complete('success');
+                // Let Stripe.js handle the rest of the payment flow.
+                stripe.confirmCardPayment(paymentData.paymentKey).then(function (result) {
+                    document.getElementById("overlay").style.display = "none"
+                    if (result.error) {
+                        var displayError = document.getElementById("card-errors");
+                        displayError.textContent = result.error.message;
+                    } else {
+                        stripePaymentHandler(paymentData, paymentCallback);
+                    }
+                });
+            }
+        });
+    });
+}
+
+function setupClassicPaymentButton(elements, stripe, paymentData, paymentCallback) {
+    document.getElementById('card-payment-button').style.display = 'block'
+    // Create an instance of the card Element.
+    var card = elements.create("card", {
+        hidePostalCode: true
+    });
+
+    // Add an instance of the card Element into the `card-element` <div>.
+    card.mount("#card-element");
+
+    // Handle payment submission when user clicks the pay button.
+    var form = document.getElementById("payment-form");
+    form.addEventListener("submit", function (event) {
+        document.getElementById("overlay").style.display = "block"
+        event.preventDefault();
+        customerEmail = document.getElementById("stripe-email").value
+        stripe
+            .confirmCardPayment(paymentData.paymentKey, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        email: customerEmail
+                    }
+                },
+                receipt_email: customerEmail
+            })
+            .then(function (result) {
+                document.getElementById("overlay").style.display = "none"
+                if (result.error) {
+                    var displayError = document.getElementById("card-errors");
+                    displayError.textContent = result.error.message;
+                } else {
+                    stripePaymentHandler(paymentData, paymentCallback);
+                }
+            });
+    });
 }
 
 function togglePaymentModalVisibility() {

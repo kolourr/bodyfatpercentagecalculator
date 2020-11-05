@@ -81,9 +81,9 @@
 }
 
 .ElementsModal--price {
-    color: rgb(255, 255, 255);
-    font-size: 36px;
-    font-weight: 500;
+    color: rgb(62, 184, 139);
+    font-size: 26px;
+    font-weight: 700; 
 }
 .ElementsModal--top-banner {
     text-align: center;
@@ -99,7 +99,7 @@
 }
 .ElementsModal--product {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -257,4 +257,8 @@ a.ElementsModal--footer-text {
 
 .StripeElement--webkit-autofill {
     background-color: rgb(254, 253, 229) !important;
+}
+
+.ElementsModal--pay-button {
+    padding: 0 !important;
 }

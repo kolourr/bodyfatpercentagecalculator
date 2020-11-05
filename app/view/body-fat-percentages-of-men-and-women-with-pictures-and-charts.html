@@ -3,6 +3,18 @@
 
 <head>
 
+  <!-- Hotjar Tracking Code for www.estimatebodyfat.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1845510,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -69,6 +81,7 @@
     <meta name="robots" content="index, follow">
     <meta charset='utf-8'>
     <link rel='stylesheet' href='../static/style.css'>
+    <link rel='stylesheet' href='../static/stripe.css'>
     <script src="jquery-3.4.0.min.js"></script>
     <link rel="stylesheet" href="../static/croppie.css" />
     <link rel="stylesheet" href="../static/sweetalert.css" />
@@ -94,7 +107,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e0f8364b601870012fd415c&cms=sop' async='async'></script>
+
 
 
 </head>
@@ -102,12 +115,7 @@
 <body>
 
 
-  <script>
-  fbq('track', 'ViewContent', {
-    value: 0.1,
-    currency: 'USD',
-  });
-</script>
+
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP"
@@ -139,8 +147,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <li class='last'><a href="/face-fat.html"><span>Face Fat Calculator</span></a></ul>
                         </li>
 
-                        <li class='last'><a href="./ketoebook.html"><span>Keto Diet Program</span></a>
-                        </li>
+                        <!-- <li class='last'><a href="./ketoebook.html"><span>Keto Course</span></a>
+                        </li> -->
 
                 </ul>
             </div>
@@ -159,6 +167,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h1 style="background-color: #ffe9e5; border-bottom: 2px solid #ffe9e5; text-align: center; ">Body Fat Percentage Pictures of Male and Female (with analysis)</h1>
 
 
+
+
             <p style="text-align: left;">
 
 
@@ -171,129 +181,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-      <p style="text-align: left;">
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center;">Am I fat photo analysis?</h2>
+
+            <p style="background-color:white; text-align: left; border-top: none; ">
 
 
-                     If you are interested in finding our your own body fat percentage, we have text and image based calculators.
+              <b>Do you want to discover your body fat percentage from just a picture?</b> <br><br>
+
+              If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
+   <br><br>
+
+   We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
+
+   To our surprise, our friends wanted to use it too. So, we put it out in the world. <br><br>
+
+   Now, almost 1000 people use this body fat calculator daily. <br><br>
+
+   We believe in our calculator so much so that we'll return the $4.99 we charge if you are unsatisfied with the result.<br><br>
+
+   All you have to do is upload your picture like the one below and <b>make sure it's just you in the picture.</b>  <br><br>
 
 
-                    </p>
-                    <p>
-                        <img class="lazy" data-src="../static/images/Body%20Fat%20Range%20Information.jpg" alt="Body Fat Percentage Information" style="max-width:100%;height:auto; ">
+                              <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
 
-                    </p>
+                            <!-- <br>
+                             If you are not satisfied with our service, email contact@estimatebodyfat.com for a full refund.
+ -->
 
+            </p>
 
-                    <p style="text-align: left;">
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
 
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: October 18, 2020</p>
 
-                                    <table id="customers">
+            <div class="content">
+                <div class="upload-demo-wrap">
+                    <div id="upload-demo"></div>
+                </div>
+                <div class="actions" >
+                    <BR>
+                    <BR>
+                    <a class="btn file-btn">
+                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
 
+                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
+                               onchange='invoke_paid_estimation(analyze)' >
+                    </a>
 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
-                                        <tr>
-                                            <th>
-                                                <label> TYPE</label>
-                                            </th>
-                                            <th>
-                                                <label>BODY FAT CALCULATORS</label>
-                                            </th>
+                </div>
 
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label>Text Input</label>
-                                            </td>
-                                            <td>
-                                                <label><a href="/body-fat-calculator.html"> U.S. Military Body Fat Percentage Calculator</a> </label>
-                                            </td>
+                <div class='result-label'>
+                    <label id='result-text' style="color: #7aa125; font-size: 30px; font-family: futura; text-align:left;"> </label>
 
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label>Text Input</label>
-                                            </td>
-                                            <td>
+                    <label id='result-label' style="color: white; font-size: 30px; font-weight: bold; font-family: futura; background-color: #ff9080;  "></label>
+                </div>
 
-                                                <label><a href="/caliper-calculator.html"> Skinfold Caliper Body Fat Percentage Calculator</a> </label>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label>Text Input</label>
-                                            </td>
-                                            <td>
-                                                <label><a href="/coronavirus-weight-risk-calculator.html">Coronavirus Weight Risk Calculator</a> </label>
-
-                                            </td>
-
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <label>Image Input</label>
-                                            </td>
-                                            <td>
-                                                <label><a href="/ai-calculator.html"> A.I. Body Fat Percentage Calculator</a> </label>
-                                            </td>
-
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <label>Image Input</label>
-                                            </td>
-                                            <td>
-                                                <label><a href="/face-fat.html"> Face Fat Percentage Calculator</a></label>
-                                            </td>
-
-                                        </tr>
-
-                                    </table>
-
-                    </p>
-
-
-
-                                <style>
-                                    #customers {
-                                        font-family: "futura", Arial, Helvetica, sans-serif;
-                                        border-collapse: collapse;
-                                        width: 100%;
-                                    }
-
-                                    #customers td,
-                                    #customers th {
-                                        border: 1px solid #ddd;
-                                        padding: 8px;
-                                    }
-
-                                    #customers tr:nth-child(even) {
-                                        background-color: #f2f2f2;
-                                    }
-
-                                    #customers tr:hover {
-                                        background-color: grey;
-                                    }
-
-                                    #customers th {
-                                        padding-top: 12px;
-                                        padding-bottom: 12px;
-                                        text-align: left;
-                                        background-color: #ff9080;
-                                        color: white;
-                                    }
-                                </style>
-
-
-
-
-
-
+            </div>
 
   <p style="text-align: left;">
-
 
 
               Body fat is essential for survival; however, excess body fat prevents the body from performing at its peak. Being overweight is a precursor to many chronic diseases. Long gone are the days where being overweight was seen as a sign
@@ -732,6 +684,9 @@ window.cookieconsent.initialise({
 
     </div>
     </div>
+
+    <script src='../static/stripe.js'></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 
