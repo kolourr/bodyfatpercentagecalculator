@@ -357,6 +357,7 @@ async def initiatepayment(request):
         For your Free gift, here's the Google Drive download link for the Keto ebook, audio and video series:
 
         https://drive.google.com/uc?export=download&id=1uxifFRI8hbJFQ36fIUgDQOQugRVgs38I
+
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
