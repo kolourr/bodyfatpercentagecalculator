@@ -167,7 +167,7 @@ function init(content) {
         <div>
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
-            <div>3 Body Fat % Estimates + Free Gift</div>
+            <div>3 Body Fat % Estimates</div>
 
 
         </div>
