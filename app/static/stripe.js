@@ -178,7 +178,7 @@ function init(content) {
  <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Just $4.99 and I get the Keto audio, video and ebook series for free as well? What a steal!" - Samuel Jo</div>
  <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Well worth the price for my body fat %. You should definitely charge more!" - Karan Shah</div>
  <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Amazing body fat calculator and thanks for the Keto series!" - Kelly Thomas</div>
- <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied.</div>
+ <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied. We'll also let you keep the Keto series.</div>
 
 
 
