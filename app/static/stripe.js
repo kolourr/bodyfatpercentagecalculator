@@ -173,9 +173,9 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate. Plus, we'll email you the Keto Series (worth $75) for FREE</div>
- <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"The Keto series includes 3 eBooks, 10 audio and video lectures as well as 11 useful articles.</div>
- <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">We offer a 100% Money Back Guarantee. Email contact@estimatebodyfat.com for a full refund is unsatisfied.</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate. Plus, we'll email you The Keto Series (worth $75) for FREE</div>
+ <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 10px;">The Keto series includes 3 eBooks, 10 Audio and Video lectures as well as 11 useful articles.</div>
+ <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com</div>
 
 
 
