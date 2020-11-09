@@ -174,13 +174,14 @@ function init(content) {
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate. Plus, we'll email you the Keto Series (worth $75) for FREE</div>
- <div style="color: rgba(255,255,0,0.9);font-size: 14px; font-weight: 500; margin-top: 10px;">Customer Reviews:</div>
+ <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"The Keto series includes 3 eBooks, 10 audio and video lectures as well as 11 useful articles.</div>
+ <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">We offer a 100% Money Back Guarantee. Email contact@estimatebodyfat.com for a full refund is unsatisfied.</div>
+
+
+
+ <!-- <div style="color: rgba(255,255,0,0.9);font-size: 14px; font-weight: 500; margin-top: 10px;">Customer Reviews:</div>
  <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Just $4.99 and I get the Keto audio, video and ebook series for free? What?? Thanks a lot!" - Samuel Jo</div>
- <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Well worth the price for my body fat %. You should definitely charge more!" - Karan Shah</div>
- <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Amazing body fat calculator and thanks for the Keto series. Appreciate it." - Kelly Thomas</div>
- <div style="color: white; font-size: 13px; font-weight: 500; margin-top: 10px;">If you are unsatisfied, email contact@estimatebodyfat.com for a 100% refund. We'll also let you keep the Keto series</div>
-
-
+ <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Well worth the price for my body fat %. You should definitely charge more!" - Karan Shah</div> -->
 
     </div>
   </div>
