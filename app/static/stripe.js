@@ -175,9 +175,9 @@ function init(content) {
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate. Plus, we'll email you the Keto Series (worth $75) for FREE</div>
  <div style="color: rgba(255,255,0,0.9);font-size: 14px; font-weight: 500; margin-top: 10px;">Few Customer Reviews:</div>
- <div style="color: rgba(255,255,0,0.8);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Just $4.99 and I get the Keto audio, video and ebook series for free as well? What a steal!" - Samuel Jo</div>
- <div style="color: rgba(255,255,0,0.8);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Well worth the price for just my body fat %. You should definitely charge more!" - Karan Shah</div>
- <div style="color: rgba(255,255,0,0.8);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"I can't believe I found this website. Amazing product and thanks for the Keto series!" - Kelly Thomas</div>
+ <div style="color: white;font-size: 13px; text-align: left; font-weight: 325; margin-top: 5px;">"Just $4.99 and I get the Keto audio, video and ebook series for free as well? What a steal!" - Samuel Jo</div>
+ <div style="color: white;font-size: 13px; text-align: left; font-weight: 325; margin-top: 5px;">"Well worth the price for just my body fat %. You should definitely charge more!" - Karan Shah</div>
+ <div style="color: white;font-size: 13px; text-align: left; font-weight: 325; margin-top: 5px;">"I can't believe I found this website. Amazing product and thanks for the Keto series!" - Kelly Thomas</div>
  <div style="color: rgba(255, 255, 255, 0.5);font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee - email contact@estimatebodyfat.com if unsatisfied.</div>
 
 
