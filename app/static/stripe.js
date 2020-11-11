@@ -175,7 +175,7 @@ function init(content) {
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
       <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com for full refund.</div>
       <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">Bonus: We will email you The Keto Series ($75 value) for FREE</div>
-
+ 
 
 
  <!-- <div style="color: rgba(255,255,0,0.9);font-size: 14px; font-weight: 500; margin-top: 10px;">Customer Reviews:</div>
