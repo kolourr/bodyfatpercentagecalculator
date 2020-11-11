@@ -173,8 +173,8 @@ function init(content) {
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate. Plus, we'll email you The Keto eBook, Audio, Video Series (worth $75) for FREE</div>
-      <div style="color: rgba(255, 255, 255, 0.6); font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">We'll also email you The Keto Series ($75 value) for FREE</div>
+      <div style="color: rgba(255, 255, 255, 0.6); font-size: 13px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com for refund.</div>
 
 
 
