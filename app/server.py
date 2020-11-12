@@ -360,12 +360,6 @@ async def initiatepayment(request):
     )
 
 
-    # For your Free gift, here's the Google Drive download link for the Keto ebook, audio and video series:
-    #
-    # https://drive.google.com/uc?export=download&id=1uxifFRI8hbJFQ36fIUgDQOQugRVgs38I
-
-
-
     return JSONResponse({
         "payment_amount": amount_to_pay,
         "payment_key": intent.client_secret,
