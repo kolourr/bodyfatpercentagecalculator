@@ -354,17 +354,15 @@ async def initiatepayment(request):
         """
         Thanks for purchasing 3 Body Fat Estimations.
 
-        For your Free gift, here's the Google Drive download link for the Keto ebook, audio and video series:
-
-        https://drive.google.com/uc?export=download&id=1uxifFRI8hbJFQ36fIUgDQOQugRVgs38I
-
         """,
         # Verify your integration in this guide by including this parameter
         metadata={'integration_check': 'accept_a_payment'},
     )
 
 
-        # To download the Keto ebook, audio and video files, please follow this link https://anonfiles.com/d4K04fqco3/567b1d78-1587161426/Keto%20Diet%20eBook,%20Audio%20&%20Video%20Series.zip
+    # For your Free gift, here's the Google Drive download link for the Keto ebook, audio and video series:
+    #
+    # https://drive.google.com/uc?export=download&id=1uxifFRI8hbJFQ36fIUgDQOQugRVgs38I
 
 
 
