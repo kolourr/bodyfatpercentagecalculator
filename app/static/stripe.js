@@ -167,13 +167,13 @@ function init(content) {
         <div>
             <!-- <div>Body Fat % (3 Attempts)</div> -->
 
-            <div>3 Body Fat % Estimates</div>
+            <div>Body Fat % Estimate</div>
 
 
         </div>
       </div>
-      <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's only $1.66 per estimate.</div>
+      <div class="ElementsModal--price ElementsModal--details">${amount} for 3 Estimates</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">That's $1.66 per estimate. Body Fat % will be displayed upon payment confirmation.</div>
       <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com for full refund.</div>
 
 
