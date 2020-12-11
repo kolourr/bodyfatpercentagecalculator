@@ -366,3 +366,4 @@ function create(content) {
 window.paymentModal = (() => {
     return { create, toggleElementsModalVisibility: togglePaymentModalVisibility };
 })();
+ 
