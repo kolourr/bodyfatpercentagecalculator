@@ -165,8 +165,7 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <!-- <div>Body Fat % (3 Attempts)</div> -->
-
+ 
             <div>3 Body Fat % Estimates</div>
 
 
@@ -177,10 +176,6 @@ function init(content) {
       <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">100% Money Back Guarantee. If unsatisfied, email contact@estimatebodyfat.com for full refund.</div>
 
 
-
- <!-- <div style="color: rgba(255,255,0,0.9);font-size: 14px; font-weight: 500; margin-top: 10px;">Customer Reviews:</div>
- <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Just $4.99 and I get the Keto audio, video and ebook series for free? What?? Thanks a lot!" - Samuel Jo</div>
- <div style="color: rgba(255, 255, 255, 0.6);font-size: 13px; text-align: left; font-weight: 350; margin-top: 5px;">"Well worth the price for my body fat %. You should definitely charge more!" - Karan Shah</div> -->
 
     </div>
   </div>
