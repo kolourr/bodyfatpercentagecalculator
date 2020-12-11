@@ -1833,6 +1833,4 @@ function show_failed_payment_notification() {
         $("#notification").fadeOut("slow");
     });
 }
-×
-Drag and Drop
-The image will be downloaded
+ 
