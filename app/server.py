@@ -1253,6 +1253,3 @@ def payment_processed_successfully(payment_id):
 if __name__ == '__main__':
     if 'serve' in sys.argv:
         uvicorn.run(app=app, host='0.0.0.0', port=5000, log_level="info")
-×
-Drag and Drop
-The image will be downloaded
