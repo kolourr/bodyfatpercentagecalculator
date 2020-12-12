@@ -1,6 +1,7 @@
 FROM python:3.7-slim-stretch
 
-FROM  jjanzic/docker-python3-opencv
+FROM  jjanzic/docker-python3-opencv:opencv-4.0.0
+
 
 RUN apt-get update && apt-get install -y git python3-dev gcc \
     && rm -rf /var/lib/apt/lists/*
