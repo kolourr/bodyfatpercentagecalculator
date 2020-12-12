@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.8-slim-buster
 
 FROM jjanzic/docker-python3-opencv
 
@@ -10,6 +10,7 @@ COPY requirements.txt .
 RUN pip3 install --upgrade -r requirements.txt
 
 RUN pip3 install --upgrade pip
+
 
 COPY app app/
 
