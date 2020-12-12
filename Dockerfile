@@ -1,4 +1,4 @@
-FROM python:3.7-slim-stretch
+FROM python:3.9
 
 FROM jjanzic/docker-python3-opencv
 
