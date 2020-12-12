@@ -353,6 +353,7 @@ async def initiatepayment(request):
         description=
         """
         Thanks for purchasing 3 Body Fat Estimations.
+        
 
         """,
         # Verify your integration in this guide by including this parameter
