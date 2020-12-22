@@ -321,13 +321,7 @@ async def sitemap(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/coronavirus-weight-risk-calculator.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'coronavirus-weight-risk-calculator.html'
-    return HTMLResponse(html_file.open().read())
-
-
-
+ 
 
 @app.route('/cancel.html')
 async def sitemap(request):
@@ -353,7 +347,7 @@ async def initiatepayment(request):
         description=
         """
         Thanks for purchasing 3 Body Fat Estimations.
-        
+
 
         """,
         # Verify your integration in this guide by including this parameter
