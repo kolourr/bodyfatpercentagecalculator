@@ -170,7 +170,8 @@ function init(content) {
         </div>
       </div>
       <div style="color: #98E2C1;font-size: 16px; font-weight: 550; margin-top: 10px;">You worked so hard. You deserve to know ❤️</div>
-      <div style="color: #50988A; font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If unsatisfied, email contact@estmatebodyfat.com for a full refund</div>
+      <div style="color: #98E2C1; font-size: 15px; font-weight: 500; margin-top: 10px;">Body Fat % will be displayed immediately after payment.</div>
+        <div style="color: #98E2C1; font-size: 13px; font-weight: 500; margin-top: 10px;">Try us risk free. Email contact@estimatebodyfat.com for full refund if unsatisfied.</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
   </div>
