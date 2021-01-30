@@ -169,9 +169,9 @@ function init(content) {
 
         </div>
       </div>
-      <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">You worked hard. You deserve to know this ❤️</div>
-      <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If you are unsatisfied, email us at contact@estmatebodyfat.com and we'll issue you a full refund</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">You worked so hard. You deserve to know this ❤️</div>
+      <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If unsatisfied, email us at contact@estmatebodyfat.com and we'll issue you a full refund</div>
+      <div class="ElementsModal--price ElementsModal--details">${amount} for 3 estimates</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
