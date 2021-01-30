@@ -165,12 +165,12 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div style="color: #F3F3F3;font-size: 28px; font-weight: 550; margin-top: 10px;">Get your Fat % instantly</div>
+            <div style="color: #D7EED8;font-size: 23px; font-weight: 550; margin-top: 10px;">$9.99 for 3 body fat estimates</div>
 
         </div>
       </div>
-      <div style="color: #9592AC;font-size: 16px; font-weight: 550; margin-top: 10px;">You worked so hard. You deserve to know ❤️</div>
-      <div style="color: #80647E; font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If unsatisfied, email contact@estmatebodyfat.com for a full refund</div>
+      <div style="color: #98E2C1;font-size: 16px; font-weight: 550; margin-top: 10px;">You worked so hard. You deserve to know ❤️</div>
+      <div style="color: #50988A; font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If unsatisfied, email contact@estmatebodyfat.com for a full refund</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
   </div>
