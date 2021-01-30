@@ -165,13 +165,13 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div>Get your Body Fat % in an instant!</div>
+            <div>Get your fat % immediately!</div>
 
         </div>
       </div>
       <div class="ElementsModal--price ElementsModal--details">${amount}</div>
-      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">Just think how much better you will feel knowing this ❤️</div>
-      <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">You get 3 attempts. Plus, we offer a 100% Money Back Guarantee. Email contact@estimatebodyfat.com if unsatisfied.</div>
+      <div style="color: white;font-size: 15px; font-weight: 550; margin-top: 10px;">You worked hard. You deserve to know this ❤️</div>
+      <div style="color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; margin-top: 10px;">Try us risk free. If you are unsatisfied, email us at contact@estmatebodyfat.com and we'll issue you a full refund</div>
     </div>
   </div>
   <div class="ElementsModal--payment-details">
