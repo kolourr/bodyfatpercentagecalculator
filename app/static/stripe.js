@@ -169,7 +169,7 @@ function init(content) {
         </div>
       </div>
       <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$9.99</div>
-      <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">Try us 100% risk free. Email contact@estimatebodyfat.com if unsatisfied.</div>
+      <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">Email contact@estimatebodyfat.com for full refund if unsatisfied.</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
   </div>
