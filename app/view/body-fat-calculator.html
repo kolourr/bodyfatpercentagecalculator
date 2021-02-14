@@ -148,15 +148,19 @@
 
             </div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">U.S. MILITARY BODY FAT CALCULATOR</h1>
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">FREE U.S. MILITARY BODY FAT CALCULATOR</h1>
 
             <p style="text-align: left;"><b>Looking for a U.S. Army/Navy/Marine body fat % calculator?</b><br><br>
-           This military calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
-           We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage <br><br>
-           We believe in our calculator so much so that we'll return the $9.99 we charge for 3 estimations if you are unsatisfied with the result. <br><br>
-              </p>
+         This military calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
+         We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage <br><br>
+
+            </p>
+
+
+            <!-- method="POST"  action="/usunitnavy"-->
 
             <form accept-charset="utf-8" class="form-style-7">
+
                 <ul>
 
                     <li>
@@ -168,8 +172,7 @@
                 </ul>
             </form>
 
-            <form id="navy-form" accept-charset="utf-8" class="form-style-7"
-                  onsubmit="invoke_paid_estimation(usnavy); return false;">
+            <form id="navy-form" accept-charset="utf-8" class="form-style-7" onsubmit="usnavy(); return false;">
 
                 <ul>
 
@@ -253,8 +256,7 @@
 
             </form>
 
-            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none"
-                  onsubmit="invoke_paid_estimation(metricusnavy); return false;">
+            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none" onsubmit="metricusnavy(); return false;">
 
                 <ul>
 
@@ -514,9 +516,9 @@
             </p>
 
             <p>
-                <img class="lazy" data-src="../static/images/bodyfat-tapemeasurement.jpg" alt="Military Body Fat Tape Measurement Calculator - Test" style="max-width:100%;height:auto; ">    <br>
-                    <br>
-
+                <img class="lazy" data-src="../static/images/bodyfat-tapemeasurement.jpg" alt="Military Body Fat Tape Measurement Calculator - Test" style="max-width:100%;height:auto; ">
+                <br>
+                <br>
             </p>
 
             <p style="text-align: left;">
@@ -1227,7 +1229,7 @@
                     <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
                     <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
-                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2021</a> </p>
 
                 </div>
 
@@ -1248,8 +1250,7 @@
         CropImage.init();
     </script>
 
-    <script src='../static/stripe.js'></script>
-    <script src="https://js.stripe.com/v3/"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

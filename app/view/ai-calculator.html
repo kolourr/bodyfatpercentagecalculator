@@ -156,29 +156,28 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                         </li>
         </ul></div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">FREE A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
 
             <p style="background-color:white; text-align: left; border-top: none; ">
 
 
-           <b>Do you want to discover your body fat percentage from a picture you upload?</b>  <br><br>
+            <b>Do you want to discover your body fat percentage from a picture you upload?</b>  <br><br>
 
-           If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
-<br><br>
+                If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
+     <br><br>
 
-We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
+     We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
 
-To our surprise, our friends wanted to use it too. So, we put it out in the world.<br><br>
+     To our surprise, our friends wanted to use it too. So, we put it out in the world.<br><br>
 
-Now, almost 1000 people use this body fat calculator daily.       <br><br>
-
-We believe in our calculator so much so that we'll return the $9.99 we charge for 3 estimations if you are unsatisfied with the result.<br><br>
-
-                All you have to do is upload your picture like the one below and <b>make sure it's just you in the picture.</b> <br><br>
+     Now, almost 1000 people use this body fat calculator daily.       <br><br>
 
 
+                     All you have to do is upload your picture like the one below and <b>make sure it's just you in the picture.</b> <br><br>
 
-                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">        </p>
+
+
+                     <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">        </p>
 
 
 
@@ -186,23 +185,21 @@ We believe in our calculator so much so that we'll return the $9.99 we charge fo
 
             <!-- <h1 class="calculator"> Body Fat Percentage Calculator</h1> -->
 
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">FREE BODY FAT CALCULATOR</h2>
 
-            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: January 30, 2021</p>
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: March 8, 2020</p>
 
             <div class="content">
                 <div class="upload-demo-wrap">
                     <div id="upload-demo"></div>
                 </div>
-                <div class="actions" >
+                <div class="actions">
                     <BR>
                     <BR>
                     <a class="btn file-btn">
-                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
+                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD IMAGE </span>
 
-                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
-                               onchange='invoke_paid_estimation(analyze)' >
-                    </a>
+                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*" onchange='analyze()' onclick="showDiv()"> </a>
 
                     <br>
                     <br>
@@ -257,13 +254,7 @@ We believe in our calculator so much so that we'll return the $9.99 we charge fo
 
                 </summary>
 
-                <p style="text-align: left;">
-
-                 It is important to remember that this body fat percentage range is just a rough estimate as height, body shape and overall fat distribtion is not taken into account.
-
-                 <br>
-                 <br>
-                  I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
+                <p style="text-align: left;">I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
                     <br>
                     <br>A lot of data. Sadly, this is very hard to come by. However, there is a way you can help me if you’ve got a Dexa Scan done or plan on getting one in the future.
                     <br>
@@ -324,7 +315,7 @@ We believe in our calculator so much so that we'll return the $9.99 we charge fo
                     <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
                     <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
-                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2021</a> </p>
 
                 </div>
 
@@ -345,10 +336,12 @@ We believe in our calculator so much so that we'll return the $9.99 we charge fo
         CropImage.init();
     </script>
 
-    <script src='../static/stripe.js'></script>
-    <script src="https://js.stripe.com/v3/"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </div>
+    </div>
 
     <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 
