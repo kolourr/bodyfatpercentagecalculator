@@ -1489,9 +1489,9 @@ pre[class*="language"] {
 }
 
 .amazon-equipment{
-  width:70%%;
-  /* margin: 0px 350px 0px 350px; */
-  padding: 10px;
+  width:auto;
+  margin: auto;
+  padding: 0px;
   padding-left:50px;
   padding-right:50px;
   text-align: center;
