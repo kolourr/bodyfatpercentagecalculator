@@ -305,32 +305,6 @@ async def sitemap(request):
     html_file = path / 'view' / 'fitness-goal-survey.html'
     return HTMLResponse(html_file.open().read())
 
-@app.route('/initiatepayment', methods=['POST'])
-async def initiatepayment(request):
-    publishable_key = os.getenv("stripe_publishable_key")
-
-    # amount in cents
-    amount_to_pay = 1000
-
-    intent = stripe.PaymentIntent.create(
-        amount=amount_to_pay,
-        currency='usd',
-        description=
-        """
-        Thanks for your tip. We really appreciate it :)
-
-        """,
-        # Verify your integration in this guide by including this parameter
-        metadata={'integration_check': 'accept_a_payment'},
-    )
-
-
-    return JSONResponse({
-        "payment_amount": amount_to_pay,
-        "payment_key": intent.client_secret,
-        "payment_id": intent.id,
-        "publishable_key": publishable_key
-    })
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
