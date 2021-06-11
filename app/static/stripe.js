@@ -169,6 +169,7 @@ function init(content) {
         </div>
       </div>
       <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$4.99</div>
+        <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">3 unique chances to check your estimate.</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
   </div>
