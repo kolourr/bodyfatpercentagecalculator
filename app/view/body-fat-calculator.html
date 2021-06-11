@@ -148,21 +148,14 @@
 
             </div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">FREE U.S. MILITARY BODY FAT CALCULATOR</h1>
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">U.S. MILITARY BODY FAT CALCULATOR</h1>
 
             <p style="text-align: left;"><b>Looking for a U.S. Army/Navy/Marine body fat % calculator?</b><br><br>
-         This military calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
-         We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage
-
-<br><br>
-
-            </p>
-
-
-            <!-- method="POST"  action="/usunitnavy"-->
+           This military calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
+           We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage <br><br>
+              </p>
 
             <form accept-charset="utf-8" class="form-style-7">
-
                 <ul>
 
                     <li>
@@ -174,7 +167,8 @@
                 </ul>
             </form>
 
-            <form id="navy-form" accept-charset="utf-8" class="form-style-7" onsubmit="usnavy(); return false;">
+            <form id="navy-form" accept-charset="utf-8" class="form-style-7"
+                  onsubmit="invoke_paid_estimation(usnavy); return false;">
 
                 <ul>
 
@@ -258,7 +252,8 @@
 
             </form>
 
-            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none" onsubmit="metricusnavy(); return false;">
+            <form id="metric-navy-form" accept-charset="utf-8" class="form-style-7" style="display:none"
+                  onsubmit="invoke_paid_estimation(metricusnavy); return false;">
 
                 <ul>
 
@@ -319,18 +314,12 @@
 
             </form>
 
-
-
-
-
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">CALCULATION: BODY FAT PERCENTAGE & BMI ANALYSIS</h2>
-
-
             <p>
 
                 <table id="customers">
 
-
+                    <strong><label  >BODY FAT PERCENTAGE & BMI ANALYSIS  </label></strong>
+                    <br>
 
                     <tr>
                         <th>
@@ -459,17 +448,6 @@
                     </tr>
 
                 </table>
-                <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">Did you find this Body Fat Calculator useful?</h2>
-    <p>
-     If you did, a small tip via PayPal can go a long way in keeping this site ad-free and free for everyone to use! <br />
-
-     <form action="https://www.paypal.com/donate" method="post" target="_top">
-     <input type="hidden" name="hosted_button_id" value="TKECXAYB34FK6" />
-     <input type="image" src="../static/images/paypal.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-     <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
-     </form>
-    </p>
-
 
                 <br>
 
@@ -530,14 +508,14 @@
             <p style="text-align: left;">
 
                 The Body Fat Calculator is based on equations developed by James A. Hodgdon and Marcie B. Beckett at the U.S. Naval Health Research Center in 1984 and involves measuring height and the circumference of the neck, waist, and hips (only for women) and plugging
-                the data into an equation (different for men and women) to determine total body fat percentage. Details on the equations can be found <a href="https://www.estimatebodyfat.com/different-ways-to-measure-body-fat.html">here</a>.  <br>
-              </p>
-
+                the data into an equation (different for men and women) to determine total body fat percentage. Details on the equations can be found <a href="https://www.estimatebodyfat.com/different-ways-to-measure-body-fat.html">here</a>.
+                <br>
+            </p>
 
             <p>
-                <img class="lazy" data-src="../static/images/bodyfat-tapemeasurement.jpg" alt="Military Body Fat Tape Measurement Calculator - Test" style="max-width:100%;height:auto; ">
-                <br>
-                <br>
+                <img class="lazy" data-src="../static/images/bodyfat-tapemeasurement.jpg" alt="Military Body Fat Tape Measurement Calculator - Test" style="max-width:100%;height:auto; ">    <br>
+                    <br>
+
             </p>
 
             <p style="text-align: left;">
@@ -1215,9 +1193,7 @@
                     <br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content.
 
                     <br>
-                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.<br /><br />
-
-                    This website is part of Amazon's Affiliate Program. We receive a commission if purchase an item on Amazon through a product link on our website.
+                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.
 
                 </p>
             </details>
@@ -1250,7 +1226,7 @@
                     <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
                     <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
-                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2021</a> </p>
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
 
                 </div>
 
@@ -1271,13 +1247,16 @@
         CropImage.init();
     </script>
 
-
     <script src='../static/stripe.js'></script>
-      <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
+    </div>
+    </div>
+
+    <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
+
 
 </body>
 

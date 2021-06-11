@@ -155,20 +155,21 @@
                 </ul>
             </div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">FREE SKINFOLD CALIPER BODY FAT CALCULATOR</h1>
-
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">SKINFOLD CALIPER BODY FAT CALCULATOR</h1>
 
             <p style="text-align: left;">
 
-     <b> Looking for a 3-site, 4-site, 7-site or 9-site simple caliper body fat calculator?</b><br><br>
+         <b> Looking for a 3-site, 4-site, 7-site or 9-site simple caliper body fat calculator?</b><br><br>
 
-       This skinfold calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
-       We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage.<br><br>
-
-
+           This skinfold calculator can measure your total body fat percentage, lean body mass, fat body mass and BMI.<br><br>
+           We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage   <br><br>
 
 
-      </p>
+          </p>
+
+
+
+
 
 
             <form accept-charset="utf-8" class="form-style-7">
@@ -211,7 +212,8 @@
 
 
 
-            <form id="jp3-form" accept-charset="utf-8" class="form-style-7" onsubmit="jp3(); return false;">
+            <form id="jp3-form" accept-charset="utf-8" class="form-style-7"
+                  onsubmit="invoke_paid_estimation(jp3); return false;">
                 <ul>
 
                     <li>
@@ -254,7 +256,7 @@
                     <li>
                         <label for="name">Height</label>
                         <input type="text" name="height" id="height" placeholder="190">
-                        <span>For 5 feet 7 inches, enter 5.7. For 185 cms, enter 185</span>
+                        <span>For 5 feet 7 inches, enter 5.7 - For 185 cms, enter 185</span>
                     </li>
 
                     <div id="men3f">
@@ -305,7 +307,8 @@
                 </ul>
             </form>
 
-            <form id="jp4-form" accept-charset="utf-8" class="form-style-7" style="display: none" onsubmit="jp4(); return false;">
+            <form id="jp4-form" accept-charset="utf-8" class="form-style-7" style="display: none"
+                  onsubmit="invoke_paid_estimation(jp4); return false;">
                 <ul>
 
                     <li>
@@ -348,7 +351,7 @@
                     <li>
                         <label for="name">Height</label>
                         <input type="text" name="height12345" id="height12345" placeholder="190">
-                        <span>For 5 feet 7 inches, enter 5.7. For 185 cms, enter 185</span>
+                        <span>For 5 feet 7 inches, enter 5.7 - For 185 cms, enter 185</span>
                     </li>
 
                     <li>
@@ -381,7 +384,8 @@
                 </ul>
             </form>
 
-            <form id="jp7-form" accept-charset="utf-8" class="form-style-7" style="display: none" onsubmit="jp7(); return false;">
+            <form id="jp7-form" accept-charset="utf-8" class="form-style-7" style="display: none"
+                  onsubmit="invoke_paid_estimation(jp7); return false;">
                 <ul>
 
                     <li>
@@ -424,7 +428,7 @@
                     <li>
                         <label for="name">Height</label>
                         <input type="text" name="heightjp712345" id="height_jp7" placeholder="190">
-                        <span>For 5 feet 7 inches, enter 5.7. For 185 cms, enter 185</span>
+                        <span>For 5 feet 7 inches, enter 5.7 - For 185 cms, enter 185</span>
                     </li>
 
                     <li>
@@ -469,7 +473,8 @@
                 </ul>
             </form>
 
-            <form id="p9-form" accept-charset="utf-8" style="display: none" class="form-style-7" onsubmit="p9(); return false;">
+            <form id="p9-form" accept-charset="utf-8" style="display: none" class="form-style-7"
+                  onsubmit="invoke_paid_estimation(p9); return false;">
                 <ul>
 
                     <li>
@@ -512,7 +517,7 @@
                     <li>
                         <label for="name">Height</label>
                         <input type="text" name="height-p9" id="heightp9" placeholder="190">
-                        <span>Enter height in cm only</span>
+                        <span>For 5 feet 7 inches, enter 5.7 - For 185 cms, enter 185</span>
                     </li>
                     <li>
                         <label for="name">Pectoral (Chest)</label>
@@ -573,7 +578,8 @@
                 </ul>
             </form>
 
-            <form id="dw4-form" accept-charset="utf-8" style="display: none" class="form-style-7" onsubmit="dw4(); return false;">
+            <form id="dw4-form" accept-charset="utf-8" style="display: none" class="form-style-7"
+                  onsubmit="invoke_paid_estimation(dw4); return false;">
                 <ul>
 
                     <li>
@@ -616,7 +622,7 @@
                     <li>
                         <label for="name">Height</label>
                         <input type="text" name="we22ight" id="heightdw4" placeholder="190">
-                        <span>Enter height in cm only</span>
+                        <span>For 5 feet 7 inches, enter 5.7 - For 185 cms, enter 185</span>
                     </li>
 
                     <li>
@@ -649,16 +655,12 @@
                 </ul>
             </form>
 
-
-
-
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">CALCULATION: BODY FAT PERCENTAGE & BMI ANALYSIS</h2>
-
             <p>
 
                 <table id="customers">
 
-
+                    <strong><label  >BODY FAT PERCENTAGE & BMI ANALYSIS  </label></strong>
+                    <br>
 
                     <tr>
                         <th>
@@ -772,16 +774,11 @@
 
             </p>
 
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">Did you find this Body Fat Calculator useful?</h2>
-  <p>
-  If you did, a small tip via PayPal can go a long way in keeping this site ad-free and free for everyone to use! <br />
 
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-  <input type="hidden" name="hosted_button_id" value="TKECXAYB34FK6" />
-  <input type="image" src="../static/images/paypal.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-  <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
-  </form>
-  </p>
+
+
+
+
 
             <style>
                 #customers {
@@ -812,9 +809,6 @@
                     color: white;
                 }
             </style>
-
-
-
 
 
             <h2 style="background-color: #ffe9e5; border-bottom: none; text-align: center">What is this Body Fat Caliper Calculator Based On?</h2>
@@ -1503,20 +1497,16 @@
 
                     <h2 style="background-color: #ffe9e5; border-bottom: none">Disclaimer</h2>
 
-
                 </summary>
                 <p style="text-align: left;">None of the website's content is meant to be taken as medical advice. Speak to your healthcare professional for medical advice
                     <br>
                     <br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content.
 
                     <br>
-                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.<br /><br />
-
-                    This website is part of Amazon's Affiliate Program. We receive a commission if purchase an item on Amazon through a product link on our website.
+                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.
 
                 </p>
             </details>
-
             <br>
 
             <details>
@@ -1545,7 +1535,7 @@
                     <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
                     <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
-                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2021</a> </p>
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
 
                 </div>
 
@@ -1566,12 +1556,13 @@
         CropImage.init();
     </script>
 
-
-
     <script src='../static/stripe.js'></script>
     <script src="https://js.stripe.com/v3/"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </div>
+    </div>
 
     <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 

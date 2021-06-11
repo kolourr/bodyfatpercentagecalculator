@@ -22,7 +22,7 @@ function invoke_paid_estimation(paymentCallback) {
             window.paymentModal.create({
                 businessName: "www.EstimateBodyFat.com",
                 // not used for now
-                productName: "Tip Estimate Body Fat $10",
+                productName: "Get 3 Body Fat % Estimates",
                 amount: response.payment_amount
             });
 
@@ -58,8 +58,8 @@ function start_payment(paymentData, paymentCallback) {
             country: 'US',
             currency: 'usd',
             total: {
-                label: 'Tip Estimate Body Fat',
-                amount: 1000,
+                label: '3 Body Fat % Estimates',
+                amount: 499,
             },
             requestPayerName: true,
             requestPayerEmail: true,
@@ -165,10 +165,10 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">Tip Estimate Body Fat</div>
+            <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">3 Body Fat % Estimates</div>
         </div>
       </div>
-      <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$10</div>
+      <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$4.99</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
   </div>

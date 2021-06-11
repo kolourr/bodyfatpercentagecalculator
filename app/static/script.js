@@ -906,7 +906,7 @@ function showPicker() {
     el("file-input").click();
 }
 
-function analyze() {
+function analyze(paymentData) {
 
     // var uploadFiles = dataURItoBlob(newbase64);
 
@@ -923,23 +923,30 @@ function analyze() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
+                if (!response['payment_failed']) {
+                    el("result-text").innerHTML = `Your body fat percentage (range) is: <br><br>`;
+                    el("result-label").innerHTML = `${response['result']} %`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
-            el("result-text").innerHTML = `Your body fat percentage (range) is: <br><br>`;
-
-
-            el("result-label").innerHTML = `${response['result']} %`;
         }
         el("analyze-button").innerHTML = "UPLOAD IMAGE";
     };
 
     var fileData = new FormData();
     fileData.append("file", uploadFiles[0]);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 }
 
 function showDiv() {
-    document.getElementById('welcomeDiv').style.display = "block";
+    // document.getElementById('welcomeDiv').style.display = "block";
 
     //  $('#welcomeDiv').toggle(10000, function() {
     //   // Animation complete.
@@ -949,7 +956,8 @@ function showDiv() {
 
 
 
-function usnavy() {
+
+function usnavy(paymentData) {
 
     var gender;
     if (document.getElementById('male').checked) {
@@ -987,50 +995,30 @@ function usnavy() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
-
-
-
-
-            el("usnavy-label").innerHTML = `${response['answer']} %`;
-
-            el("fatmass").innerHTML = `${response['fatmass']} Pounds`;
-
-
-            el("leanmass").innerHTML = `${response['leanmass']} Pounds`;
-
-
-            el("bmi").innerHTML = `${response['bmi']}`;
-
-
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
-
-
-            el("army-note").innerHTML = `${response['army-note']}`;
-
-
-            el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
-
-
-            el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
-
-
-
-            el("marine-note").innerHTML = `${response['marine-note']}`;
-
-
-            el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
-
-
-
-
-            el("navy-note").innerHTML = `${response['navy-note']}`;
-
-
-            el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
-
-
-
+            try {
+                var response = JSON.parse(e.target.responseText);
+                if (!response['payment_failed']) {
+                    el("usnavy-label").innerHTML = `${response['answer']} %`;
+                    el("fatmass").innerHTML = `${response['fatmass']} Pounds`;
+                    el("leanmass").innerHTML = `${response['leanmass']} Pounds`;
+                    el("bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    // on coronovirus page these elements don't exist what causes exception
+                    if (el("army-note")) {
+                        el("army-note").innerHTML = `${response['army-note']}`;
+                        el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
+                        el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
+                        el("marine-note").innerHTML = `${response['marine-note']}`;
+                        el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
+                        el("navy-note").innerHTML = `${response['navy-note']}`;
+                        el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
+                    }
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
         }
     };
@@ -1047,6 +1035,7 @@ function usnavy() {
     fileData.append('waist_inches', waist_inches);
     fileData.append('hip_feet', hip_feet);
     fileData.append('hip_inches', hip_inches);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
@@ -1174,7 +1163,7 @@ $(function() {
 
 
 
-function metricusnavy() {
+function metricusnavy(paymentData) {
 
     var gender;
     if (document.getElementById('m').checked) {
@@ -1208,47 +1197,32 @@ function metricusnavy() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("usnavy-label").innerHTML = `${response['answer']} %`;
+                if (!response['payment_failed']) {
+                    el("usnavy-label").innerHTML = `${response['answer']} %`;
+                    el("fatmass").innerHTML = `${response['fatmass']} Kgs`;
+                    el("leanmass").innerHTML = `${response['leanmass']} Kgs`;
+                    el("bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("fatmass").innerHTML = `${response['fatmass']} Kgs`;
-
-
-            el("leanmass").innerHTML = `${response['leanmass']} Kgs`;
-
-
-            el("bmi").innerHTML = `${response['bmi']}`;
-
-
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
-
-
-            el("army-note").innerHTML = `${response['army-note']}`;
-
-
-            el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
-
-
-            el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
-
-
-
-            el("marine-note").innerHTML = `${response['marine-note']}`;
-
-
-            el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
-
-
-
-
-            el("navy-note").innerHTML = `${response['navy-note']}`;
-
-
-            el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
-
-
-
+                    // on coronovirus page these elements don't exist what causes exception
+                    if (el("army-note")) {
+                        el("army-note").innerHTML = `${response['army-note']}`;
+                        el("army-standard-answer").innerHTML = `${response['army-standard-answer']}%`;
+                        el("army-post-answer").innerHTML = `${response['army-post-answer']}%`;
+                        el("marine-note").innerHTML = `${response['marine-note']}`;
+                        el("marine-standard-answer").innerHTML = `${response['marine-standard-answer']}%`;
+                        el("navy-note").innerHTML = `${response['navy-note']}`;
+                        el("navy-standard-answer").innerHTML = `${response['navy-standard-answer']}%`;
+                    }
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
         }
     };
 
@@ -1260,6 +1234,7 @@ function metricusnavy() {
     fileData.append('neck', neck);
     fileData.append('waist', waist);
     fileData.append('hip', hip);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
@@ -1267,7 +1242,7 @@ function metricusnavy() {
 
 
 
-function jp3() {
+function jp3(paymentData) {
 
     var gender;
     if (document.getElementById('male123').checked) {
@@ -1333,18 +1308,26 @@ function jp3() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
-            el("total-fatmass").innerHTML = `${response['fatmass']}`;
-            el("total-leanmass").innerHTML = `${response['leanmass']}`;
+                if (!response['payment_failed']) {
+                    el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+                    el("total-fatmass").innerHTML = `${response['fatmass']}`;
+                    el("total-leanmass").innerHTML = `${response['leanmass']}`;
 
-            el("total-bmi").innerHTML = `${response['bmi']}`;
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    el("total-bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("weight-unit-1").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-1").innerHTML = `${response['weightunit']}`;
 
-            el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
         }
     };
@@ -1362,11 +1345,12 @@ function jp3() {
     fileData.append('women_tricep', women_tricep);
     fileData.append('quadricep_women', quadricep_women);
     fileData.append('suprailiac', suprailiac);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
 
-function jp4() {
+function jp4(paymentData) {
 
 
     var gender;
@@ -1429,19 +1413,26 @@ function jp4() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
-            el("total-fatmass").innerHTML = `${response['fatmass']}`;
-            el("total-leanmass").innerHTML = `${response['leanmass']}`;
+                if (!response['payment_failed']) {
+                    el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+                    el("total-fatmass").innerHTML = `${response['fatmass']}`;
+                    el("total-leanmass").innerHTML = `${response['leanmass']}`;
 
-            el("total-bmi").innerHTML = `${response['bmi']}`;
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    el("total-bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("weight-unit-1").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-1").innerHTML = `${response['weightunit']}`;
 
-            el("weight-unit-2").innerHTML = `${response['weightunit']}`;
-
+                    el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
         }
     };
@@ -1457,12 +1448,13 @@ function jp4() {
     fileData.append('tricep', tricep);
     fileData.append('quadricep', quadricep);
     fileData.append('suprailiac', suprailiac);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
 
 
-function jp7() {
+function jp7(paymentData) {
 
 
 
@@ -1531,20 +1523,26 @@ function jp7() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
-            el("total-fatmass").innerHTML = `${response['fatmass']}`;
-            el("total-leanmass").innerHTML = `${response['leanmass']}`;
+                if (!response['payment_failed']) {
+                    el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+                    el("total-fatmass").innerHTML = `${response['fatmass']}`;
+                    el("total-leanmass").innerHTML = `${response['leanmass']}`;
 
-            el("total-bmi").innerHTML = `${response['bmi']}`;
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    el("total-bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("weight-unit-1").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-1").innerHTML = `${response['weightunit']}`;
 
-            el("weight-unit-2").innerHTML = `${response['weightunit']}`;
-
-
+                    el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
         }
     };
 
@@ -1562,16 +1560,13 @@ function jp7() {
     fileData.append('abdomen', abdomen);
     fileData.append('suprailiac', suprailiac);
     fileData.append('quadricep', quadricep);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
 
 
-
-
-function p9() {
-
-
+function p9(paymentData) {
 
     var gender;
     if (document.getElementById('malep9').checked) {
@@ -1643,18 +1638,26 @@ function p9() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
-            el("total-fatmass").innerHTML = `${response['fatmass']}`;
-            el("total-leanmass").innerHTML = `${response['leanmass']}`;
+                if (!response['payment_failed']) {
+                    el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+                    el("total-fatmass").innerHTML = `${response['fatmass']}`;
+                    el("total-leanmass").innerHTML = `${response['leanmass']}`;
 
-            el("total-bmi").innerHTML = `${response['bmi']}`;
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    el("total-bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("weight-unit-1").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-1").innerHTML = `${response['weightunit']}`;
 
-            el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
 
         }
@@ -1676,13 +1679,14 @@ function p9() {
     fileData.append('suprailiac', suprailiac);
     fileData.append('lowerback', lowerback);
     fileData.append('calf', calf);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
 
 
 
-function dw4() {
+function dw4(paymentData) {
 
     var gender;
     if (document.getElementById('maledw4').checked) {
@@ -1741,19 +1745,26 @@ function dw4() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
-            el("total-fatmass").innerHTML = `${response['fatmass']}`;
-            el("total-leanmass").innerHTML = `${response['leanmass']}`;
+                if (!response['payment_failed']) {
+                    el("total-bodyfatpercent").innerHTML = `${response['answer']} %`;
+                    el("total-fatmass").innerHTML = `${response['fatmass']}`;
+                    el("total-leanmass").innerHTML = `${response['leanmass']}`;
 
-            el("total-bmi").innerHTML = `${response['bmi']}`;
-            el("bmi-category").innerHTML = `${response['bmi-category']}`;
+                    el("total-bmi").innerHTML = `${response['bmi']}`;
+                    el("bmi-category").innerHTML = `${response['bmi-category']}`;
 
-            el("weight-unit-1").innerHTML = `${response['weightunit']}`;
+                    el("weight-unit-1").innerHTML = `${response['weightunit']}`;
 
-            el("weight-unit-2").innerHTML = `${response['weightunit']}`;
-
+                    el("weight-unit-2").innerHTML = `${response['weightunit']}`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
         }
     };
 
@@ -1768,14 +1779,13 @@ function dw4() {
     fileData.append('bicep', bicep);
     fileData.append('subscapular', subscapular);
     fileData.append('suprailiac', suprailiac);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 
 }
 
 
-
-
-function faceanalyze() {
+function faceanalyze(paymentData) {
 
     // var uploadFiles = dataURItoBlob(newbase64);
 
@@ -1792,25 +1802,35 @@ function faceanalyze() {
     };
     xhr.onload = function(e) {
         if (this.readyState === 4) {
-            var response = JSON.parse(e.target.responseText);
+            try {
+                var response = JSON.parse(e.target.responseText);
 
-            el("result-text").innerHTML = `Your body fat percentage (range) based on your face is: <br><br>`;
+                if (!response['payment_failed']) {
+                    el("result-text").innerHTML = `Your body fat percentage (range) based on your face is: <br><br>`;
+                    el("result-label").innerHTML = `${response['result']} %`;
+                } else {
+                    show_failed_payment_notification();
+                }
+            } catch (e) {
+                show_failed_payment_notification();
+            }
 
-
-            el("result-label").innerHTML = `${response['result']} %`;
         }
         el("analyze-button").innerHTML = "UPLOAD IMAGE";
     };
 
     var fileData = new FormData();
     fileData.append("file", uploadFiles[0]);
+    fileData.append("payment_id", paymentData.paymentId)
     xhr.send(fileData);
 }
 
-function showDiv() {
-    document.getElementById('welcomeDiv').style.display = "block";
-
-    //  $('#welcomeDiv').toggle(10000, function() {
-    //   // Animation complete.
-    // });
+function show_failed_payment_notification() {
+    $("#notification").fadeIn("slow", function () {
+        $("#notification_content").html('"We were unable to process your payment request. If your payment was actually processed please contact us contact@estimatebodyfat.com"')
+    });
+    $(".dismiss").click(function () {
+        $("#notification").fadeOut("slow");
+    });
 }
+ 

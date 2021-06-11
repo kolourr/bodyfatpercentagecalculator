@@ -156,35 +156,25 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                         </li>
         </ul></div>
 
-            <h1 style="background-color:#faf1f0;border-bottom: none; ">FREE A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
+            <h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
 
             <p style="background-color:white; text-align: left; border-top: none; ">
 
 
-            <b>Do you want to discover your body fat percentage from a picture you upload?</b>  <br><br>
+           <b>Do you want to discover your body fat percentage from a picture you upload?</b>  <br><br>
 
-                If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
-     <br><br>
+           If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
+<br><br>
 
-     We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
+We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
 
-     To our surprise, our friends wanted to use it too. So, we put it out in the world.<br><br>
+To our surprise, our friends wanted to use it too. So, we put it out in the world.<br><br>
 
-     Now, almost 1000 people use this body fat calculator daily.       <br><br>
-
-
-                     All you have to do is upload your picture like the one below in the Body Fat Calculator box and <b>make sure it's just you in the picture.</b> <br><br>
+                All you have to do is upload your picture like the one below and <b>make sure it's just you in the picture.</b> <br><br>
 
 
 
-                     <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
-
-
-
-
-
-
-                   </p>
+                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">        </p>
 
 
 
@@ -192,21 +182,23 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
             <!-- <h1 class="calculator"> Body Fat Percentage Calculator</h1> -->
 
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">FREE BODY FAT CALCULATOR</h2>
+            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
 
-            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: March 8, 2020</p>
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: June 10, 2021</p>
 
             <div class="content">
                 <div class="upload-demo-wrap">
                     <div id="upload-demo"></div>
                 </div>
-                <div class="actions">
+                <div class="actions" >
                     <BR>
                     <BR>
                     <a class="btn file-btn">
-                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD IMAGE </span>
+                        <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
 
-                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*" onchange='analyze()' onclick="showDiv()"> </a>
+                        <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
+                               onchange='invoke_paid_estimation(analyze)' >
+                    </a>
 
                     <br>
                     <br>
@@ -225,16 +217,12 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
             </div>
 
-            <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">Did you find this Body Fat Calculator useful?</h2>
-<p>
- If you did, a small tip via PayPal can go a long way in keeping this site ad-free and free for everyone to use! <br />
 
- <form action="https://www.paypal.com/donate" method="post" target="_top">
- <input type="hidden" name="hosted_button_id" value="TKECXAYB34FK6" />
- <input type="image" src="../static/images/paypal.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
- <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
- </form>
-</p>
+
+
+
+
+
 
 
 
@@ -251,8 +239,8 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
                 <p style="text-align: left;">We <strong><u>DO NOT STORE</u></strong> your image. The image belongs to <strong><u>YOU and only YOU.</u></strong>
                     <br>
-                    <br></p> <br> <br>
-
+                    <br>
+                </p> <br> <br>
             </details>
 
 
@@ -265,7 +253,13 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
                 </summary>
 
-                <p style="text-align: left;">I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
+                <p style="text-align: left;">
+
+                 It is important to remember that this body fat percentage range is just a rough estimate as height, body shape and overall fat distribtion is not taken into account.
+
+                 <br>
+                 <br>
+                  I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
                     <br>
                     <br>A lot of data. Sadly, this is very hard to come by. However, there is a way you can help me if you’ve got a Dexa Scan done or plan on getting one in the future.
                     <br>
@@ -294,9 +288,7 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                     <br> I Lov Guitars Inc. will not be held liable for any claim, damage or other liability arising from, out, or in connection with using this web application and its content.
 
                     <br>
-                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.<br /><br />
-
-                    This website is part of Amazon's Affiliate Program. We receive a commission if purchase an item on Amazon through a product link on our website.
+                    <br> Images used on <a href="https://www.estimatebodyfat.com/">Estimate Body Fat </a> have been obtained from Royalty Free Sites or purchased from Stock Repositories.
 
                 </p>
             </details>
@@ -328,7 +320,7 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                     <p style="border-top:   2px solid #ffd3cf;"><a style="color:orange; " href="https://www.estimatebodyfat.com/privacy.html">Privacy Policy</a></p>
                     <p><a style="color:orange; " href="https://www.estimatebodyfat.com/termsofuse.html">Terms of Use</a></p>
 
-                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2021</a> </p>
+                    <p style="border-bottom:   2px solid #ffd3cf;">Copyright <a style="color:orange;">Estimate Body Fat © 2020</a> </p>
 
                 </div>
 
@@ -349,13 +341,12 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
         CropImage.init();
     </script>
 
-
     <script src='../static/stripe.js'></script>
-      <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-      <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
+    <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 
 
 </body>
