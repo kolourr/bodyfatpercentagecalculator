@@ -59,7 +59,7 @@ function start_payment(paymentData, paymentCallback) {
             currency: 'usd',
             total: {
                 label: '3 Body Fat % Estimates',
-                amount: 1999,
+                amount: 799,
             },
             requestPayerName: true,
             requestPayerEmail: true,
@@ -168,7 +168,7 @@ function init(content) {
             <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">3 Body Fat % Estimates</div>
         </div>
       </div>
-      <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$19.99</div>
+      <div style="color:#F2FAFA;font-size: 20px; font-weight: 550; margin-top: 10px;">$7.99</div>
         <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">3 unique chances to check your estimate.</div>
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
     </div>
