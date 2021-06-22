@@ -339,7 +339,7 @@ async def initiatepayment(request):
     publishable_key = os.getenv("stripe_publishable_key")
 
     # amount in cents
-    amount_to_pay = 799
+    amount_to_pay = 100
 
     intent = stripe.PaymentIntent.create(
         amount=amount_to_pay,
