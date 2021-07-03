@@ -347,6 +347,8 @@ async def initiatepayment(request):
         description=
         """
         Thanks for purchasing 3 Body Fat Estimations.
+        
+        Here's your download link for the Keto eBook, Audio and Video Series: https://drive.google.com/uc?export=download&id=1Kq1ecz_a9kh33ip4hq7kuJMPGQFJOOAh
 
 
         """,
