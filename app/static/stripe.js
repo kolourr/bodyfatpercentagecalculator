@@ -165,14 +165,14 @@ function init(content) {
       </div>
       <div class="ElementsModal--product ElementsModal--details">
         <div>
-            <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">3 Body Fat % Estimates + Free Course</div>
+            <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">3 Body Fat % Estimates</div>
         </div>
       </div>
       <div style="color:#e0c66e;font-size: 25px; font-weight: 550; margin-top: 10px;">$4.99</div>
 
         <div style="color:#F3FAFA;font-size: 15px; font-weight: 550; margin-top: 15px;">Your body fat % will be displayed instantly upon payment.</div>
         <div style="color:#F3FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">Plus, you get 2 more chances to adjust your measurements or upload new pictures.</div>
-        <div style="color:#B28A57;font-size: 14px; font-weight: 550; margin-top: 15px;">As a bonus, you'll receive the Keto eBook, Audio and Video Series (worth $75) for FREE. The download link will be found in the payment receipt email.</div>
+        <div style="color:#B28A57;font-size: 14px; font-weight: 550; margin-top: 15px;">BONUS: You'll also receive the Keto eBook, Audio and Video Series (worth $75) for FREE. The download link will be found in the payment receipt email.</div>
 
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
 
