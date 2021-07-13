@@ -169,10 +169,10 @@ function init(content) {
         </div>
       </div>
       <div style="color:#F3FAFA;font-size: 22px; font-weight: 550; margin-top: 10px;">$4.99</div>
-      <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">As a bonus, you'll receive the Keto eBook, Audio and Video Series (worth $75) for FREE. Download link in email.</div>
 
-        <div style="color:#E28C57;font-size: 13px; font-weight: 550; margin-top: 10px;">Your body fat % will be displayed instantly upon payment.</div>
-        <div style="color:#E28C57;font-size: 13px; font-weight: 550; margin-top: 10px;">Plus, you get 2 more chances to adjust your measurements or upload new pictures.</div>
+        <div style="color:#E28C57;font-size: 14px; font-weight: 550; margin-top: 10px;">Your body fat % will be displayed instantly upon payment.</div>
+        <div style="color:#E28C57;font-size: 14px; font-weight: 550; margin-top: 10px;">Plus, you get 2 more chances to adjust your measurements or upload new pictures.</div>
+        <div style="color:#F2FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">As a bonus, you'll receive the Keto eBook, Audio and Video Series (worth $75) for FREE. Download link in email.</div>
 
       <!-- <div class="ElementsModal--price ElementsModal--details">${amount}</div> -->
 
