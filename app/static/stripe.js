@@ -59,7 +59,7 @@ function start_payment(paymentData, paymentCallback) {
             currency: 'usd',
             total: {
                 label: '3 Body Fat % Estimates',
-                amount: 1999,
+                amount: 999,
             },
             requestPayerName: true,
             requestPayerEmail: true,
@@ -119,7 +119,7 @@ function init(content) {
             viewBox="0 0 20 20"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:xlink="http://www.w3.org/999/xlink"
           >
             <defs>
               <path
@@ -168,7 +168,7 @@ function init(content) {
             <div style="color: #E28C57;font-size: 23px; font-weight: 550; margin-top: 10px;">3 Body Fat % Estimates</div>
         </div>
       </div>
-      <div style="color:#e0c66e;font-size: 25px; font-weight: 550; margin-top: 10px;">$19.99</div>
+      <div style="color:#e0c66e;font-size: 25px; font-weight: 550; margin-top: 10px;">$9.99</div>
 
         <div style="color:#F3FAFA;font-size: 15px; font-weight: 550; margin-top: 15px;">Your body fat % will be displayed instantly upon payment.</div>
         <div style="color:#F3FAFA;font-size: 15px; font-weight: 550; margin-top: 10px;">Plus, you get 2 more chances to adjust your measurements or upload new pictures.</div>
