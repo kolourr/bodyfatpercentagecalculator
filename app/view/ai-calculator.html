@@ -5,20 +5,6 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
 <head>
 
-  <!-- Clarity tracking code for https://estimatebodyfat.com/ --><script>    (function(c,l,a,r,i,t,y){        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);    })(window, document, "clarity", "script", "54s0y8htb6");</script>
-
-  <!-- Hotjar Tracking Code for www.estimatebodyfat.com -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1845510,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -95,7 +81,6 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
     <meta name="robots" content="index, follow">
     <meta charset='utf-8'>
     <link rel='stylesheet' href='../static/style.css'>
-    <link rel='stylesheet' href='../static/stripe.css'>
     <script src="jquery-3.4.0.min.js"></script>
     <link rel="stylesheet" href="../static/croppie.css" />
     <link rel="stylesheet" href="../static/sweetalert.css" />
@@ -111,31 +96,19 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e0f8364b601870012fd415c&cms=sop' async='async'></script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2569934498155266"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
-
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXR2CSP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="notification" style="display: none;">
-        <div id="notification_content"></div>
-        <span class="dismiss"><a title="dismiss this notification">X</a></span>
-    </div>
     <div>
         <div class='center'>
             <a href='./'>
@@ -155,29 +128,34 @@ It uses the Fast AI Library, Intel's Haarcascades and Croppie JS plugin -->
                             <li><a href='./ai-calculator.html'><span>A.I. Fat Calculator</span></a></li>
                             <li><a href="/body-fat-calculator.html"><span>Military Fat Calculator</span></a>
                                 <li><a href="/caliper-calculator.html"><span>Caliper Fat Calculator</span></a>
-                                         <li class='last'><a href="/face-fat.html"><span>Face Fat Calculator</span></a></ul>
+                                    <li><a href="/coronavirus-weight-risk-calculator.html"><span>Coronavirus Weight Risk Calculator</span></a>
+                                        <li class='last'><a href="/face-fat.html"><span>Face Fat Calculator</span></a></ul>
                         </li>
-        </ul></div>
+
+
+
+                </ul>
+
+            </div>
 
             <h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
 
-            <p style="background-color:white; text-align: left; border-top: none; ">
+            <p style="background-color:white; text-align: left; border-top: none; ">The A.I. Body Fat Percentage Calculator is a visual body fat calculator that can be used to estimate your total body fat percentage with just a picture of yourself. For the body fat calculator to work, you must upload a picture of yourself.
+                <br>
+                <br> In the picture you upload, you must stand straight, flex and be the only one in it. Men must be shirtless and women in gym attire/form fitting clothing.
+                <br>
+                <br>You can use a bathroom selfie or ask someone to take a picture of yourself. Make sure the image is a close-up picture. The picture you upload must follow these rules, otherwise, the results will be greatly skewed.
+                <br>
+                <br>
 
+                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
+                <br> When you upload your picture, a neural network (A.I.) gives you an answer within 5 seconds (based on the closest body fat percentage range). It is important to remember that this number is just a rough estimate.
+                <br>
+                <br>
 
-           <b>Do you want to discover your body fat percentage from a picture you upload?</b>  <br><br>
+                <!-- Btw, we also have our own <a href="https://shop.estimatebodyfat.com/">personal grooming store</a> to help you smell and look the best you can be. See below! -->
+            </p>
 
-           If so, you're in the right place. This calculator was built by analyzing pictures of 1000's of people at different body fat percentages using an A.I. classifier.
-<br><br>
-
-We built this calculator for ourselves as we wanted a quick and easy way to determine our own body fat percentage (with a picture taken in front of a mirror).<br><br>
-
-To our surprise, our friends wanted to use it too. So, we put it out in the world.<br><br>
-
-
-All you have to do is upload your picture like the one below and <b>make sure it's just you in the picture.</b> <br><br>
-
-
-                <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg" alt="visual body fat percentage detector" style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">        </p>
 
 
 
@@ -187,7 +165,7 @@ All you have to do is upload your picture like the one below and <b>make sure it
 
             <h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
 
-            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: July 20, 2021</p>
+            <p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: March 8, 2020</p>
 
             <div class="content">
                 <div class="upload-demo-wrap">
@@ -254,13 +232,7 @@ All you have to do is upload your picture like the one below and <b>make sure it
 
                 </summary>
 
-                <p style="text-align: left;">
-
-                 It is important to remember that this body fat percentage range is just a rough estimate as height, body shape and overall fat distribtion is not taken into account.
-
-                 <br>
-                 <br>
-                  I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
+                <p style="text-align: left;">I hope you’ve received value from this web application and keep coming back to it to check your body fat percentage as you progress on your fat loss journey. As you might have read, to keep improving, the web app needs data.
                     <br>
                     <br>A lot of data. Sadly, this is very hard to come by. However, there is a way you can help me if you’ve got a Dexa Scan done or plan on getting one in the future.
                     <br>
@@ -342,10 +314,12 @@ All you have to do is upload your picture like the one below and <b>make sure it
         CropImage.init();
     </script>
 
-    <script src='../static/stripe.js'></script>
-    <script src="https://js.stripe.com/v3/"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </div>
+    </div>
 
     <script src="https://my.hellobar.com/a32bd13ad389482f645ce379ceb8ad3631ae81f8.js" type="text/javascript" charset="utf-8" async="async"></script>
 
