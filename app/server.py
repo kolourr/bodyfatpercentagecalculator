@@ -24,14 +24,10 @@ from starlette.requests import Request
 from PIL import Image
 
 
-
 export_file_url = 'https://drive.google.com/uc?export=download&id=1qqwWp_QIb2BkHqLKlccBNrdW2kJz9zIB'
 export_file_name = 'export.pkl'
 
 classes = ['5 to 7', '7.5 to 9', '8 to 11', '10 to 12', '13 to 15', '13 to 15.5', '16 to 17', '16 to 18', '18 to 19', '19 to 20', '20 to 22', '21 to 23', '23 to 25', '24 to 25', '26 to 28', '26 to 28.5', '29 to 30', '29 to 33', '31 to 33', '34 to 38', '35 to 39', '40 plus', '40+']
-
-
-
 
 
 
@@ -294,41 +290,7 @@ async def sitemap(request):
     html_file = path / 'view' / 'ai-calculator.html'
     return HTMLResponse(html_file.open().read())
 
-@app.route('/ketoebook.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'ketoebook.html'
-    return HTMLResponse(html_file.open().read())
 
-@app.route('/success.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'success.html'
-    return HTMLResponse(html_file.open().read())
-
-@app.route('/cancel.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'cancel.html'
-    return HTMLResponse(html_file.open().read())
-
-
-@app.route('/coronavirus-weight-risk-calculator.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'coronavirus-weight-risk-calculator.html'
-    return HTMLResponse(html_file.open().read())
-
-
-@app.route('/ketoebook.html')
-async def sitemap(request):
-    return RedirectResponse(url='https://www.estimatebodyfat.com/')
-
-@app.route('/cancel.html')
-async def sitemap(request):
-    return RedirectResponse(url='https://www.estimatebodyfat.com/')
-
-
-@app.route('/fitness-goal-survey.html')
-async def sitemap(request):
-    html_file = path / 'view' / 'fitness-goal-survey.html'
-    return HTMLResponse(html_file.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
@@ -1170,8 +1132,6 @@ async def faceanalyze(request):
     img2 = open_image(BytesIO(success_new))
     prediction = learn_face.predict(img2)[0]
     return JSONResponse({'result': str(prediction)})
-
-
 
 
 if __name__ == '__main__':
