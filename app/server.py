@@ -294,8 +294,36 @@ async def sitemap(request):
     html_file = path / 'view' / 'ai-calculator.html'
     return HTMLResponse(html_file.open().read())
 
+@app.route('/ketoebook.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'ketoebook.html'
+    return HTMLResponse(html_file.open().read())
 
- 
+@app.route('/success.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'success.html'
+    return HTMLResponse(html_file.open().read())
+
+@app.route('/cancel.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'cancel.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/coronavirus-weight-risk-calculator.html')
+async def sitemap(request):
+    html_file = path / 'view' / 'coronavirus-weight-risk-calculator.html'
+    return HTMLResponse(html_file.open().read())
+
+
+@app.route('/ketoebook.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
+
+@app.route('/cancel.html')
+async def sitemap(request):
+    return RedirectResponse(url='https://www.estimatebodyfat.com/')
+
 
 @app.route('/fitness-goal-survey.html')
 async def sitemap(request):
