@@ -5,7 +5,7 @@
 }
 */
 @media screen and (min-width: 1681px) {
-    h1, h2,p,h3,h4,form,.amazon-equipment, .content {
+    h1, h2,p,h3,h4,form, .content {
         width:70%%;
         margin: 0px 350px 0px 350px;
         padding: 10px;
@@ -13,7 +13,6 @@
         padding-right:50px;
         text-align: center;
    }
-
     h1 {
         font-size: 26px;
         color: black;
@@ -89,7 +88,7 @@ footer {
     */
 }
 @media screen and (max-width: 1680px) {
-    h1, h2,p,h3,h4,form,.amazon-equipment, .content {
+    h1, h2,h3, h4, p,form, .content {
         width:70%%;
         margin: 0px 160px 0px 160px;
         padding: 10px;
@@ -153,7 +152,7 @@ footer {
    }
 }
 @media screen and (max-width: 1280px) {
-    h1, h2,p,h3,h4,form,.amazon-equipment, .content {
+    h1, h2,h3, h4, p, form, .content {
         width:100%%;
         margin: 0px 100px 0px 100px;
         padding: 10px;
@@ -217,7 +216,7 @@ footer {
    }
 }
 @media screen and (max-width: 980px) {
-    h1, h2,p,h3,h4,form,.amazon-equipment, .content {
+    h1, h2, p, h4, h3,form, .content {
         width:70%%;
         margin: -10px -20px 0px -20px;
         padding: 10px;
@@ -281,7 +280,7 @@ footer {
    }
 }
 @media screen and (max-width: 736px) {
-  h1, h2,p,h3,h4,form,.amazon-equipment, .content {
+    h1, h2,h3,h4, p,form, .content {
         width:70%%;
         margin: -10px -50px 0px -50px;
         padding: 10px;
@@ -1487,18 +1486,4 @@ pre[class*="language"] {
     .croppie-container {
         padding: 30px 0;
    }
-}
-
-.tip {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-
 }
