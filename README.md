@@ -1,7 +1,7 @@
 <h1 align="center">Body Fat Percentage Calculator:<a href="https://www.estimatebodyfat.com/">Simple Image Classifier</a></h1>
 <div align="center">
   <a href='https://www.estimatebodyfat.com/'>
-	  <img src="https://raw.githubusercontent.com/kolourr/bodyfatpercentagecalculator/main/bodyfatcalculator.png" width="100%" />
+	  <img src="https://raw.githubusercontent.com/kolourr/bodyfatpercentagecalculator/master/bodyfatcalculator.png" width="100%" />
   </a>
 </div>
 
