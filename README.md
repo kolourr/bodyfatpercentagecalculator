@@ -1,87 +1,19 @@
-### Estimate Body Fat is a collection of body fat calculators
-
-#### How to add the payment to a new page
-
-* Put stripe.css above the html content within other stylesheet declarations
-```
-<link rel='stylesheet' href='../static/stripe.css'>
-```
-
-* Put stripe js related files after the html content
-```
-<script src='../static/stripe.js'></script>
-<script src="https://js.stripe.com/v3/"></script>
-```
-
-
-* Configure the event handler with the proper handle function
-```
-<input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
-                               onchange='invoke_paid_estimation(analyze)' >
-```
-
-                               
-<b>invoke_paid_estimation</b> - generic function to initialize the payment procedure <br>
-<b>analyze</b> - specific function mapped to your backend endpoint
-
-As example here is complete html for the AI calculator:
-
-```
-<h1 style="background-color:#faf1f0;border-bottom: none; ">A.I. BODY FAT PERCENTAGE CALCULATOR</h1>
-
-<p style="background-color:white; text-align: left; border-top: none; ">
-
-
-    <b>Get your Body Fat Percentage within 3 Seconds with just a Picture</b>
-    <br>
-    <br>
-    I analyzed 1000's of images (using AI) and spent months mapping them to different body fat percentages.
-    <br><br>
-    Upload a picture like the one below and make sure it's just you in the picture.
-    <br>
-    <br>
-
-    <img class="lazy" data-src="../static/images/ESTIMATE%20BODY%20FAT%20INSTRUCTIONS.jpg"
-         alt="visual body fat percentage detector"
-         style="max-width:100%;height:auto; display: block;   margin-left: auto;   margin-right: auto;">
-    <br>
-
-</p>
-
-<h2 style="background-color:#faf1f0;border-bottom: none; text-align: center">BODY FAT CALCULATOR</h2>
-
-<p style="background-color:#faf1f0; text-align: center; border-top: none; "> Body Fat Model Updated: June 1, 2020</p>
-
-<div class="content">
-    <div class="upload-demo-wrap">
-        <div id="upload-demo"></div>
-    </div>
-    <div class="actions">
-        <BR>
-        <BR>
-        <a class="btn file-btn">
-            <span id='analyze-button' class="analyze-button" type='button'>UPLOAD MY IMAGE </span>
-
-            <input type="file" id="upload" class="aifatclass" value="Choose a file" accept="image/*"
-                   onchange='invoke_paid_estimation(analyze)'>
-        </a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-    </div>
-
-    <div class='result-label'>
-        <label id='result-text' style="color: #7aa125; font-size: 30px; font-family: futura; text-align:left;"> </label>
-
-        <label id='result-label'
-               style="color: white; font-size: 30px; font-weight: bold; font-family: futura; background-color: #ff9080;  "></label>
-    </div>
-
+<h1 align="center">Body Fat Percentage Calculator:<a href="https://www.estimatebodyfat.com/">Simple Image Classifier</a></h1>
+<div align="center">
+  <a href='https://www.estimatebodyfat.com/'>
+	  <img src="https://raw.githubusercontent.com/kolourr/bodyfatpercentagecalculator/main/bodyfatcalculator.png" width="100%" />
+  </a>
 </div>
-```   
 
+<h3 align="center">Easy to Use AI Body Fat Calculator</h3>
+ 
+ ## Details 
 
+ This webapp was build as part of Lecture 2 of Fast AI</a>. 
+
+ 
+
+ ## Tech
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> </p>
