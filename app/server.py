@@ -281,6 +281,12 @@ async def sitemap(request):
     html_file = path / 'view' / 'body-goal-project.html'
     return HTMLResponse(html_file.open().read())
 
+
+@app.route('/ads.txt')
+async def sitemap(request):
+    html_file = path / 'view' / 'ads.txt'
+    return HTMLResponse(html_file.open().read())
+
 @app.route('/motivational-quote-email.html')
 async def sitemap(request):
     return RedirectResponse(url='https://www.estimatebodyfat.com/body-goal-project.html')
